@@ -223,7 +223,7 @@ def get_llm_provider(model_config: Model) -> Type[BaseLLM]:
     # For OpenAI, we use a different provider depending on whether it's a chat model or not
     if (
         model_config.engine == "openai"
-        and ("gpt-3.5" in model_config.model or "gpt-4" in model_config.model)
+        and ("gpt-3.5" in model_config.model or "gpt-4" in model_config.model or "gemini" in model_config.model)
         and "instruct" not in model_config.model
     ):
         try:
