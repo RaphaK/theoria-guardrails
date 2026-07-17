@@ -4,7 +4,7 @@ This guide describes how to use multiple configurations as part of the same serv
 
 ## Motivation
 
-When running a guardrails server, it is convenient to create *atomic configurations* which can be reused across multiple "complete" configurations. In this guide, we use [these example configurations](https://github.com/NVIDIA/NeMo-Guardrails/tree/develop/examples/server_configs/atomic):
+When running a guardrails server, it is convenient to create *atomic configurations* which can be reused across multiple "complete" configurations. In this guide, we use [these example configurations](https://github.com/Theoria/NeMo-Guardrails/tree/develop/examples/server_configs/atomic):
 1. `input_checking`: which uses the self-check input rail.
 2. `output_checking`: which uses the self-check output rail.
 3. `main`: which uses the `gpt-3.5-turbo-instruct` model with no guardrails.
@@ -42,12 +42,12 @@ nest_asyncio.apply()
 In this guide, the server is started programmatically, as shown below. This is equivalent to (from the root of the project):
 
 ```sh
-nemoguardrails server --config=examples/server_configs/atomic
+theoriaguardrails server --config=examples/server_configs/atomic
 ```
 
 ```python
 import os
-from nemoguardrails.server.api import app
+from theoriaguardrails.server.api import app
 from threading import Thread
 import uvicorn
 

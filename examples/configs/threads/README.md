@@ -5,8 +5,8 @@ This is a sample server config folder with server-side threads enabled.
 To enable server-side threads, you must register a `DataStore` inside the `config.py` file, which should be placed at the root of the folder containing the rails configurations.
 
 ```python
-from nemoguardrails.server.api import register_datastore
-from nemoguardrails.server.datastore.memory_store import MemoryStore
+from theoriaguardrails.server.api import register_datastore
+from theoriaguardrails.server.datastore.memory_store import MemoryStore
 
 register_datastore(MemoryStore())
 ```
@@ -37,7 +37,7 @@ define flow
 To run the server, use the following command from the root of the project:
 
 ```bash
-nemoguardrails server --config=examples/configs/threads
+theoriaguardrails server --config=examples/configs/threads
 ```
 
 ## Testing

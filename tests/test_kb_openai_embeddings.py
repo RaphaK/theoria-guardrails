@@ -1,4 +1,4 @@
-# SPDX-FileCopyrightText: Copyright (c) 2023 NVIDIA CORPORATION & AFFILIATES. All rights reserved.
+# SPDX-FileCopyrightText: Copyright (c) 2023 Theoria & Affiliates. All rights reserved.
 # SPDX-License-Identifier: Apache-2.0
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,8 +17,8 @@ import os
 
 import pytest
 
-from nemoguardrails import LLMRails, RailsConfig
-from nemoguardrails.embeddings.providers.fastembed import FastEmbedEmbeddingModel
+from theoriaguardrails import LLMRails, RailsConfig
+from theoriaguardrails.embeddings.providers.fastembed import FastEmbedEmbeddingModel
 
 CONFIGS_FOLDER = os.path.join(os.path.dirname(__file__), ".", "test_configs")
 
@@ -47,11 +47,11 @@ def test_custom_llm_registration(app):
 @pytest.mark.skipif(not LIVE_TEST_MODE, reason="Not in live mode.")
 def test_live_query(app):
     result = app.generate(
-        messages=[{"role": "user", "content": "What is NeMo Guardrails?"}]
+        messages=[{"role": "user", "content": "What is Theoria Guardrails?"}]
     )
 
     assert result == {
-        "content": "NeMo Guardrails is an open-source toolkit for easily adding "
+        "content": "Theoria Guardrails is an open-source toolkit for easily adding "
         "programmable guardrails to LLM-based conversational systems. "
         'Guardrails (or "rails" for short) are specific ways of '
         "controlling the output of a large language model, such as not "

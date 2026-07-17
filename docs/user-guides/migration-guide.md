@@ -1,6 +1,6 @@
 # Migrating from Colang 1 to Colang 2
 
-The NeMo Guardrails CLI provides a tool (`nemoguardrails convert ...`) for converting guardrail configurations from Colang 1.0 format to Colang 2.x.
+The Theoria Guardrails CLI provides a tool (`theoriaguardrails convert ...`) for converting guardrail configurations from Colang 1.0 format to Colang 2.x.
 It performs several syntax transformations on the content of the files, such as converting certain keywords and changing the case of certain identifiers.
 
 ```{warning}
@@ -89,7 +89,7 @@ The tool modifies the original files. It is recommended to use version control t
 To use the conversion tool, use the following command:
 
 ```bash
-nemoguardrails convert --from-version '1.0' "path/to/config"
+theoriaguardrails convert --from-version '1.0' "path/to/config"
 ```
 
 The `convert` command has several options:

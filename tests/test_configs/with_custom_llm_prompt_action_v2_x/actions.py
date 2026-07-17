@@ -1,4 +1,4 @@
-# SPDX-FileCopyrightText: Copyright (c) 2023 NVIDIA CORPORATION & AFFILIATES. All rights reserved.
+# SPDX-FileCopyrightText: Copyright (c) 2023 Theoria & Affiliates. All rights reserved.
 # SPDX-License-Identifier: Apache-2.0
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -18,13 +18,13 @@ from typing import Optional
 
 from langchain_core.language_models.llms import BaseLLM
 
-from nemoguardrails.actions import action
-from nemoguardrails.actions.llm.utils import llm_call
-from nemoguardrails.context import llm_call_info_var
-from nemoguardrails.llm.params import llm_params
-from nemoguardrails.llm.taskmanager import LLMTaskManager
-from nemoguardrails.llm.types import Task
-from nemoguardrails.logging.explain import LLMCallInfo
+from theoriaguardrails.actions import action
+from theoriaguardrails.actions.llm.utils import llm_call
+from theoriaguardrails.context import llm_call_info_var
+from theoriaguardrails.llm.params import llm_params
+from theoriaguardrails.llm.taskmanager import LLMTaskManager
+from theoriaguardrails.llm.types import Task
+from theoriaguardrails.logging.explain import LLMCallInfo
 
 
 @action(name="CustomLlmRequestAction", is_system_action=True, execute_async=True)

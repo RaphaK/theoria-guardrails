@@ -13,5 +13,5 @@ streaming: True
 To test this config, in streaming mode, using the chat CLI, run the following command from the root of the project:
 
 ```bash
-nemoguardrails chat --config=examples/configs/streaming --streaming
+theoriaguardrails chat --config=examples/configs/streaming --streaming
 ```

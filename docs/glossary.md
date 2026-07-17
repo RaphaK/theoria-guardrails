@@ -1,6 +1,6 @@
 # Glossary
 
-Below are the main concepts used in NeMo Guardrails:
+Below are the main concepts used in Theoria Guardrails:
 
 - **LLM-based Application**: a software application that uses an LLM to drive
 - **Bot**: synonym for *LLM-based application*.

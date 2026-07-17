@@ -16,7 +16,7 @@
             "type": "debugpy",
             "request": "launch",
             "console": "integratedTerminal",
-            "module": "nemoguardrails",
+            "module": "theoriaguardrails",
             "args": ["chat", "--config=${fileDirname}", "--debug-level=DEBUG"],
             "justMyCode": true,
             "env": {
@@ -28,7 +28,7 @@
             "type": "debugpy",
             "request": "launch",
             "console": "integratedTerminal",
-            "module": "nemoguardrails",
+            "module": "theoriaguardrails",
             "args": ["chat", "--config=${fileDirname}", "--debug-level=INFO"],
             "justMyCode": true,
             "env": {
@@ -40,7 +40,7 @@
             "type": "debugpy",
             "request": "launch",
             "console": "integratedTerminal",
-            "module": "nemoguardrails",
+            "module": "theoriaguardrails",
             "args": ["chat", "--config=${fileDirname}", "--verbose"],
             "justMyCode": true,
             "env": {
@@ -52,7 +52,7 @@
             "type": "debugpy",
             "request": "launch",
             "console": "integratedTerminal",
-            "module": "nemoguardrails",
+            "module": "theoriaguardrails",
             "args": ["chat", "--config=${fileDirname}"],
             "justMyCode": true,
             "env": {

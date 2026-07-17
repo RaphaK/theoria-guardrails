@@ -100,7 +100,7 @@ define user ask about self-harm
 To test the bot with the default behaviour having all the rails active, we just need to create an `LLMRails` object given the current guardrails configuration. The following response would be generated to an user greeting:
 
 ```python
-from nemoguardrails import RailsConfig, LLMRails
+from theoriaguardrails import RailsConfig, LLMRails
 
 config = RailsConfig.from_path("config")
 rails = LLMRails(config)

@@ -76,7 +76,7 @@ rails:
 ```
 
 ```python
-from nemoguardrails import RailsConfig, LLMRails
+from theoriaguardrails import RailsConfig, LLMRails
 
 config = RailsConfig.from_path("config")
 rails = LLMRails(config)

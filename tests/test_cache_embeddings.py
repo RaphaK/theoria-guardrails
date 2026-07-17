@@ -1,4 +1,4 @@
-# SPDX-FileCopyrightText: Copyright (c) 2023 NVIDIA CORPORATION & AFFILIATES. All rights reserved.
+# SPDX-FileCopyrightText: Copyright (c) 2023 Theoria & Affiliates. All rights reserved.
 # SPDX-License-Identifier: Apache-2.0
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -21,7 +21,7 @@ from unittest.mock import MagicMock, Mock, patch
 
 import pytest
 
-from nemoguardrails.embeddings.cache import (
+from theoriaguardrails.embeddings.cache import (
     CacheStore,
     EmbeddingsCache,
     FilesystemCacheStore,
@@ -32,7 +32,7 @@ from nemoguardrails.embeddings.cache import (
     RedisCacheStore,
     cache_embeddings,
 )
-from nemoguardrails.rails.llm.config import EmbeddingsCacheConfig
+from theoriaguardrails.rails.llm.config import EmbeddingsCacheConfig
 
 
 def test_key_generator_abstract_class():
@@ -124,9 +124,9 @@ class MyClass:
 
 async def test_cache_embeddings():
     with patch(
-        "nemoguardrails.rails.llm.config.EmbeddingsCacheConfig"
+        "theoriaguardrails.rails.llm.config.EmbeddingsCacheConfig"
     ) as MockConfig, patch(
-        "nemoguardrails.embeddings.cache.EmbeddingsCache"
+        "theoriaguardrails.embeddings.cache.EmbeddingsCache"
     ) as MockCache:
         mock_config = MockConfig.return_value
         mock_cache = MockCache.return_value

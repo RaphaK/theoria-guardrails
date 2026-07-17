@@ -8,44 +8,44 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ### Added
 
-* Prompt template name to verbose logging ([#811](https://github.com/NVIDIA/NeMo-Guardrails/pull/811)) by @schuellc-nvidia
-* New configuration setting to change UMIM event source id ([#823](https://github.com/NVIDIA/NeMo-Guardrails/pull/823)) by @sklinglernv
-* New attention module to standard library ([#829](https://github.com/NVIDIA/NeMo-Guardrails/pull/829)) by @sklinglernv
-* Passthrough mode support ([#779](https://github.com/NVIDIA/NeMo-Guardrails/pull/779)) by @Pouyanpi
+* Prompt template name to verbose logging ([#811](https://github.com/Theoria/NeMo-Guardrails/pull/811)) by @schuellc-theoria
+* New configuration setting to change UMIM event source id ([#823](https://github.com/Theoria/NeMo-Guardrails/pull/823)) by @sklinglernv
+* New attention module to standard library ([#829](https://github.com/Theoria/NeMo-Guardrails/pull/829)) by @sklinglernv
+* Passthrough mode support ([#779](https://github.com/Theoria/NeMo-Guardrails/pull/779)) by @Pouyanpi
 
 ### Fixed
 
-* Activation of flows with default parameters ([#758](https://github.com/NVIDIA/NeMo-Guardrails/pull/758)) by @schuellc-nvidia
-* ``pretty_str`` string formatting function ([#759](https://github.com/NVIDIA/NeMo-Guardrails/pull/759)) by @schuellc-nvidia
-* Consistent uuid generation in debug mode ([#760](https://github.com/NVIDIA/NeMo-Guardrails/pull/760)) by @schuellc-nvidia
-* Avatar posture management function in standard library ([#771](https://github.com/NVIDIA/NeMo-Guardrails/pull/771)) by @sklinglernv
-* Nested ``if else`` construct parsing ([#833](https://github.com/NVIDIA/NeMo-Guardrails/pull/833)) by @radinshayanfar
-* Multiline string values in interaction history prompting ([#765](https://github.com/NVIDIA/NeMo-Guardrails/pull/765)) by @radinshayanfar
+* Activation of flows with default parameters ([#758](https://github.com/Theoria/NeMo-Guardrails/pull/758)) by @schuellc-theoria
+* ``pretty_str`` string formatting function ([#759](https://github.com/Theoria/NeMo-Guardrails/pull/759)) by @schuellc-theoria
+* Consistent uuid generation in debug mode ([#760](https://github.com/Theoria/NeMo-Guardrails/pull/760)) by @schuellc-theoria
+* Avatar posture management function in standard library ([#771](https://github.com/Theoria/NeMo-Guardrails/pull/771)) by @sklinglernv
+* Nested ``if else`` construct parsing ([#833](https://github.com/Theoria/NeMo-Guardrails/pull/833)) by @radinshayanfar
+* Multiline string values in interaction history prompting ([#765](https://github.com/Theoria/NeMo-Guardrails/pull/765)) by @radinshayanfar
 
 ## [2.0-beta.4] - 2024-10-02
 
 ### Fixed
 
-* LLM prompt template ``generate_value_from_instruction`` for GTP and LLama model chat interface ([#775](https://github.com/NVIDIA/NeMo-Guardrails/pull/775)) by @schuellc-nvidia
+* LLM prompt template ``generate_value_from_instruction`` for GTP and LLama model chat interface ([#775](https://github.com/Theoria/NeMo-Guardrails/pull/775)) by @schuellc-theoria
 
 ## [2.0-beta.3] - 2024-09-27
 
 ### Added
 
-* Support for new Colang 2 keyword `deactivate` ([#673](https://github.com/NVIDIA/NeMo-Guardrails/pull/673)) by @schuellc-nvidia
-* Bot configuration as variable `$system.config` ([#703](https://github.com/NVIDIA/NeMo-Guardrails/pull/703)) by @schuellc-nvidia
-* Basic support for most OpenAI and LLame 3 models ([#709](https://github.com/NVIDIA/NeMo-Guardrails/pull/709)) by @schuellc-nvidia
-* Interaction loop priority levels for flows ([#712](https://github.com/NVIDIA/NeMo-Guardrails/pull/712)) by @schuellc-nvidia
-* CLI chat debugging commands ([#717](https://github.com/NVIDIA/NeMo-Guardrails/pull/717)) by @schuellc-nvidia
+* Support for new Colang 2 keyword `deactivate` ([#673](https://github.com/Theoria/NeMo-Guardrails/pull/673)) by @schuellc-theoria
+* Bot configuration as variable `$system.config` ([#703](https://github.com/Theoria/NeMo-Guardrails/pull/703)) by @schuellc-theoria
+* Basic support for most OpenAI and LLame 3 models ([#709](https://github.com/Theoria/NeMo-Guardrails/pull/709)) by @schuellc-theoria
+* Interaction loop priority levels for flows ([#712](https://github.com/Theoria/NeMo-Guardrails/pull/712)) by @schuellc-theoria
+* CLI chat debugging commands ([#717](https://github.com/Theoria/NeMo-Guardrails/pull/717)) by @schuellc-theoria
 
 ### Changed
 
-* Merged (and removed) utils library file with core library ([#669](https://github.com/NVIDIA/NeMo-Guardrails/pull/669)) by @schuellc-nvidia
+* Merged (and removed) utils library file with core library ([#669](https://github.com/Theoria/NeMo-Guardrails/pull/669)) by @schuellc-theoria
 
 ### Fixed
 
-* Fixes a event group match bug (e.g. `match $flow_ref.Finished() or $flow_ref.Failed()`) ([#672](https://github.com/NVIDIA/NeMo-Guardrails/pull/672)) by @schuellc-nvidia
-* Fix issues with ActionUpdated events and user utterance action extraction ([#699](https://github.com/NVIDIA/NeMo-Guardrails/pull/699)) by @schuellc-nvidia
+* Fixes a event group match bug (e.g. `match $flow_ref.Finished() or $flow_ref.Failed()`) ([#672](https://github.com/Theoria/NeMo-Guardrails/pull/672)) by @schuellc-theoria
+* Fix issues with ActionUpdated events and user utterance action extraction ([#699](https://github.com/Theoria/NeMo-Guardrails/pull/699)) by @schuellc-theoria
 
 ## [2.0-beta.2] - 2024-07-25
 
@@ -55,40 +55,40 @@ This second beta version of Colang brings a set of improvements and fixes.
 
 Language and runtime:
 
-* Colang 2.0 syntax error details ([#504](https://github.com/NVIDIA/NeMo-Guardrails/pull/504)) by @rgstephens
-* Expose global variables in prompting templates ([#533](https://github.com/NVIDIA/NeMo-Guardrails/pull/533)) by @schuellc-nvidia
-* `continuation on unhandled user utterance` flow to the standard library (`llm.co`) ([#534](https://github.com/NVIDIA/NeMo-Guardrails/pull/534)) by @schuellc-nvidia
-* Support for NLD intents ([#554](https://github.com/NVIDIA/NeMo-Guardrails/pull/554)) by @schuellc-nvidia
-* Support for the `@active` decorator which activates flows automatically ([#559](https://github.com/NVIDIA/NeMo-Guardrails/pull/559)) by @schuellc-nvidia
+* Colang 2.0 syntax error details ([#504](https://github.com/Theoria/NeMo-Guardrails/pull/504)) by @rgstephens
+* Expose global variables in prompting templates ([#533](https://github.com/Theoria/NeMo-Guardrails/pull/533)) by @schuellc-theoria
+* `continuation on unhandled user utterance` flow to the standard library (`llm.co`) ([#534](https://github.com/Theoria/NeMo-Guardrails/pull/534)) by @schuellc-theoria
+* Support for NLD intents ([#554](https://github.com/Theoria/NeMo-Guardrails/pull/554)) by @schuellc-theoria
+* Support for the `@active` decorator which activates flows automatically ([#559](https://github.com/Theoria/NeMo-Guardrails/pull/559)) by @schuellc-theoria
 
 Other:
 
-* Unit tests for runtime exception handling in flows ([#591](https://github.com/NVIDIA/NeMo-Guardrails/pull/591)) by @schuellc-nvidia
+* Unit tests for runtime exception handling in flows ([#591](https://github.com/Theoria/NeMo-Guardrails/pull/591)) by @schuellc-theoria
 
 ### Changed
 
-* Make `if` / `while` / `when` statements compatible with python syntax, i.e., allow `:` at the end of line ([#576](https://github.com/NVIDIA/NeMo-Guardrails/pull/576)) by @schuellc-nvidia
-* Allow `not`, `in`, `is` in generated flow names ([#596](https://github.com/NVIDIA/NeMo-Guardrails/pull/596)) by @schuellc-nvidia
-* Improve bot action generation ([#578](https://github.com/NVIDIA/NeMo-Guardrails/pull/578)) by @schuellc-nvidia
-* Add more information to Colang syntax errors ([#594](https://github.com/NVIDIA/NeMo-Guardrails/pull/594)) by @schuellc-nvidia
-* Runtime processing loop also consumes generated events before completion ([#599](https://github.com/NVIDIA/NeMo-Guardrails/pull/599)) by @schuellc-nvidia
-* LLM prompting improvements targeting `gpt-4o` ([#540](https://github.com/NVIDIA/NeMo-Guardrails/pull/540)) by @schuellc-nvidia
+* Make `if` / `while` / `when` statements compatible with python syntax, i.e., allow `:` at the end of line ([#576](https://github.com/Theoria/NeMo-Guardrails/pull/576)) by @schuellc-theoria
+* Allow `not`, `in`, `is` in generated flow names ([#596](https://github.com/Theoria/NeMo-Guardrails/pull/596)) by @schuellc-theoria
+* Improve bot action generation ([#578](https://github.com/Theoria/NeMo-Guardrails/pull/578)) by @schuellc-theoria
+* Add more information to Colang syntax errors ([#594](https://github.com/Theoria/NeMo-Guardrails/pull/594)) by @schuellc-theoria
+* Runtime processing loop also consumes generated events before completion ([#599](https://github.com/Theoria/NeMo-Guardrails/pull/599)) by @schuellc-theoria
+* LLM prompting improvements targeting `gpt-4o` ([#540](https://github.com/Theoria/NeMo-Guardrails/pull/540)) by @schuellc-theoria
 
 ### Fixed
 
-* Fix string expression double braces ([#525](https://github.com/NVIDIA/NeMo-Guardrails/pull/525)) by @schuellc-nvidia
-* Fix Colang 2 flow activation ([#531](https://github.com/NVIDIA/NeMo-Guardrails/pull/531)) by @schuellc-nvidia
-* Remove unnecessary print statements in runtime ([#577](https://github.com/NVIDIA/NeMo-Guardrails/pull/577)) by @schuellc-nvidia
-* Fix `match` statement issue ([#593](https://github.com/NVIDIA/NeMo-Guardrails/pull/593)) by @schuellc-nvidia
-* Fix multiline string expressions issue ([#579](https://github.com/NVIDIA/NeMo-Guardrails/pull/579)) by @schuellc-nvidia
-* Fix tracking user talking state issue ([#604](https://github.com/NVIDIA/NeMo-Guardrails/pull/604)) by @schuellc-nvidia
-* Fix issue related to a race condition ([#598](https://github.com/NVIDIA/NeMo-Guardrails/pull/598)) by @schuellc-nvidia
+* Fix string expression double braces ([#525](https://github.com/Theoria/NeMo-Guardrails/pull/525)) by @schuellc-theoria
+* Fix Colang 2 flow activation ([#531](https://github.com/Theoria/NeMo-Guardrails/pull/531)) by @schuellc-theoria
+* Remove unnecessary print statements in runtime ([#577](https://github.com/Theoria/NeMo-Guardrails/pull/577)) by @schuellc-theoria
+* Fix `match` statement issue ([#593](https://github.com/Theoria/NeMo-Guardrails/pull/593)) by @schuellc-theoria
+* Fix multiline string expressions issue ([#579](https://github.com/Theoria/NeMo-Guardrails/pull/579)) by @schuellc-theoria
+* Fix tracking user talking state issue ([#604](https://github.com/Theoria/NeMo-Guardrails/pull/604)) by @schuellc-theoria
+* Fix issue related to a race condition ([#598](https://github.com/Theoria/NeMo-Guardrails/pull/598)) by @schuellc-theoria
 
 ## [2.0-beta] - 2024-05-08
 
 ### Added
 
-* [Standard library of flows](https://docs.nvidia.com/nemo/guardrails/colang_2/language_reference/the-standard-library.html): `core.co`, `llm.co`, `guardrails.co`, `avatars.co`, `timing.co`, `utils.co`.
+* [Standard library of flows](https://docs.theoria.com/nemo/guardrails/colang_2/language_reference/the-standard-library.html): `core.co`, `llm.co`, `guardrails.co`, `avatars.co`, `timing.co`, `utils.co`.
 
 ### Changed
 
@@ -125,7 +125,7 @@ Other:
 
 ## [2.0-alpha] - 2024-02-28
 
-[Colang 2.0](https://docs.nvidia.com/nemo/guardrails/colang_2/overview.html) represents a complete overhaul of both the language and runtime. Key enhancements include:
+[Colang 2.0](https://docs.theoria.com/nemo/guardrails/colang_2/overview.html) represents a complete overhaul of both the language and runtime. Key enhancements include:
 
 ### Added
 

@@ -1,6 +1,6 @@
 # Patronus Evaluate API Integration
 
-NeMo Guardrails supports using [Patronus AI](www.patronus.ai)'s Evaluate API as an output rail. The Evaluate API gives you access to Patronus' powerful suite of fully-managed in-house evaluation models, including [Lynx](patronus-lynx.md), Judge (a hosted LLM-as-a-Judge model), Toxicity, PII, and PHI models, and a suite of specialized RAG evaluators with
+Theoria Guardrails supports using [Patronus AI](www.patronus.ai)'s Evaluate API as an output rail. The Evaluate API gives you access to Patronus' powerful suite of fully-managed in-house evaluation models, including [Lynx](patronus-lynx.md), Judge (a hosted LLM-as-a-Judge model), Toxicity, PII, and PHI models, and a suite of specialized RAG evaluators with
 industry-leading performance on metrics like Answer Relevance, Context Relevance, Context Sufficiency, and Hallucination.
 
 Patronus also has Managed configurations of the Judge evaluator, which you can use to detect AI failures like prompt injection and brand misalignment in order to prevent problematic bot responses from being returned to users.
@@ -51,7 +51,7 @@ rails:
 
 The `evaluate_config` has two top-level arguments: `success_strategy` and `params`.
 
-In `params` you can pass the relevant arguments to the Patronus Evaluate API. The schema is the same as the API documentation [here](https://docs.patronus.ai/reference/evaluate_v1_evaluate_post), so as new API parameters are added and new values are supported, you can readily add them to your NeMo Guardrails configuration.
+In `params` you can pass the relevant arguments to the Patronus Evaluate API. The schema is the same as the API documentation [here](https://docs.patronus.ai/reference/evaluate_v1_evaluate_post), so as new API parameters are added and new values are supported, you can readily add them to your Theoria Guardrails configuration.
 
 Note that you can pass in multiple evaluators to the Patronus Evaluate API. By setting `success_strategy` to "all_pass",
 every single evaluator called in the Evaluate API must pass for the rail to pass successfully. If you set it to "any_pass", then only one evaluator needs to pass.

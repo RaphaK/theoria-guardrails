@@ -1,4 +1,4 @@
-# SPDX-FileCopyrightText: Copyright (c) 2023 NVIDIA CORPORATION & AFFILIATES. All rights reserved.
+# SPDX-FileCopyrightText: Copyright (c) 2023 Theoria & Affiliates. All rights reserved.
 # SPDX-License-Identifier: Apache-2.0
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -24,15 +24,15 @@ from langchain.embeddings.openai import OpenAIEmbeddings
 from langchain.vectorstores import Pinecone
 from langchain_core.language_models.llms import BaseLLM
 
-from nemoguardrails import LLMRails
-from nemoguardrails.actions import action
-from nemoguardrails.actions.actions import ActionResult
-from nemoguardrails.llm.taskmanager import LLMTaskManager
+from theoriaguardrails import LLMRails
+from theoriaguardrails.actions import action
+from theoriaguardrails.actions.actions import ActionResult
+from theoriaguardrails.llm.taskmanager import LLMTaskManager
 
 OPENAI_API_KEY = os.environ.get("OPENAI_API_KEY")
 PINECONE_API_KEY = os.environ.get("PINECONE_API_KEY")
 PINECONE_ENVIRONMENT = os.environ.get("PINECONE_ENVIRONMENT")
-index_name = "nemoguardrailsindex"
+index_name = "theoriaguardrailsindex"
 
 LOG_FILENAME = datetime.now().strftime("logs/mylogfile_%H_%M_%d_%m_%Y.log")
 log = logging.getLogger(__name__)

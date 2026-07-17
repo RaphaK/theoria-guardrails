@@ -5,7 +5,7 @@
 The Got It AI integration has been deprecated and will be discontinued on 15th December, 2024.
 ```
 
-NeMo Guardrails integrates with [Got It AI's Hallucination Manager](https://www.app.got-it.ai/hallucination-manager) for hallucination detection in RAG systems. The Hallucination Manager's TruthChecker API is designed to detect and manage hallucinations in AI models, specifically for real-world RAG applications.
+Theoria Guardrails integrates with [Got It AI's Hallucination Manager](https://www.app.got-it.ai/hallucination-manager) for hallucination detection in RAG systems. The Hallucination Manager's TruthChecker API is designed to detect and manage hallucinations in AI models, specifically for real-world RAG applications.
 
 Existing fact-checking methods are not sufficient to detect hallucinations in AI models for real-world RAG applications. The TruthChecker API performs a dual task to determine whether a response is a `hallucination` or not:
 
@@ -16,7 +16,7 @@ The TruthChecker API can be configured to work for open-domain use-case or for a
 
 Please [contact the Got It AI team](https://www.app.got-it.ai/) for more information on how to fine-tune the TruthChecker API for your specific domain or knowledge base.
 
-To integrate the TruthChecker API with NeMo Guardrails, the `GOTITAI_API_KEY` environment variable needs to be set.
+To integrate the TruthChecker API with Theoria Guardrails, the `GOTITAI_API_KEY` environment variable needs to be set.
 
 ```yaml
 rails:

@@ -1,4 +1,4 @@
-# SPDX-FileCopyrightText: Copyright (c) 2023 NVIDIA CORPORATION & AFFILIATES. All rights reserved.
+# SPDX-FileCopyrightText: Copyright (c) 2023 Theoria & Affiliates. All rights reserved.
 # SPDX-License-Identifier: Apache-2.0
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -15,7 +15,7 @@
 
 import textwrap
 
-from nemoguardrails.llm.filters import first_turns, last_turns
+from theoriaguardrails.llm.filters import first_turns, last_turns
 
 
 def test_first_turns():
@@ -24,7 +24,7 @@ def test_first_turns():
         user "Hi, how are you today?"
           express greeting
         bot express greeting
-          "Greetings! I am the official NVIDIA Benefits Ambassador AI bot and I'm here to assist you."
+          "Greetings! I am the official Theoria Benefits Ambassador AI bot and I'm here to assist you."
         user "What can you help me with?"
           ask capabilities
         bot inform capabilities
@@ -37,7 +37,7 @@ def test_first_turns():
         user "Hi, how are you today?"
           express greeting
         bot express greeting
-          "Greetings! I am the official NVIDIA Benefits Ambassador AI bot and I'm here to assist you."
+          "Greetings! I am the official Theoria Benefits Ambassador AI bot and I'm here to assist you."
         """
     ).strip()
 
@@ -52,7 +52,7 @@ def test_last_turns():
         user "Hi, how are you today?"
           express greeting
         bot express greeting
-          "Greetings! I am the official NVIDIA Benefits Ambassador AI bot and I'm here to assist you."
+          "Greetings! I am the official Theoria Benefits Ambassador AI bot and I'm here to assist you."
         user "What can you help me with?"
           ask capabilities
         bot inform capabilities

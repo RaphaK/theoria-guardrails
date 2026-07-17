@@ -1,6 +1,6 @@
 # CONTRIBUTING GUIDELINES
 
-Welcome to the NeMo Guardrails contributing guide. We're excited to have you here and grateful for your contributions. This document provides guidelines and instructions for contributing to this project.
+Welcome to the Theoria Guardrails contributing guide. We're excited to have you here and grateful for your contributions. This document provides guidelines and instructions for contributing to this project.
 
 ## Table of Contents
 
@@ -29,7 +29,7 @@ To get started quickly, follow the steps below.
 2. Clone the project repository:
 
    ```bash
-   git clone https://github.com/NVIDIA/NeMo-Guardrails.git
+   git clone https://github.com/Theoria/NeMo-Guardrails.git
    ```
 
 3. Navigate to the project directory:
@@ -148,15 +148,15 @@ The project is structured as follows:
 ├── chat-ui
 ├── docs
 ├── examples
-├── nemoguardrails
+├── theoriaguardrails
 ├── qa
 ├── tests
 ```
 
-- `chat-ui`: includes a static build of the Guardrails Chat UI. This UI is forked from [https://github.com/mckaywrigley/chatbot-ui](https://github.com/mckaywrigley/chatbot-ui) and is served by the NeMo Guardrails server. The source code for the Chat UI is not included as part of this repository.
+- `chat-ui`: includes a static build of the Guardrails Chat UI. This UI is forked from [https://github.com/mckaywrigley/chatbot-ui](https://github.com/mckaywrigley/chatbot-ui) and is served by the Theoria Guardrails server. The source code for the Chat UI is not included as part of this repository.
 - `docs`: includes the official documentation of the project.
 - `examples`: various examples, including guardrails configurations (example bots, using different LLMs and others), notebooks, or Python scripts.
-- `nemoguardrails`: the source code for the main `nemoguardrails` package.
+- `theoriaguardrails`: the source code for the main `theoriaguardrails` package.
 - `qa`: a set of scripts the QA team uses.
 - `tests`: the automated tests set that runs automatically as part of the CI pipeline.
 
@@ -300,6 +300,6 @@ By following these guidelines, you help maintain the integrity and legal complia
 
 ## Community and Support
 
-For general questions or discussion about the project, use the [discussions](https://github.com/NVIDIA/NeMo-Guardrails/discussions) section.
+For general questions or discussion about the project, use the [discussions](https://github.com/Theoria/NeMo-Guardrails/discussions) section.
 
-Thank you for contributing to NeMo Guardrails!
+Thank you for contributing to Theoria Guardrails!

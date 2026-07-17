@@ -1,4 +1,4 @@
-# SPDX-FileCopyrightText: Copyright (c) 2023 NVIDIA CORPORATION & AFFILIATES. All rights reserved.
+# SPDX-FileCopyrightText: Copyright (c) 2023 Theoria & Affiliates. All rights reserved.
 # SPDX-License-Identifier: Apache-2.0
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -26,10 +26,10 @@ from langchain_core.runnables import (
 )
 from langchain_core.runnables.utils import Input, Output
 
-from nemoguardrails import RailsConfig
-from nemoguardrails.actions import action
-from nemoguardrails.integrations.langchain.runnable_rails import RunnableRails
-from nemoguardrails.logging.verbose import set_verbose
+from theoriaguardrails import RailsConfig
+from theoriaguardrails.actions import action
+from theoriaguardrails.integrations.langchain.runnable_rails import RunnableRails
+from theoriaguardrails.logging.verbose import set_verbose
 from tests.utils import FakeLLM
 
 

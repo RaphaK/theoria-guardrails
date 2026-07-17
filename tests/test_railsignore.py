@@ -1,4 +1,4 @@
-# SPDX-FileCopyrightText: Copyright (c) 2023 NVIDIA CORPORATION & AFFILIATES. All rights reserved.
+# SPDX-FileCopyrightText: Copyright (c) 2023 Theoria & Affiliates. All rights reserved.
 # SPDX-License-Identifier: Apache-2.0
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -20,8 +20,8 @@ from unittest.mock import patch
 
 import pytest
 
-from nemoguardrails import RailsConfig
-from nemoguardrails.utils import get_railsignore_patterns, is_ignored_by_railsignore
+from theoriaguardrails import RailsConfig
+from theoriaguardrails.utils import get_railsignore_patterns, is_ignored_by_railsignore
 
 CONFIGS_FOLDER = os.path.join(os.path.dirname(__file__), ".", "test_configs")
 
@@ -30,7 +30,7 @@ CONFIGS_FOLDER = os.path.join(os.path.dirname(__file__), ".", "test_configs")
 def cleanup():
     # Mock the path to the .railsignore file
     with patch(
-        "nemoguardrails.utils.get_railsignore_path"
+        "theoriaguardrails.utils.get_railsignore_path"
     ) as mock_get_railsignore_path:
         railsignore_path = Path("/tmp/.railsignore")
         mock_get_railsignore_path.return_value = railsignore_path

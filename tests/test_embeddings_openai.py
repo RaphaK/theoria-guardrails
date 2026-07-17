@@ -1,4 +1,4 @@
-# SPDX-FileCopyrightText: Copyright (c) 2023 NVIDIA CORPORATION & AFFILIATES. All rights reserved.
+# SPDX-FileCopyrightText: Copyright (c) 2023 Theoria & Affiliates. All rights reserved.
 # SPDX-License-Identifier: Apache-2.0
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,10 +17,10 @@ import os
 
 import pytest
 
-from nemoguardrails import LLMRails, RailsConfig
+from theoriaguardrails import LLMRails, RailsConfig
 
 try:
-    from nemoguardrails.embeddings.providers.openai import OpenAIEmbeddingModel
+    from theoriaguardrails.embeddings.providers.openai import OpenAIEmbeddingModel
 except ImportError:
     # Ignore this if running in test environment when openai not installed.
     OpenAIEmbeddingModel = None

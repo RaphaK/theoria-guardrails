@@ -2,7 +2,7 @@
 
 This example configuration uses the NeMo LLM Service API. To test it, you need access to the NeMo LLM Service, particularly the models `gpt-43b-905` and `gpt-43b-002`.
 
-**Disclaimer**: The `nemollm` models have only been tested on basic use cases, e.g., greetings and recognizing specific questions. On more complex queries, these models may not work correctly. Thorough testing and optimizations are needed before considering a production deployment.
+**Disclaimer**: The `theoriallm` models have only been tested on basic use cases, e.g., greetings and recognizing specific questions. On more complex queries, these models may not work correctly. Thorough testing and optimizations are needed before considering a production deployment.
 
 ## Configuration
 

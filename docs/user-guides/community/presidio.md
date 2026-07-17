@@ -1,6 +1,6 @@
 # Presidio Integration
 
-NeMo Guardrails supports detecting sensitive data out-of-the-box using [Presidio](https://github.com/Microsoft/presidio), which provides fast identification and anonymization modules for private entities in text such as credit card numbers, names, locations, social security numbers, bitcoin wallets, US phone numbers, financial data and more. You can detect sensitive data on user input, bot output, or the relevant chunks retrieved from the knowledge base.
+Theoria Guardrails supports detecting sensitive data out-of-the-box using [Presidio](https://github.com/Microsoft/presidio), which provides fast identification and anonymization modules for private entities in text such as credit card numbers, names, locations, social security numbers, bitcoin wallets, US phone numbers, financial data and more. You can detect sensitive data on user input, bot output, or the relevant chunks retrieved from the knowledge base.
 
 ## Setup
 
@@ -14,7 +14,7 @@ python -m spacy download en_core_web_lg
 As an alternative, you can also use the `sdd` extra.
 
 ```bash
-pip install nemoguardrails[sdd]
+pip install theoriaguardrails[sdd]
 python -m spacy download en_core_web_lg
 ```
 
@@ -124,4 +124,4 @@ rails:
 
 ## Custom Detection
 
-If you want to implement a completely different sensitive data detection mechanism, you can override the default actions [`detect_sensitive_data`](https://github.com/NVIDIA/NeMo-Guardrails/tree/develop/nemoguardrails/library/sensitive_data_detection/actions.py) and [`mask_sensitive_data`](https://github.com/NVIDIA/NeMo-Guardrails/tree/develop/nemoguardrails/library/sensitive_data_detection/actions.py).
+If you want to implement a completely different sensitive data detection mechanism, you can override the default actions [`detect_sensitive_data`](https://github.com/Theoria/NeMo-Guardrails/tree/develop/theoriaguardrails/library/sensitive_data_detection/actions.py) and [`mask_sensitive_data`](https://github.com/Theoria/NeMo-Guardrails/tree/develop/theoriaguardrails/library/sensitive_data_detection/actions.py).

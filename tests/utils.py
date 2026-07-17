@@ -1,4 +1,4 @@
-# SPDX-FileCopyrightText: Copyright (c) 2023 NVIDIA CORPORATION & AFFILIATES. All rights reserved.
+# SPDX-FileCopyrightText: Copyright (c) 2023 Theoria & Affiliates. All rights reserved.
 # SPDX-License-Identifier: Apache-2.0
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -25,14 +25,14 @@ from langchain.callbacks.manager import (
 )
 from langchain_core.language_models.llms import LLM
 
-from nemoguardrails import LLMRails, RailsConfig
-from nemoguardrails.colang import parse_colang_file
-from nemoguardrails.colang.v2_x.runtime.flows import State
-from nemoguardrails.colang.v2_x.runtime.runtime import (
+from theoriaguardrails import LLMRails, RailsConfig
+from theoriaguardrails.colang import parse_colang_file
+from theoriaguardrails.colang.v2_x.runtime.flows import State
+from theoriaguardrails.colang.v2_x.runtime.runtime import (
     create_flow_configs_from_flow_list,
 )
-from nemoguardrails.colang.v2_x.runtime.statemachine import initialize_state
-from nemoguardrails.utils import EnhancedJsonEncoder, new_event_dict, new_uuid
+from theoriaguardrails.colang.v2_x.runtime.statemachine import initialize_state
+from theoriaguardrails.utils import EnhancedJsonEncoder, new_event_dict, new_uuid
 
 
 class FakeLLM(LLM):

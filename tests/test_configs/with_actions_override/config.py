@@ -1,4 +1,4 @@
-# SPDX-FileCopyrightText: Copyright (c) 2023 NVIDIA CORPORATION & AFFILIATES. All rights reserved.
+# SPDX-FileCopyrightText: Copyright (c) 2023 Theoria & Affiliates. All rights reserved.
 # SPDX-License-Identifier: Apache-2.0
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,10 +13,10 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-from nemoguardrails import LLMRails
-from nemoguardrails.actions import action
-from nemoguardrails.actions.actions import ActionResult
-from nemoguardrails.utils import new_event_dict
+from theoriaguardrails import LLMRails
+from theoriaguardrails.actions import action
+from theoriaguardrails.actions.actions import ActionResult
+from theoriaguardrails.utils import new_event_dict
 
 
 @action(is_system_action=True)

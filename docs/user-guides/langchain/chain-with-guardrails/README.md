@@ -106,8 +106,8 @@ prompts:
 ```
 
 ```python
-from nemoguardrails import RailsConfig
-from nemoguardrails.integrations.langchain.runnable_rails import RunnableRails
+from theoriaguardrails import RailsConfig
+from theoriaguardrails.integrations.langchain.runnable_rails import RunnableRails
 
 config = RailsConfig.from_path("config")
 guardrails = RunnableRails(config)

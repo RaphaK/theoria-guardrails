@@ -4,10 +4,10 @@ This document summarizes the most important public research on existing guardrai
 We present only the most relevant papers, including surveys, together with their accompanying code repository if there is one.
 
 While the number of recent works on various guardrails topics is quite high, we aim to only present a curated selection.
-We also want that this selection to inform our feature roadmap, deciding on what new methods published as a research paper to add to the NeMo Guardrails repository.
+We also want that this selection to inform our feature roadmap, deciding on what new methods published as a research paper to add to the Theoria Guardrails repository.
 
 The guardrails categories used below follow the ones present in the [Guardrails library](./user-guides/guardrails-library.md).
-For each category we present a list of relevant surveys, existing research papers already supported in NeMo Guardrails, and the curated list of selected papers that might influence our roadmap.
+For each category we present a list of relevant surveys, existing research papers already supported in Theoria Guardrails, and the curated list of selected papers that might influence our roadmap.
 
 ## Hallucination rails
 
@@ -20,7 +20,7 @@ Relevant surveys on hallucination detection and checking factuality for large la
 
 ### Fact-checking (implicit hallucination) rails
 
-Supported in NeMo Guardrails:
+Supported in Theoria Guardrails:
 
 - Zha, Y., Yang, Y., Li, R., & Hu, Z. (2023). AlignScore: Evaluating factual consistency with a unified alignment function. arXiv preprint arXiv:2305.16739. [paper](https://arxiv.org/pdf/2305.16739.pdf) | [repo](https://github.com/yuh-zha/AlignScore)
 
@@ -29,13 +29,13 @@ Relevant papers:
 
 ### Explicit hallucination rails
 
-Supported in NeMo Guardrails:
+Supported in Theoria Guardrails:
 
 - _(Similar to)_ Manakul, P., Liusie, A., & Gales, M. J. (2023). Selfcheckgpt: Zero-resource black-box hallucination detection for generative large language models. arXiv preprint arXiv:2303.08896. [paper](https://arxiv.org/pdf/2303.08896.pdf) | [repo](https://github.com/potsawee/selfcheckgpt)
 
 ## Moderation rails
 
-Supported in NeMo Guardrails:
+Supported in Theoria Guardrails:
 
 - Inan, H., Upasani, K., Chi, J., Rungta, R., Iyer, K., Mao, Y., ... & Khabsa, M. (2023). Llama guard: Llm-based input-output safeguard for human-ai conversations. arXiv preprint arXiv:2312.06674. [paper](https://arxiv.org/pdf/2312.06674.pdf) | [repo](https://github.com/meta-llama/PurpleLlama/tree/main/Llama-Guard)
 
@@ -48,7 +48,7 @@ Relevant papers:
 Relevant surveys:
 - Yao, Y., Duan, J., Xu, K., Cai, Y., Sun, Z., & Zhang, Y. (2024). A survey on large language model (llm) security and privacy: The good, the bad, and the ugly. High-Confidence Computing, 100211. paper
 
-Supported in NeMo Guardrails:
+Supported in Theoria Guardrails:
 - _(Similar to)_ Alon, G., & Kamfonas, M. (2023). Detecting language model attacks with perplexity. arXiv preprint arXiv:2308.14132. [paper](https://arxiv.org/pdf/2308.14132.pdf) | repo
 
 Relevant papers:
@@ -61,8 +61,8 @@ Relevant papers:
 ## Dialog rails
 
 
-Supported in NeMo Guardrails:
-- Rebedea, T., Dinu, R., Sreedhar, M., Parisien, C., & Cohen, J. (2023). Nemo guardrails: A toolkit for controllable and safe llm applications with programmable rails. arXiv preprint arXiv:2310.10501. [paper](https://arxiv.org/pdf/2310.10501.pdf) | [code](https://github.com/NVIDIA/NeMo-Guardrails)
+Supported in Theoria Guardrails:
+- Rebedea, T., Dinu, R., Sreedhar, M., Parisien, C., & Cohen, J. (2023). Theoria Guardrails: A toolkit for controllable and safe llm applications with programmable rails. arXiv preprint arXiv:2310.10501. [paper](https://arxiv.org/pdf/2310.10501.pdf) | [code](https://github.com/Theoria/NeMo-Guardrails)
 
 Relevant papers:
 - Sun, A. Y., Nair, V., Schumacher, E., & Kannan, A. (2023). CONSCENDI: A Contrastive and Scenario-Guided Distillation Approach to Guardrail Models for Virtual Assistants. arXiv preprint arXiv:2304.14364. [paper](https://arxiv.org/pdf/2304.14364.pdf) | [code](https://github.com/curai/curai-research/tree/main/CONSCENDI)

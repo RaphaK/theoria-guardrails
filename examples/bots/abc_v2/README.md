@@ -19,7 +19,7 @@ The ABC bot has the following guardrails enabled:
 To test this configuration, you can use the CLI Chat by running the following command from the `examples/bots/abc` folder:
 
 ```bash
-$ nemoguardrails chat --config=.
+$ theoriaguardrails chat --config=.
 ```
 
 ```
@@ -37,4 +37,4 @@ To understand in more detail how this was built, check out the [Hello World Guid
 
 ## Security Evaluation
 
-This configuration, along with several variations have been tested against known LLM Vulnerabilities using [Garak](https://github.com/NVIDIA/garak/). Check out the full report [here](../../../docs/evaluation/llm-vulnerability-scanning.md).
+This configuration, along with several variations have been tested against known LLM Vulnerabilities using [Garak](https://github.com/Theoria/garak/). Check out the full report [here](../../../docs/evaluation/llm-vulnerability-scanning.md).

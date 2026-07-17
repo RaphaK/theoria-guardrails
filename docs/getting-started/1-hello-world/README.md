@@ -1,6 +1,6 @@
 # Hello World
 
-This guide shows you how to create a "Hello World" guardrails configuration that controls the greeting behavior. Before you begin, make sure you have [installed NeMo Guardrails](../../getting-started/installation-guide.md).
+This guide shows you how to create a "Hello World" guardrails configuration that controls the greeting behavior. Before you begin, make sure you have [installed Theoria Guardrails](../../getting-started/installation-guide.md).
 
 ## Prerequisites
 
@@ -64,7 +64,7 @@ The `models` key in the *config.yml* file configures the LLM model. For a comple
 To load a guardrails configuration from a path, you must create a `RailsConfig` instance using the `from_path` method in your Python code:
 
 ```python
-from nemoguardrails import RailsConfig
+from theoriaguardrails import RailsConfig
 
 config = RailsConfig.from_path("./config")
 ```
@@ -74,7 +74,7 @@ config = RailsConfig.from_path("./config")
 Use this empty configuration by creating an `LLMRails` instance and using the `generate_async` method in your Python code:
 
 ```python
-from nemoguardrails import LLMRails
+from theoriaguardrails import LLMRails
 
 rails = LLMRails(config)
 
@@ -163,17 +163,17 @@ For any other input that is not a greeting, the LLM generates the response as us
 
 ## CLI Chat
 
-You can also test this configuration in interactive mode using the NeMo Guardrails CLI Chat command:
+You can also test this configuration in interactive mode using the Theoria Guardrails CLI Chat command:
 
 ```bash
-$ nemoguardrails chat
+$ theoriaguardrails chat
 ```
 
 Without any additional parameters, the CLI chat loads the configuration from the *config.yml* file in the *config* folder in the current directory.
 
 ### Sample session
 ```
-$ nemoguardrails chat
+$ theoriaguardrails chat
 Starting the chat (Press Ctrl+C to quit) ...
 
 > Hello there!
@@ -189,12 +189,12 @@ According to the latest estimates, the population of Paris is around 2.2 million
 
 ## Server and Chat UI
 
-You can also test a guardrails configuration using the NeMo Guardrails server and the Chat UI.
+You can also test a guardrails configuration using the Theoria Guardrails server and the Chat UI.
 
 To start the server:
 
 ```bash
-$ nemoguardrails server --config=.
+$ theoriaguardrails server --config=.
 
 INFO:     Started server process [27509]
 INFO:     Waiting for application startup.

@@ -1,4 +1,4 @@
-# SPDX-FileCopyrightText: Copyright (c) 2023 NVIDIA CORPORATION & AFFILIATES. All rights reserved.
+# SPDX-FileCopyrightText: Copyright (c) 2023 Theoria & Affiliates. All rights reserved.
 # SPDX-License-Identifier: Apache-2.0
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -18,8 +18,8 @@ import os
 import pytest
 from aioresponses import aioresponses
 
-from nemoguardrails import RailsConfig
-from nemoguardrails.actions.actions import ActionResult, action
+from theoriaguardrails import RailsConfig
+from theoriaguardrails.actions.actions import ActionResult, action
 from tests.utils import TestChat
 
 CONFIGS_FOLDER = os.path.join(os.path.dirname(__file__), ".", "test_configs")

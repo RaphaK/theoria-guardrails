@@ -17,10 +17,10 @@ streaming: True
 
 ### Chat CLI
 
-You can enable streaming when launching the NeMo Guardrails chat CLI by using the `--streaming` option:
+You can enable streaming when launching the Theoria Guardrails chat CLI by using the `--streaming` option:
 
 ```bash
-nemoguardrails chat --config=examples/configs/streaming --streaming
+theoriaguardrails chat --config=examples/configs/streaming --streaming
 ```
 
 ### Python API
@@ -32,7 +32,7 @@ You can use the streaming directly from the python API in two ways:
 For the simple usage, you need to call the `stream_async` method on the `LLMRails` instance:
 
 ```python
-from nemoguardrails import LLMRails
+from theoriaguardrails import LLMRails
 
 app = LLMRails(config)
 
@@ -46,8 +46,8 @@ async for chunk in app.stream_async(messages=history):
 For the full usage, you need to provide a `StreamingHandler` instance to the `generate_async` method on the `LLMRails` instance:
 
 ```python
-from nemoguardrails import LLMRails
-from nemoguardrails.streaming import StreamingHandler
+from theoriaguardrails import LLMRails
+from theoriaguardrails.streaming import StreamingHandler
 
 app = LLMRails(config)
 
@@ -68,11 +68,11 @@ result = await app.generate_async(
 print(result)
 ```
 
-For the complete working example, check out this [demo script](https://github.com/NVIDIA/NeMo-Guardrails/tree/develop/examples/scripts/demo_streaming.py).
+For the complete working example, check out this [demo script](https://github.com/Theoria/NeMo-Guardrails/tree/develop/examples/scripts/demo_streaming.py).
 
 ### Server API
 
-To make a call to the NeMo Guardrails Server in streaming mode, you have to set the `stream` parameter to `True` inside the JSON body. For example, to get the completion for a chat session using the `/v1/chat/completions` endpoint:
+To make a call to the Theoria Guardrails Server in streaming mode, you have to set the `stream` parameter to `True` inside the JSON body. For example, to get the completion for a chat session using the `/v1/chat/completions` endpoint:
 ```
 POST /v1/chat/completions
 ```
@@ -90,7 +90,7 @@ POST /v1/chat/completions
 ### Streaming for LLMs deployed using HuggingFacePipeline
 
 We also support streaming for LLMs deployed using `HuggingFacePipeline`.
-One example is provided in the [HF Pipeline Dolly](https://github.com/NVIDIA/NeMo-Guardrails/tree/develop/examples/configs/llm/hf_pipeline_dolly/README.md) configuration.
+One example is provided in the [HF Pipeline Dolly](https://github.com/Theoria/NeMo-Guardrails/tree/develop/examples/configs/llm/hf_pipeline_dolly/README.md) configuration.
 
 To use streaming for HF Pipeline LLMs, you first need to set the streaming flag in your `config.yml`.
 
@@ -98,11 +98,11 @@ To use streaming for HF Pipeline LLMs, you first need to set the streaming flag 
 streaming: True
 ```
 
-Then you need to create an `nemoguardrails.llm.providers.huggingface.AsyncTextIteratorStreamer` streamer object,
+Then you need to create an `theoriaguardrails.llm.providers.huggingface.AsyncTextIteratorStreamer` streamer object,
 add it to the `kwargs` of the pipeline and to the `model_kwargs` of the `HuggingFacePipelineCompatible` object.
 
 ```python
-from nemoguardrails.llm.providers.huggingface import AsyncTextIteratorStreamer
+from theoriaguardrails.llm.providers.huggingface import AsyncTextIteratorStreamer
 
 # instantiate tokenizer object required by LLM
 streamer = AsyncTextIteratorStreamer(tokenizer, skip_prompt=True)

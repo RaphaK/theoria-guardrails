@@ -6,7 +6,7 @@ A high trustworthiness score generally correlates with high-quality responses. I
 
 The mathematical derivation of the score is explained in [Cleanlab's documentation](https://help.cleanlab.ai/tutorials/tlm/#how-does-the-tlm-trustworthiness-score-work), and you can also access [trustworthiness score benchmarks](https://cleanlab.ai/blog/trustworthy-language-model/).
 
-You can easily change the cutoff value for the trustworthiness score by adjusting the threshold in the [config](https://github.com/NVIDIA/NeMo-Guardrails/tree/develop/nemoguardrails/library/cleanlab/flows.co). For example, to change the threshold to 0.7, you can add the following flow to your config:
+You can easily change the cutoff value for the trustworthiness score by adjusting the threshold in the [config](https://github.com/Theoria/NeMo-Guardrails/tree/develop/theoriaguardrails/library/cleanlab/flows.co). For example, to change the threshold to 0.7, you can add the following flow to your config:
 
 ```colang
 define subflow cleanlab trustworthiness

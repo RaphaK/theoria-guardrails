@@ -59,7 +59,7 @@ The 'self check input' rail [prompts](../../getting-started/6-topical-rails/conf
 
 ## Jailbreak Detection Heuristics
 
-NeMo Guardrails supports jailbreak detection using a set of heuristics. Currently, two heuristics are supported:
+Theoria Guardrails supports jailbreak detection using a set of heuristics. Currently, two heuristics are supported:
 
 1. [Length per Perplexity](../user-guides/guardrails-library.md#length-per-perplexity)
 2. [Prefix and Suffix Perplexity](../user-guides/guardrails-library.md#prefix-and-suffix-perplexity)
@@ -96,7 +96,7 @@ The thresholds for the length perplexity and prefix/suffix perplexity are derive
 To test the bot with the jailbreak detection heuristics as the input rail, we need to create an LLMRails object given the current configuration. We can then prompt the LLM with a GCG-style message and check the response.
 
 ```python
-from nemoguardrails import RailsConfig, LLMRails
+from theoriaguardrails import RailsConfig, LLMRails
 
 config = RailsConfig.from_path("../../getting-started/6-topical-rails/config/")
 rails = LLMRails(config)

@@ -1,4 +1,4 @@
-# SPDX-FileCopyrightText: Copyright (c) 2023 NVIDIA CORPORATION & AFFILIATES. All rights reserved.
+# SPDX-FileCopyrightText: Copyright (c) 2023 Theoria & Affiliates. All rights reserved.
 # SPDX-License-Identifier: Apache-2.0
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,7 +16,7 @@
 import pytest
 from fastapi.testclient import TestClient
 
-from nemoguardrails.actions_server import actions_server
+from theoriaguardrails.actions_server import actions_server
 
 client = TestClient(actions_server.app)
 

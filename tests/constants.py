@@ -1,4 +1,4 @@
-# SPDX-FileCopyrightText: Copyright (c) 2023 NVIDIA CORPORATION & AFFILIATES. All rights reserved.
+# SPDX-FileCopyrightText: Copyright (c) 2023 Theoria & Affiliates. All rights reserved.
 # SPDX-License-Identifier: Apache-2.0
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -15,8 +15,8 @@
 
 # NeMo endpoint URLs
 NEMO_API_URL_GPT_43B_002 = (
-    "https://api.llm.ngc.nvidia.com/v1/models/gpt-43b-002/completions"
+    "https://api.llm.ngc.theoria.com/v1/models/gpt-43b-002/completions"
 )
 NEMO_API_URL_GPT_43B_905 = (
-    "https://api.llm.ngc.nvidia.com/v1/models/gpt-43b-905/completions"
+    "https://api.llm.ngc.theoria.com/v1/models/gpt-43b-905/completions"
 )

@@ -15,13 +15,13 @@ prompts:
 
   - task: self_check_hallucination
     models:
-      - nemollm
+      - theoriallm
     content: |-
       <<This is a long placeholder prompt to check for hallucinations>>
 
   - task: self_check_hallucination
     models:
-      - nemollm
+      - theoriallm
     mode: compact
     content: |-
       <<Check for hallucinations>>

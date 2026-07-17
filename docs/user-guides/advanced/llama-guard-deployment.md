@@ -18,4 +18,4 @@ python -m vllm.entrypoints.openai.api_server --port 5123 --model meta-llama/Llam
 
 This will serve up the vLLM inference server on `http://localhost:5123/`.
 
-4. Set the host and port in your bot's YAML configuration files ([example config](https://github.com/NVIDIA/NeMo-Guardrails/blob/develop/examples/configs/llama_guard/README.md)). If you're running the `nemoguardrails` app on another server, remember to replace `localhost` with your vLLM server's public IP address.
+4. Set the host and port in your bot's YAML configuration files ([example config](https://github.com/Theoria/NeMo-Guardrails/blob/develop/examples/configs/llama_guard/README.md)). If you're running the `theoriaguardrails` app on another server, remember to replace `localhost` with your vLLM server's public IP address.

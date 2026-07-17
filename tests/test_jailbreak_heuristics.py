@@ -1,4 +1,4 @@
-# SPDX-FileCopyrightText: Copyright (c) 2023 NVIDIA CORPORATION & AFFILIATES. All rights reserved.
+# SPDX-FileCopyrightText: Copyright (c) 2023 Theoria & Affiliates. All rights reserved.
 # SPDX-License-Identifier: Apache-2.0
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -18,14 +18,14 @@ from time import time
 
 import pytest
 
-from nemoguardrails import RailsConfig
+from theoriaguardrails import RailsConfig
 from tests.utils import TestChat
 
 try:
     import torch
     import transformers
 
-    from nemoguardrails.library.jailbreak_detection.heuristics.checks import (
+    from theoriaguardrails.library.jailbreak_detection.heuristics.checks import (
         check_jailbreak_length_per_perplexity,
         check_jailbreak_prefix_suffix_perplexity,
         get_perplexity,

@@ -5,7 +5,7 @@ This examples shows how to create a main flow that instructs the bot to respond 
 NOTE: this examples works with any string that is interpreted as a greeting.
 
 ```
-$ nemoguardrails chat --config=examples/v2_x/tutorial/hello_world_3
+$ theoriaguardrails chat --config=examples/v2_x/tutorial/hello_world_3
 Starting the chat (Press Ctrl + C twice to quit) ...
 
 > hello there!

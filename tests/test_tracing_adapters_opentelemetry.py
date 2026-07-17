@@ -1,4 +1,4 @@
-# SPDX-FileCopyrightText: Copyright (c) 2023 NVIDIA CORPORATION & AFFILIATES. All rights reserved.
+# SPDX-FileCopyrightText: Copyright (c) 2023 Theoria & Affiliates. All rights reserved.
 # SPDX-License-Identifier: Apache-2.0
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -22,14 +22,14 @@ from unittest.mock import MagicMock, patch
 try:
     from opentelemetry.sdk.trace import TracerProvider as SDKTracerProvider
 
-    from nemoguardrails.tracing.adapters.opentelemetry import OpenTelemetryAdapter
+    from theoriaguardrails.tracing.adapters.opentelemetry import OpenTelemetryAdapter
 
     OPENTELEMETRY_AVAILABLE = True
 except ImportError:
     OPENTELEMETRY_AVAILABLE = False
 
-from nemoguardrails.eval.models import Span
-from nemoguardrails.tracing import InteractionLog
+from theoriaguardrails.eval.models import Span
+from theoriaguardrails.tracing import InteractionLog
 
 
 @unittest.skipIf(not OPENTELEMETRY_AVAILABLE, "opentelemetry is not available")

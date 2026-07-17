@@ -39,7 +39,7 @@ This guide focuses on the **dialog rails**. Note that the *general instructions*
 
 
 ```python
-from nemoguardrails import RailsConfig, LLMRails
+from theoriaguardrails import RailsConfig, LLMRails
 
 config = RailsConfig.from_path("./config")
 rails = LLMRails(config)

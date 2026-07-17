@@ -1,6 +1,6 @@
 # Generation Options
 
-NeMo Guardrails exposes a set of **generation options** that give you fine-grained control over how the LLM generation is performed (e.g., what rails are enabled, additional parameters that should be passed to the LLM, what context data should be returned, what logging information should be returned).
+Theoria Guardrails exposes a set of **generation options** that give you fine-grained control over how the LLM generation is performed (e.g., what rails are enabled, additional parameters that should be passed to the LLM, what context data should be returned, what logging information should be returned).
 
 The **generation options** can be used both in the Python API and through the server API.
 
@@ -67,7 +67,7 @@ rails.generate(messages=messages, options={
 })
 ```
 
-The supported parameters depend on the underlying LLM engine. NeMo Guardrails passes them "as is".
+The supported parameters depend on the underlying LLM engine. Theoria Guardrails passes them "as is".
 
 ## Additional LLM Output
 

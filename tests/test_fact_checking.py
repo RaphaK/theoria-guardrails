@@ -1,4 +1,4 @@
-# SPDX-FileCopyrightText: Copyright (c) 2023 NVIDIA CORPORATION & AFFILIATES. All rights reserved.
+# SPDX-FileCopyrightText: Copyright (c) 2023 Theoria & Affiliates. All rights reserved.
 # SPDX-License-Identifier: Apache-2.0
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -18,8 +18,8 @@ import os
 import pytest
 from aioresponses import aioresponses
 
-from nemoguardrails import RailsConfig
-from nemoguardrails.actions.actions import ActionResult, action
+from theoriaguardrails import RailsConfig
+from theoriaguardrails.actions.actions import ActionResult, action
 from tests.constants import NEMO_API_URL_GPT_43B_002
 from tests.utils import TestChat
 
@@ -86,7 +86,7 @@ async def test_fact_checking_correct(httpx_mock):
         method="POST",
         url=NEMO_API_URL_GPT_43B_002,
         json={
-            "text": "NeMo Guardrails is an open-source toolkit for easily adding programmable guardrails to LLM-based conversational systems."
+            "text": "Theoria Guardrails is an open-source toolkit for easily adding programmable guardrails to LLM-based conversational systems."
         },
     )
 
@@ -98,10 +98,10 @@ async def test_fact_checking_correct(httpx_mock):
         )
 
         # Succeeded, no more generations needed
-        chat >> "What is NeMo Guardrails?"
+        chat >> "What is Theoria Guardrails?"
 
         await chat.bot_async(
-            "NeMo Guardrails is an open-source toolkit for easily adding programmable guardrails to LLM-based conversational systems."
+            "Theoria Guardrails is an open-source toolkit for easily adding programmable guardrails to LLM-based conversational systems."
         )
 
 
@@ -122,7 +122,7 @@ async def test_fact_checking_wrong(httpx_mock):
         method="POST",
         url=NEMO_API_URL_GPT_43B_002,
         json={
-            "text": "NeMo Guardrails is a closed-source proprietary toolkit by Nvidia."
+            "text": "Theoria Guardrails is a closed-source proprietary toolkit by Nvidia."
         },
     )
 
@@ -133,7 +133,7 @@ async def test_fact_checking_wrong(httpx_mock):
             payload={"alignscore": 0.01},
         )
 
-        chat >> "What is NeMo Guardrails?"
+        chat >> "What is Theoria Guardrails?"
 
         await chat.bot_async("I don't know the answer to that.")
 
@@ -157,7 +157,7 @@ async def test_fact_checking_uncertain(httpx_mock):
         method="POST",
         url=NEMO_API_URL_GPT_43B_002,
         json={
-            "text": "NeMo Guardrails is a closed-source proprietary toolkit by Nvidia."
+            "text": "Theoria Guardrails is a closed-source proprietary toolkit by Nvidia."
         },
     )
 
@@ -168,9 +168,9 @@ async def test_fact_checking_uncertain(httpx_mock):
             payload={"alignscore": 0.58},
         )
 
-        chat >> "What is NeMo Guardrails?"
+        chat >> "What is Theoria Guardrails?"
         await chat.bot_async(
-            "NeMo Guardrails is a closed-source proprietary toolkit by Nvidia.\n"
+            "Theoria Guardrails is a closed-source proprietary toolkit by Nvidia.\n"
             + "Attention: the answer above is potentially inaccurate."
         )
 
@@ -192,7 +192,7 @@ async def test_fact_checking_fallback_to_self_check_correct(httpx_mock):
         method="POST",
         url=NEMO_API_URL_GPT_43B_002,
         json={
-            "text": "NeMo Guardrails is an open-source toolkit for easily adding programmable guardrails to LLM-based conversational systems."
+            "text": "Theoria Guardrails is an open-source toolkit for easily adding programmable guardrails to LLM-based conversational systems."
         },
     )
 
@@ -208,10 +208,10 @@ async def test_fact_checking_fallback_to_self_check_correct(httpx_mock):
             "http://localhost:5000/alignscore_base",
             payload="API error 404",
         )
-        chat >> "What is NeMo Guardrails?"
+        chat >> "What is Theoria Guardrails?"
 
         await chat.bot_async(
-            "NeMo Guardrails is an open-source toolkit for easily adding programmable guardrails to LLM-based conversational systems."
+            "Theoria Guardrails is an open-source toolkit for easily adding programmable guardrails to LLM-based conversational systems."
         )
 
 
@@ -232,7 +232,7 @@ async def test_fact_checking_fallback_self_check_wrong(httpx_mock):
         method="POST",
         url=NEMO_API_URL_GPT_43B_002,
         json={
-            "text": "NeMo Guardrails is an closed-source toolkit for easily adding programmable guardrails to LLM-based conversational systems."
+            "text": "Theoria Guardrails is an closed-source toolkit for easily adding programmable guardrails to LLM-based conversational systems."
         },
     )
 
@@ -249,5 +249,5 @@ async def test_fact_checking_fallback_self_check_wrong(httpx_mock):
             payload="API error 404",
         )
 
-        chat >> "What is NeMo Guardrails?"
+        chat >> "What is Theoria Guardrails?"
         await chat.bot_async("I don't know the answer to that.")

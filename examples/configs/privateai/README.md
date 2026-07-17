@@ -1,6 +1,6 @@
 # Private AI Configuration Example
 
-This example contains configuration files for using Private AI in your NeMo Guardrails project.
+This example contains configuration files for using Private AI in your Theoria Guardrails project.
 
 For more details on the Private AI integration, see [Private AI Integration User Guide](../../../docs/user-guides/community/privateai.md).
 

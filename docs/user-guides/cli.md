@@ -7,7 +7,7 @@
 For testing purposes, the Guardrails toolkit provides a command line chat that can be used to interact with the LLM.
 
 ```sh
-nemoguardrails chat --config examples/ [--verbose] [--verbose-llm-calls]
+theoriaguardrails chat --config examples/ [--verbose] [--verbose-llm-calls]
 ```
 
 ## Options
@@ -16,12 +16,12 @@ nemoguardrails chat --config examples/ [--verbose] [--verbose-llm-calls]
 - `--verbose`: In verbose mode, detailed debugging information is also shown.
 - `--verbose-llm-calls`: In verbose LLM calls mode, the debugging information includes the entire prompt that is sent to the LLM and the completion.
 
-You should now be able to invoke the `nemoguardrails` CLI.
+You should now be able to invoke the `theoriaguardrails` CLI.
 
  ```bash
- > nemoguardrails --help
+ > theoriaguardrails --help
 
- Usage: nemoguardrails [OPTIONS] COMMAND [ARGS]...
+ Usage: theoriaguardrails [OPTIONS] COMMAND [ARGS]...
 
  Options:
   --install-completion [bash|zsh|fish|powershell|pwsh]
@@ -32,23 +32,23 @@ You should now be able to invoke the `nemoguardrails` CLI.
   --help                          Show this message and exit.
 
  Commands:
-  actions-server  Starts a NeMo Guardrails actions server.
+  actions-server  Starts a Theoria Guardrails actions server.
   chat            Starts an interactive chat session.
   convert         Convert a Colang 1.0 directory to Colang 2.0 format.
   evaluate        Run an evaluation task.
-  server          Starts a NeMo Guardrails server.
+  server          Starts a Theoria Guardrails server.
  ```
 
- You can also use the `--help` flag to learn more about each of the `nemoguardrails` commands:
+ You can also use the `--help` flag to learn more about each of the `theoriaguardrails` commands:
 
 ### actions-server
 
  ```bash
- > nemoguardrails actions-server --help
+ > theoriaguardrails actions-server --help
 
- Usage: nemoguardrails actions-server [OPTIONS]
+ Usage: theoriaguardrails actions-server [OPTIONS]
 
-  Starts a NeMo Guardrails actions server.
+  Starts a Theoria Guardrails actions server.
 
  Options:
   --port INTEGER  The port that the server should listen on.   [default: 8001]
@@ -58,9 +58,9 @@ You should now be able to invoke the `nemoguardrails` CLI.
 ### chat
 
  ```bash
- > nemoguardrails chat --help
+ > theoriaguardrails chat --help
 
- Usage: nemoguardrails chat [OPTIONS]
+ Usage: theoriaguardrails chat [OPTIONS]
 
   Starts an interactive chat session.
 
@@ -95,11 +95,11 @@ You should now be able to invoke the `nemoguardrails` CLI.
 ### server
 
 ```bash
-> nemoguardrails server --help
+> theoriaguardrails server --help
 
-Usage: nemoguardrails server [OPTIONS]
+Usage: theoriaguardrails server [OPTIONS]
 
-Starts a NeMo Guardrails server.
+Starts a Theoria Guardrails server.
 
 Options:
 --port                                        INTEGER  The port that the server should listen on. [default: 8000]
@@ -114,9 +114,9 @@ Options:
 ### evaluate
 
 ```bash
-> nemoguardrails evaluate --help
+> theoriaguardrails evaluate --help
 
-Usage: nemoguardrails evaluate [OPTIONS] COMMAND [ARGS]...
+Usage: theoriaguardrails evaluate [OPTIONS] COMMAND [ARGS]...
 
 Options:
 --help:          Show this message and exit.
@@ -131,9 +131,9 @@ topical:         Evaluates the performance of the topical rails defined in a Gua
 ### convert
 
 ```bash
-> nemoguardrails convert --help
+> theoriaguardrails convert --help
 
-Usage: nemoguardrails convert [OPTIONS] PATH
+Usage: theoriaguardrails convert [OPTIONS] PATH
 
 Convert a Colang 1.0 directory to Colang 2.0.
 

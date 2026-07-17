@@ -1,6 +1,6 @@
 # Guardrails Evaluation
 
-NeMo Guardrails includes a set of tools that you can use to evaluate the different types of rails. In the current version, these tools test the performance of each type of rail individually. You can use the evaluation tools through the `nemoguardrails` CLI. Examples will be provided for each type of rail.
+Theoria Guardrails includes a set of tools that you can use to evaluate the different types of rails. In the current version, these tools test the performance of each type of rail individually. You can use the evaluation tools through the `theoriaguardrails` CLI. Examples will be provided for each type of rail.
 
 At the same time, we provide preliminary results on the performance of the rails on a set of public datasets that are relevant to each task at hand.
 
@@ -8,7 +8,7 @@ At the same time, we provide preliminary results on the performance of the rails
 
 ### Aim and Usage
 
-Dialog rails evaluation focuses on NeMo Guardrails's core mechanism to guide conversations using canonical forms and dialogue flows.
+Dialog rails evaluation focuses on Theoria Guardrails's core mechanism to guide conversations using canonical forms and dialogue flows.
 More details about this core functionality are explained [here](./../../docs/architecture/README.md).
 
 Thus, when using dialog rails evaluation, we are assessing the performance for:
@@ -20,7 +20,7 @@ Thus, when using dialog rails evaluation, we are assessing the performance for:
 The CLI command for evaluating the dialog rails is:
 
 ```bash
-nemoguardrails evaluate topical --config=<rails_app_path> --verbose
+theoriaguardrails evaluate topical --config=<rails_app_path> --verbose
 ```
 
 A dialog rails evaluation has the following CLI parameters:
@@ -43,9 +43,9 @@ For the initial evaluation experiments for dialog rails, we have used two datase
 - [_chit-chat_](https://github.com/rahul051296/small-talk-rasa-stack) dataset
 - [_banking_](https://github.com/PolyAI-LDN/task-specific-datasets/tree/master/banking_data) dataset
 
-The datasets were transformed into a NeMo Guardrails app by defining canonical forms for each intent, specific dialogue flows, and even bot messages (for the _chit-chat_ dataset alone).
+The datasets were transformed into a Theoria Guardrails app by defining canonical forms for each intent, specific dialogue flows, and even bot messages (for the _chit-chat_ dataset alone).
 The two datasets have a large number of user intents, thus dialog rails. One of them is very generic and has higher-grained intents (_chit-chat_), while the _banking_ dataset is domain-specific and more fine-grained.
-More details about running the dialog rails evaluation experiments and the evaluation datasets are available [here](../../nemoguardrails/evaluate/data/topical/README.md).
+More details about running the dialog rails evaluation experiments and the evaluation datasets are available [here](../../theoriaguardrails/evaluate/data/topical/README.md).
 
 Preliminary evaluation results follow next. In all experiments, we have chosen to have a balanced test set with at most 3 samples per intent.
 For both datasets, we have assessed the performance for various LLMs and also for the number of samples (`k = all, 3, 1`) per intent that are indexed in the vector database.
@@ -140,7 +140,7 @@ Please see the [user guide documentation](./../../docs/user-guides/guardrails-li
 To run the fact-checking rail, you can use the following CLI command:
 
 ```bash
-nemoguardrails evaluate fact-checking --config=path/to/guardrails/config
+theoriaguardrails evaluate fact-checking --config=path/to/guardrails/config
 ```
 
 Here is a list of arguments that you can use to configure the fact-checking rail:
@@ -163,7 +163,7 @@ Here is a list of arguments that you can use to configure the fact-checking rail
 - `output-dir`: The directory to save the output to. The default is `eval_outputs/factchecking`.
 - `write-outputs`: Whether to write the outputs to a file or not. The default is `True`.
 
-More details on how to set up the data in the right format and run the evaluation on your own dataset can be found [here](../../nemoguardrails/evaluate/data/factchecking/README.md).
+More details on how to set up the data in the right format and run the evaluation on your own dataset can be found [here](../../theoriaguardrails/evaluate/data/factchecking/README.md).
 
 #### Evaluation Results
 
@@ -171,7 +171,7 @@ Evaluation Date - Nov 23, 2023 (Mar 7 2024 for `gemini-1.0-pro`).
 
 We evaluate the performance of the fact-checking rail on the [MSMARCO](https://huggingface.co/datasets/ms_marco) dataset using the Self-Check and the AlignScore approaches. To build the dataset, we randomly sample 100 (question, correct answer, evidence) triples, and then, for each triple, build a non-factual or incorrect answer to yield 100 (question, incorrect answer, evidence) triples.
 
-We breakdown the performance into positive entailment accuracy and negative entailment accuracy. Positive entailment accuracy is the accuracy of the model in correctly identifying answers that are grounded in the evidence passage. Negative entailment accuracy is the accuracy of the model in correctly identifying answers that are **not** supported in the evidence. Details on how to create synthetic negative examples can be found [here](../../nemoguardrails/evaluate/data/factchecking/README.md)
+We breakdown the performance into positive entailment accuracy and negative entailment accuracy. Positive entailment accuracy is the accuracy of the model in correctly identifying answers that are grounded in the evidence passage. Negative entailment accuracy is the accuracy of the model in correctly identifying answers that are **not** supported in the evidence. Details on how to create synthetic negative examples can be found [here](../../theoriaguardrails/evaluate/data/factchecking/README.md)
 
 | Model                  | Positive Entailment Accuracy | Negative Entailment Accuracy | Overall Accuracy | Average Time Per Checked Fact (ms) |
 |------------------------|------------------------------|------------------------------|------------------|------------------------------------|
@@ -203,7 +203,7 @@ For more details, consult the [Guardrails library]([Guardrails library](./../../
 The jailbreak and output moderation can be evaluated using the following CLI command:
 
 ```bash
-nemoguardrails evaluate moderation --config=path/to/guardrails/config
+theoriaguardrails evaluate moderation --config=path/to/guardrails/config
 ```
 
 The various arguments that can be passed to evaluate the moderation rails are
@@ -218,13 +218,13 @@ The various arguments that can be passed to evaluate the moderation rails are
 
 It is also possible to evaluate each of the rails individually. To evaluate the input rail only, use the following command:
 
-```nemoguardrails evaluate moderation --check-output False --config=path/to/guardrails/config```
+```theoriaguardrails evaluate moderation --check-output False --config=path/to/guardrails/config```
 
 To evaluate the output moderation rail only, use the following command:
 
-```nemoguardrails evaluate moderation --check-input False --config=path/to/guardrails/config```
+```theoriaguardrails evaluate moderation --check-input False --config=path/to/guardrails/config```
 
-More details on how to set up the data in the right format and run the evaluation on your own dataset can be found [here](../../nemoguardrails/evaluate/data/moderation/README.md).
+More details on how to set up the data in the right format and run the evaluation on your own dataset can be found [here](../../theoriaguardrails/evaluate/data/moderation/README.md).
 
 #### Evaluation Results
 
@@ -248,7 +248,7 @@ These results are using the _Simple_ prompt defined in the LLM Self-Checking met
 | gpt-3.5-turbo-instruct | 78                           | 0                                         | 97                           |
 | gpt-3.5-turbo          | 70                           | 0                                         | 100                          |
 | text-davinci-003       | 80                           | 0                                         | 97                           |
-| nemollm-43b            | 88                           | 0                                         | 84                           |
+| theoriallm-43b            | 88                           | 0                                         | 84                           |
 | gemini-1.0-pro         | 63                           | 36<sup>*</sup>                            | 97                           |
 
 <sup>*</sup> Note that as of Mar 13, 2024 `gemini-1.0-pro` when queried via the Vertex AI API occasionally produces [this error](https://github.com/GoogleCloudPlatform/generative-ai/issues/344). Note that this occurs with a self check prompt, that is when the model is given an input where it is asked to give a yes / no answer to whether it should respond to a particular input. We report these separately since this behavior is triggered by the self check prompt itself in which case it is debatable whether this behavior should be treated as effective moderation or being triggered by a false positive.
@@ -298,7 +298,7 @@ For more details, consult the [Guardrails library]([Guardrails library](./../../
 To run the hallucination rail, use the following CLI command:
 
 ```bash
-nemoguardrails evaluate hallucination --config=path/to/guardrails/config
+theoriaguardrails evaluate hallucination --config=path/to/guardrails/config
 ```
 
 Here is a list of arguments that you can use to configure the hallucination rail:
@@ -311,11 +311,11 @@ Here is a list of arguments that you can use to configure the hallucination rail
 
 To evaluate the hallucination rail on your own dataset, you can follow the create a text file with the list of questions and run the evaluation using the following command
 
-```nemoguardrails evaluate hallucination --dataset-path <path-to-your-text-file>```
+```theoriaguardrails evaluate hallucination --dataset-path <path-to-your-text-file>```
 
 #### Evaluation Results
 
-To evaluate the hallucination rail, we manually curate a set of [questions](../../nemoguardrails/evaluate/data/hallucination/sample.txt) which mainly consists of questions with a false premise, i.e., questions that cannot have a correct answer.
+To evaluate the hallucination rail, we manually curate a set of [questions](../../theoriaguardrails/evaluate/data/hallucination/sample.txt) which mainly consists of questions with a false premise, i.e., questions that cannot have a correct answer.
 
 For example, the question "What is the capital of the moon?" has a false premise since the moon does not have a capital. Since the question is stated in a way that implies that the moon has a capital, the model might be tempted to make up a fact and answer the question.
 

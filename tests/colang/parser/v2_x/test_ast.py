@@ -1,4 +1,4 @@
-# SPDX-FileCopyrightText: Copyright (c) 2023 NVIDIA CORPORATION & AFFILIATES. All rights reserved.
+# SPDX-FileCopyrightText: Copyright (c) 2023 Theoria & Affiliates. All rights reserved.
 # SPDX-License-Identifier: Apache-2.0
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,7 +13,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-from nemoguardrails.colang.v2_x.lang.colang_ast import (
+from theoriaguardrails.colang.v2_x.lang.colang_ast import (
     Flow,
     If,
     Return,
@@ -21,7 +21,7 @@ from nemoguardrails.colang.v2_x.lang.colang_ast import (
     SpecOp,
     SpecType,
 )
-from nemoguardrails.colang.v2_x.lang.utils import dataclass_to_dict
+from theoriaguardrails.colang.v2_x.lang.utils import dataclass_to_dict
 
 
 def test_basic():

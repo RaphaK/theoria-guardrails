@@ -1,17 +1,17 @@
 models:
   - type: main
-    engine: "nemollm"
+    engine: "theoriallm"
     model: "gpt-43b-905"
 
   - type: self_check_input
-    engine: nemollm
+    engine: theoriallm
     model: gpt-43b-002
     parameters:
       tokens_to_generate: 10
 #      customization_id: 6e5361fa-f878-4f00-8bc6-d7fbaaada915
 
   - type: self_check_output
-    engine: nemollm
+    engine: theoriallm
     model: gpt-43b-002
     parameters:
       tokens_to_generate: 10
@@ -28,7 +28,7 @@ rails:
 prompts:
   - task: self_check_input
     models:
-      - nemollm
+      - theoriallm
     content: |-
       The following is a user input to a language model. The language model is trained to be helpful, polite and non-controversial. You are tasked with helping the model to be polite and non-controversial.
       Input: {{ user_input }}
@@ -37,7 +37,7 @@ prompts:
 
   - task: self_check_output
     models:
-      - nemollm
+      - theoriallm
     content: |-
       The following is a user input to a language model and the response it generated. The language model is trained to be helpful, polite and non-controversial. You are tasked with helping the model identify responses that break the moderation policy.
       Input: '{{ user_input }}'

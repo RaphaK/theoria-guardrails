@@ -1,6 +1,6 @@
 # Guardrails Library
 
-NeMo Guardrails comes with a library of built-in guardrails that you can easily use:
+Theoria Guardrails comes with a library of built-in guardrails that you can easily use:
 
 1. LLM Self-Checking
    - [Input Checking](#self-check-input)
@@ -74,7 +74,7 @@ If a prompt is not defined, an exception will be raised when the configuration i
 
 The above is an example prompt you can use with the *self check input rail*. See the [Example Prompts](#example-prompts) section below for more details. The `self_check_input` prompt has an input variable `{{ user_input }}` which includes the input from the user. The completion must be "yes" if the input should be blocked and "no" otherwise.
 
-The self-check input rail executes the [`self_check_input` action](https://github.com/NVIDIA/NeMo-Guardrails/tree/develop/nemoguardrails/library/self_check/input_check/actions.py), which returns `True` if the input should be allowed, and `False` otherwise:
+The self-check input rail executes the [`self_check_input` action](https://github.com/Theoria/NeMo-Guardrails/tree/develop/theoriaguardrails/library/self_check/input_check/actions.py), which returns `True` if the input should be allowed, and `False` otherwise:
 
 ```colang
 define flow self check input
@@ -180,7 +180,7 @@ If a prompt is not defined, an exception will be raised when the configuration i
 
 The above is an example prompt you can use with the *self check output rail*. See the [Example Prompts](#example-prompts-1) section below for more details. The `self_check_output` prompt has an input variable `{{ bot_response }}` which includes the output from the bot. The completion must be "yes" if the output should be blocked and "no" otherwise.
 
-The self-check output rail executes the [`self_check_output` action](https://github.com/NVIDIA/NeMo-Guardrails/tree/develop/nemoguardrails/library/self_check/output_check/actions.py), which returns `True` if the output should be allowed, and `False` otherwise:
+The self-check output rail executes the [`self_check_output` action](https://github.com/Theoria/NeMo-Guardrails/tree/develop/theoriaguardrails/library/self_check/output_check/actions.py), which returns `True` if the output should be allowed, and `False` otherwise:
 
 ```colang
 define flow self check output
@@ -249,7 +249,7 @@ prompts:
 
 The goal of the self-check fact-checking output rail is to ensure that the answer to a RAG (Retrieval Augmented Generation) query is grounded in the provided evidence extracted from the knowledge base (KB).
 
-NeMo Guardrails uses the concept of **relevant chunks** (which are stored in the `$relevant_chunks` context variable) as the evidence against which fact-checking should be performed. The relevant chunks can be extracted automatically, if the built-in knowledge base support is used, or provided directly alongside the query (see the [Getting Started Guide example](../getting-started/7-rag/README.md)).
+Theoria Guardrails uses the concept of **relevant chunks** (which are stored in the `$relevant_chunks` context variable) as the evidence against which fact-checking should be performed. The relevant chunks can be extracted automatically, if the built-in knowledge base support is used, or provided directly alongside the query (see the [Getting Started Guide example](../getting-started/7-rag/README.md)).
 
 **IMPORTANT**: The performance of this rail is strongly dependent on the capability of the LLM to follow the instructions in the `self_check_facts` prompt.
 
@@ -283,7 +283,7 @@ If a prompt is not defined, an exception will be raised when the configuration i
 
 The above is an example prompt that you can use with the *self check facts rail*. The `self_check_facts` prompt has two input variables: `{{ evidence }}`, which includes the relevant chunks, and `{{ response }}`, which includes the bot response that should be fact-checked. The completion must be "yes" if the response is factually correct and "no" otherwise.
 
-The self-check fact-checking rail executes the [`self_check_facts` action](https://github.com/NVIDIA/NeMo-Guardrails/tree/develop/nemoguardrails/library/self_check/output_check/actions.py), which returns a score between `0.0` (response is not accurate) and `1.0` (response is accurate). The reason a number is returned, instead of a boolean, is to keep a consistent API with other methods that return a score, e.g., the AlignScore method below.
+The self-check fact-checking rail executes the [`self_check_facts` action](https://github.com/Theoria/NeMo-Guardrails/tree/develop/theoriaguardrails/library/self_check/output_check/actions.py), which returns a score between `0.0` (response is not accurate) and `1.0` (response is accurate). The reason a number is returned, instead of a boolean, is to keep a consistent API with other methods that return a score, e.g., the AlignScore method below.
 
 ```colang
 define subflow self check facts
@@ -319,7 +319,7 @@ define flow answer report question
   bot $answer
 ```
 
-Please refer to the [Custom RAG Output Rails example](https://github.com/NVIDIA/NeMo-Guardrails/tree/develop/examples/configs/rag/custom_rag_output_rails/README.md).
+Please refer to the [Custom RAG Output Rails example](https://github.com/Theoria/NeMo-Guardrails/tree/develop/examples/configs/rag/custom_rag_output_rails/README.md).
 
 ### Hallucination Detection
 
@@ -408,7 +408,7 @@ define flow answer report question
   bot $answer
 ```
 
-Please refer to the [Custom RAG Output Rails example](https://github.com/NVIDIA/NeMo-Guardrails/tree/develop/examples/configs/rag/custom_rag_output_rails/README.md).
+Please refer to the [Custom RAG Output Rails example](https://github.com/Theoria/NeMo-Guardrails/tree/develop/examples/configs/rag/custom_rag_output_rails/README.md).
 
 #### Implementation Details
 
@@ -511,7 +511,7 @@ If you're using this function for a different task with a custom prompt, you'll 
 
 The above is an example prompt that you can use with the *content safety check input $model=shieldgemma*. The prompt has one input variable: `{{ user_input }}`, which includes user input that should be moderated. The completion must be "yes" if the response is not safe and "no" otherwise. Optionally, some models may return a set of policy violations.
 
-The `content safety check input` and `content safety check output` rails executes the [`content_safety_check_input`](../../nemoguardrails/library/content_safety/actions.py) and [`content_safety_check_output`](../../nemoguardrails/library/content_safety/actions.py) actions respectively.
+The `content safety check input` and `content safety check output` rails executes the [`content_safety_check_input`](../../theoriaguardrails/library/content_safety/actions.py) and [`content_safety_check_output`](../../theoriaguardrails/library/content_safety/actions.py) actions respectively.
 
 ## Community Models and Libraries
 
@@ -519,7 +519,7 @@ This category of rails relies on open-source models and libraries.
 
 ### AlignScore-based Fact-Checking
 
-NeMo Guardrails provides out-of-the-box support for the [AlignScore metric (Zha et al.)](https://aclanthology.org/2023.acl-long.634.pdf), which uses a RoBERTa-based model for scoring factual consistency in model responses with respect to the knowledge base.
+Theoria Guardrails provides out-of-the-box support for the [AlignScore metric (Zha et al.)](https://aclanthology.org/2023.acl-long.634.pdf), which uses a RoBERTa-based model for scoring factual consistency in model responses with respect to the knowledge base.
 
 #### Example usage
 
@@ -540,7 +540,7 @@ For more details, check out the [AlignScore Integration](./community/alignscore.
 
 ### Llama Guard-based Content Moderation
 
-NeMo Guardrails provides out-of-the-box support for content moderation using Meta's [Llama Guard](https://ai.meta.com/research/publications/llama-guard-llm-based-input-output-safeguard-for-human-ai-conversations/) model.
+Theoria Guardrails provides out-of-the-box support for content moderation using Meta's [Llama Guard](https://ai.meta.com/research/publications/llama-guard-llm-based-input-output-safeguard-for-human-ai-conversations/) model.
 
 #### Example usage
 
@@ -558,7 +558,7 @@ For more details, check out the [Llama-Guard Integration](./community/llama-guar
 
 ### Patronus Lynx-based RAG Hallucination Detection
 
-NeMo Guardrails supports hallucination detection in RAG systems using [Patronus AI](www.patronus.ai)'s Lynx model. The model is hosted on Hugging Face and comes in both a 70B parameters (see [here](https://huggingface.co/PatronusAI/Patronus-Lynx-70B-Instruct)) and 8B parameters (see [here](https://huggingface.co/PatronusAI/Patronus-Lynx-8B-Instruct)) variant.
+Theoria Guardrails supports hallucination detection in RAG systems using [Patronus AI](www.patronus.ai)'s Lynx model. The model is hosted on Hugging Face and comes in both a 70B parameters (see [here](https://huggingface.co/PatronusAI/Patronus-Lynx-70B-Instruct)) and 8B parameters (see [here](https://huggingface.co/PatronusAI/Patronus-Lynx-8B-Instruct)) variant.
 
 #### Example usage
 
@@ -573,7 +573,7 @@ For more details, check out the [Patronus Lynx Integration](./community/patronus
 
 ### Presidio-based Sensitive Data Detection
 
-NeMo Guardrails supports detecting sensitive data out-of-the-box using [Presidio](https://github.com/Microsoft/presidio), which provides fast identification and anonymization modules for private entities in text such as credit card numbers, names, locations, social security numbers, bitcoin wallets, US phone numbers, financial data and more. You can detect sensitive data on user input, bot output, or the relevant chunks retrieved from the knowledge base.
+Theoria Guardrails supports detecting sensitive data out-of-the-box using [Presidio](https://github.com/Microsoft/presidio), which provides fast identification and anonymization modules for private entities in text such as credit card numbers, names, locations, social security numbers, bitcoin wallets, US phone numbers, financial data and more. You can detect sensitive data on user input, bot output, or the relevant chunks retrieved from the knowledge base.
 
 To activate a sensitive data detection input rail, you have to configure the entities that you want to detect:
 
@@ -611,7 +611,7 @@ This category of rails relies on 3rd party APIs for various guardrailing tasks.
 
 ### ActiveFence
 
-NeMo Guardrails supports using the [ActiveFence ActiveScore API](https://docs.activefence.com/index.html) as an input rail out-of-the-box (you need to have the `ACTIVEFENCE_API_KEY` environment variable set).
+Theoria Guardrails supports using the [ActiveFence ActiveScore API](https://docs.activefence.com/index.html) as an input rail out-of-the-box (you need to have the `ACTIVEFENCE_API_KEY` environment variable set).
 
 #### Example usage
 
@@ -631,7 +631,7 @@ For more details, check out the [ActiveFence Integration](./community/active-fen
 The Got It AI integration has been deprecated and will be discontinued on 15th December, 2024.
 ```
 
-NeMo Guardrails integrates with [Got It AI's Hallucination Manager](https://www.app.got-it.ai/hallucination-manager) for hallucination detection in RAG systems. To integrate the TruthChecker API with NeMo Guardrails, the `GOTITAI_API_KEY` environment variable needs to be set.
+Theoria Guardrails integrates with [Got It AI's Hallucination Manager](https://www.app.got-it.ai/hallucination-manager) for hallucination detection in RAG systems. To integrate the TruthChecker API with Theoria Guardrails, the `GOTITAI_API_KEY` environment variable needs to be set.
 
 #### Example usage
 
@@ -646,7 +646,7 @@ For more details, check out the [Got It AI Integration](./community/gotitai.md) 
 
 ### AutoAlign
 
-NeMo Guardrails supports using the AutoAlign's guardrails API (you need to have the `AUTOALIGN_API_KEY` environment variable set).
+Theoria Guardrails supports using the AutoAlign's guardrails API (you need to have the `AUTOALIGN_API_KEY` environment variable set).
 
 #### Example usage
 
@@ -664,7 +664,7 @@ For more details, check out the [AutoAlign Integration](./community/auto-align.m
 
 ### Cleanlab
 
-NeMo Guardrails supports using the [Cleanlab Trustworthiness Score API](https://cleanlab.ai/blog/trustworthy-language-model/) as an output rail (you need to have the `CLEANLAB_API_KEY` environment variable set).
+Theoria Guardrails supports using the [Cleanlab Trustworthiness Score API](https://cleanlab.ai/blog/trustworthy-language-model/) as an output rail (you need to have the `CLEANLAB_API_KEY` environment variable set).
 
 #### Example usage
 
@@ -675,11 +675,11 @@ rails:
       - cleanlab trustworthiness
 ```
 
-For more details, check out the [Cleanlab Integration](https://github.com/NVIDIA/NeMo-Guardrails/blob/develop/docs/user-guides/community/cleanlab.md) page.
+For more details, check out the [Cleanlab Integration](https://github.com/Theoria/NeMo-Guardrails/blob/develop/docs/user-guides/community/cleanlab.md) page.
 
 ### GCP Text Moderation
 
-NeMo Guardrails supports using the GCP Text Moderation. You need to be authenticated with GCP, refer [here](https://cloud.google.com/docs/authentication/application-default-credentials) for auth details.
+Theoria Guardrails supports using the GCP Text Moderation. You need to be authenticated with GCP, refer [here](https://cloud.google.com/docs/authentication/application-default-credentials) for auth details.
 
 #### Example usage
 
@@ -690,11 +690,11 @@ rails:
       - gcpnlp moderation
 ```
 
-For more details, check out the [GCP Text Moderation](https://github.com/NVIDIA/NeMo-Guardrails/blob/develop/docs/user-guides/community/gcp-text-moderations.md) page.
+For more details, check out the [GCP Text Moderation](https://github.com/Theoria/NeMo-Guardrails/blob/develop/docs/user-guides/community/gcp-text-moderations.md) page.
 
 ### Private AI PII Detection
 
-NeMo Guardrails supports using [Private AI API](https://docs.private-ai.com/?utm_medium=github&utm_campaign=nemo-guardrails) for PII detection in input, output and retrieval flows.
+Theoria Guardrails supports using [Private AI API](https://docs.private-ai.com/?utm_medium=github&utm_campaign=theoria-guardrails) for PII detection in input, output and retrieval flows.
 
 To activate the PII detection, you need specify `server_endpoint`, and the entities that you want to detect. You'll also need to set the `PAI_API_KEY` environment variable if you're using the Private AI cloud API.
 
@@ -730,11 +730,11 @@ rails:
       - detect pii on retrieval
 ```
 
-For more details, check out the [Private AI Integration](https://github.com/NVIDIA/NeMo-Guardrails/blob/develop/docs/user-guides/community/privateai.md) page.
+For more details, check out the [Private AI Integration](https://github.com/Theoria/NeMo-Guardrails/blob/develop/docs/user-guides/community/privateai.md) page.
 
 ### Private AI PII Detection
 
-NeMo Guardrails supports using [Private AI API](https://docs.private-ai.com/?utm_medium=github&utm_campaign=nemo-guardrails) for PII detection in input, output and retrieval flows.
+Theoria Guardrails supports using [Private AI API](https://docs.private-ai.com/?utm_medium=github&utm_campaign=theoria-guardrails) for PII detection in input, output and retrieval flows.
 
 To activate the PII detection, you need specify `server_endpoint`, and the entities that you want to detect. You'll also need to set the `PAI_API_KEY` environment variable if you're using the Private AI cloud API.
 
@@ -776,7 +776,7 @@ For more details, check out the [Private AI Integration](./community/privateai.m
 
 ### Jailbreak Detection Heuristics
 
-NeMo Guardrails supports jailbreak detection using a set of heuristics. Currently, two heuristics are supported:
+Theoria Guardrails supports jailbreak detection using a set of heuristics. Currently, two heuristics are supported:
 
 1. [Length per Perplexity](#length-per-perplexity)
 2. [Prefix and Suffix Perplexity](#prefix-and-suffix-perplexity)

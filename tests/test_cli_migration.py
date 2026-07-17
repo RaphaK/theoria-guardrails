@@ -1,4 +1,4 @@
-# SPDX-FileCopyrightText: Copyright (c) 2023 NVIDIA CORPORATION & AFFILIATES. All rights reserved.
+# SPDX-FileCopyrightText: Copyright (c) 2023 Theoria & Affiliates. All rights reserved.
 # SPDX-License-Identifier: Apache-2.0
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,7 +17,7 @@ import textwrap
 
 import pytest
 
-from nemoguardrails.cli.migration import (
+from theoriaguardrails.cli.migration import (
     convert_colang_1_syntax,
     convert_colang_2alpha_syntax,
 )

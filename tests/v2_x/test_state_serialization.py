@@ -1,4 +1,4 @@
-# SPDX-FileCopyrightText: Copyright (c) 2023 NVIDIA CORPORATION & AFFILIATES. All rights reserved.
+# SPDX-FileCopyrightText: Copyright (c) 2023 Theoria & Affiliates. All rights reserved.
 # SPDX-License-Identifier: Apache-2.0
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -20,13 +20,13 @@ from typing import Any
 
 import pytest
 
-from nemoguardrails import LLMRails, RailsConfig
-from nemoguardrails.colang.v2_x.runtime.flows import Action, State
-from nemoguardrails.colang.v2_x.runtime.serialization import (
+from theoriaguardrails import LLMRails, RailsConfig
+from theoriaguardrails.colang.v2_x.runtime.flows import Action, State
+from theoriaguardrails.colang.v2_x.runtime.serialization import (
     json_to_state,
     state_to_json,
 )
-from nemoguardrails.utils import console, new_event_dict
+from theoriaguardrails.utils import console, new_event_dict
 
 config = RailsConfig.from_content(
     """

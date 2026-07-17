@@ -1,6 +1,6 @@
 # Demo Use Case
 
-This topic describes a use case used in the remaining guide topics. The use case defines a fictional company, *ABC Company*, with a bot, the *ABC Bot*, that assists employees by providing information on the organization's employee handbook and policies. The remaining topics in this guide use this example to explain a practical application of NeMo Guardrails.
+This topic describes a use case used in the remaining guide topics. The use case defines a fictional company, *ABC Company*, with a bot, the *ABC Bot*, that assists employees by providing information on the organization's employee handbook and policies. The remaining topics in this guide use this example to explain a practical application of Theoria Guardrails.
 
 The following guide topics lead you through a step-by-step configuration process, addressing various challenges that might arise.
 

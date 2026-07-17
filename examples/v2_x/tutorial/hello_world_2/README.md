@@ -7,7 +7,7 @@ NOTE: in this example, the exact strings "hi"/"hello" must be used. Anything els
 ## Example Session
 
 ```
-$ nemoguardrails chat --config=examples/v2_x/tutorial/hello_world_2
+$ theoriaguardrails chat --config=examples/v2_x/tutorial/hello_world_2
 Starting the chat (Press Ctrl + C twice to quit) ...
 
 > hi

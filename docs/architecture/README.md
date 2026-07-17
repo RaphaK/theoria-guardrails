@@ -1,6 +1,6 @@
 # Architecture Guide
 
-This document provides more details on the architecture and the approach that the NeMo Guardrails toolkit takes for implementing guardrails.
+This document provides more details on the architecture and the approach that the Theoria Guardrails toolkit takes for implementing guardrails.
 
 ![Overall Architecture](overall-architecture.png)
 

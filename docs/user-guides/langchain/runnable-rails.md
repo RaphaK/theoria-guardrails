@@ -1,14 +1,14 @@
 # RunnableRails
 
-This guide will teach you how to integrate guardrail configurations built with NeMo Guardrails into your LangChain applications. The examples in this guide will focus on using the [LangChain Expression Language](https://python.langchain.com/docs/expression_language/) (LCEL).
+This guide will teach you how to integrate guardrail configurations built with Theoria Guardrails into your LangChain applications. The examples in this guide will focus on using the [LangChain Expression Language](https://python.langchain.com/docs/expression_language/) (LCEL).
 
 ## Overview
 
-NeMo Guardrails provides a LangChain native interface that implements the [Runnable Protocol](https://python.langchain.com/docs/expression_language/interface), through the `RunnableRails` class. To get started, you must first load a guardrail configuration and create a `RunnableRails` instance:
+Theoria Guardrails provides a LangChain native interface that implements the [Runnable Protocol](https://python.langchain.com/docs/expression_language/interface), through the `RunnableRails` class. To get started, you must first load a guardrail configuration and create a `RunnableRails` instance:
 
 ```python
-from nemoguardrails import RailsConfig
-from nemoguardrails.integrations.langchain.runnable_rails import RunnableRails
+from theoriaguardrails import RailsConfig
+from theoriaguardrails.integrations.langchain.runnable_rails import RunnableRails
 
 config = RailsConfig.from_path("path/to/config")
 guardrails = RunnableRails(config)

@@ -1,4 +1,4 @@
-# SPDX-FileCopyrightText: Copyright (c) 2023 NVIDIA CORPORATION & AFFILIATES. All rights reserved.
+# SPDX-FileCopyrightText: Copyright (c) 2023 Theoria & Affiliates. All rights reserved.
 # SPDX-License-Identifier: Apache-2.0
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,7 +17,7 @@ import os
 
 import pytest
 
-from nemoguardrails import LLMRails, RailsConfig
+from theoriaguardrails import LLMRails, RailsConfig
 from tests.utils import FakeLLM, any_event_conforms, event_sequence_conforms
 
 TEST_CONFIGS_PATH = os.path.join(os.path.dirname(__file__), "test_configs")
@@ -63,7 +63,7 @@ async def test_action_execution_with_result(rails_config):
     expected_events = [
         {
             "data": {"user_message": "Hello!"},
-            "source_uid": "NeMoGuardrails",
+            "source_uid": "TheoriaGuardrails",
             "type": "ContextUpdate",
         },
         {
@@ -73,7 +73,7 @@ async def test_action_execution_with_result(rails_config):
             },
             "action_result_key": None,
             "is_system_action": True,
-            "source_uid": "NeMoGuardrails",
+            "source_uid": "TheoriaGuardrails",
             "type": "StartInternalSystemAction",
         },
         {
@@ -84,7 +84,7 @@ async def test_action_execution_with_result(rails_config):
             "action_result_key": None,
             "events": [
                 {
-                    "source_uid": "NeMoGuardrails",
+                    "source_uid": "TheoriaGuardrails",
                     "text": "Hello!",
                     "type": "UserMessage",
                 }
@@ -92,12 +92,12 @@ async def test_action_execution_with_result(rails_config):
             "is_success": True,
             "is_system_action": True,
             "return_value": None,
-            "source_uid": "NeMoGuardrails",
+            "source_uid": "TheoriaGuardrails",
             "status": "success",
             "type": "InternalSystemActionFinished",
         },
         {
-            "source_uid": "NeMoGuardrails",
+            "source_uid": "TheoriaGuardrails",
             "text": "Hello!",
             "type": "UserMessage",
         },
@@ -106,7 +106,7 @@ async def test_action_execution_with_result(rails_config):
             "action_params": {},
             "action_result_key": None,
             "is_system_action": True,
-            "source_uid": "NeMoGuardrails",
+            "source_uid": "TheoriaGuardrails",
             "type": "StartInternalSystemAction",
         },
         {
@@ -116,20 +116,20 @@ async def test_action_execution_with_result(rails_config):
             "events": [
                 {
                     "intent": "express greeting",
-                    "source_uid": "NeMoGuardrails",
+                    "source_uid": "TheoriaGuardrails",
                     "type": "UserIntent",
                 }
             ],
             "is_success": True,
             "is_system_action": True,
             "return_value": None,
-            "source_uid": "NeMoGuardrails",
+            "source_uid": "TheoriaGuardrails",
             "status": "success",
             "type": "InternalSystemActionFinished",
         },
         {
             "intent": "express greeting",
-            "source_uid": "NeMoGuardrails",
+            "source_uid": "TheoriaGuardrails",
             "type": "UserIntent",
         },
         {
@@ -137,12 +137,12 @@ async def test_action_execution_with_result(rails_config):
             "action_params": {},
             "action_result_key": "account",
             "is_system_action": False,
-            "source_uid": "NeMoGuardrails",
+            "source_uid": "TheoriaGuardrails",
             "type": "StartInternalSystemAction",
         },
         {
             "data": {"account": {"name": "John"}},
-            "source_uid": "NeMoGuardrails",
+            "source_uid": "TheoriaGuardrails",
             "type": "ContextUpdate",
         },
         {
@@ -153,7 +153,7 @@ async def test_action_execution_with_result(rails_config):
             "is_success": True,
             "is_system_action": False,
             "return_value": {"name": "John"},
-            "source_uid": "NeMoGuardrails",
+            "source_uid": "TheoriaGuardrails",
             "status": "success",
             "type": "InternalSystemActionFinished",
         },
@@ -163,12 +163,12 @@ async def test_action_execution_with_result(rails_config):
             "action_params": {},
             "action_result_key": None,
             "is_system_action": True,
-            "source_uid": "NeMoGuardrails",
+            "source_uid": "TheoriaGuardrails",
             "type": "StartInternalSystemAction",
         },
         {
             "data": {"relevant_chunks": "\n"},
-            "source_uid": "NeMoGuardrails",
+            "source_uid": "TheoriaGuardrails",
             "type": "ContextUpdate",
         },
         {
@@ -179,7 +179,7 @@ async def test_action_execution_with_result(rails_config):
             "is_success": True,
             "is_system_action": True,
             "return_value": "\n",
-            "source_uid": "NeMoGuardrails",
+            "source_uid": "TheoriaGuardrails",
             "status": "success",
             "type": "InternalSystemActionFinished",
         },
@@ -188,12 +188,12 @@ async def test_action_execution_with_result(rails_config):
             "action_params": {},
             "action_result_key": None,
             "is_system_action": True,
-            "source_uid": "NeMoGuardrails",
+            "source_uid": "TheoriaGuardrails",
             "type": "StartInternalSystemAction",
         },
         {
             "data": {"skip_output_rails": True},
-            "source_uid": "NeMoGuardrails",
+            "source_uid": "TheoriaGuardrails",
             "type": "ContextUpdate",
         },
         {
@@ -202,7 +202,7 @@ async def test_action_execution_with_result(rails_config):
             "action_result_key": None,
             "events": [
                 {
-                    "source_uid": "NeMoGuardrails",
+                    "source_uid": "TheoriaGuardrails",
                     "text": "Hello!",
                     "type": "BotMessage",
                 }
@@ -210,18 +210,18 @@ async def test_action_execution_with_result(rails_config):
             "is_success": True,
             "is_system_action": True,
             "return_value": None,
-            "source_uid": "NeMoGuardrails",
+            "source_uid": "TheoriaGuardrails",
             "status": "success",
             "type": "InternalSystemActionFinished",
         },
         {
-            "source_uid": "NeMoGuardrails",
+            "source_uid": "TheoriaGuardrails",
             "text": "Hello!",
             "type": "BotMessage",
         },
         {
             "data": {"bot_message": "Hello!", "skip_output_rails": False},
-            "source_uid": "NeMoGuardrails",
+            "source_uid": "TheoriaGuardrails",
             "type": "ContextUpdate",
         },
         {
@@ -231,7 +231,7 @@ async def test_action_execution_with_result(rails_config):
             },
             "action_result_key": None,
             "is_system_action": True,
-            "source_uid": "NeMoGuardrails",
+            "source_uid": "TheoriaGuardrails",
             "type": "StartInternalSystemAction",
         },
         {
@@ -245,14 +245,14 @@ async def test_action_execution_with_result(rails_config):
                     "action_info_modality": "bot_speech",
                     "action_info_modality_policy": "replace",
                     "script": "Hello!",
-                    "source_uid": "NeMoGuardrails",
+                    "source_uid": "TheoriaGuardrails",
                     "type": "StartUtteranceBotAction",
                 }
             ],
             "is_success": True,
             "is_system_action": True,
             "return_value": None,
-            "source_uid": "NeMoGuardrails",
+            "source_uid": "TheoriaGuardrails",
             "status": "success",
             "type": "InternalSystemActionFinished",
         },
@@ -260,11 +260,11 @@ async def test_action_execution_with_result(rails_config):
             "action_info_modality": "bot_speech",
             "action_info_modality_policy": "replace",
             "script": "Hello!",
-            "source_uid": "NeMoGuardrails",
+            "source_uid": "TheoriaGuardrails",
             "type": "StartUtteranceBotAction",
         },
         {
-            "source_uid": "NeMoGuardrails",
+            "source_uid": "TheoriaGuardrails",
             "type": "Listen",
         },
     ]

@@ -1,4 +1,4 @@
-# SPDX-FileCopyrightText: Copyright (c) 2023 NVIDIA CORPORATION & AFFILIATES. All rights reserved.
+# SPDX-FileCopyrightText: Copyright (c) 2023 Theoria & Affiliates. All rights reserved.
 # SPDX-License-Identifier: Apache-2.0
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,11 +17,11 @@ import textwrap
 
 import pytest
 
-from nemoguardrails import RailsConfig
-from nemoguardrails.llm.filters import conversation_to_events
-from nemoguardrails.llm.prompts import get_prompt
-from nemoguardrails.llm.taskmanager import LLMTaskManager
-from nemoguardrails.llm.types import Task
+from theoriaguardrails import RailsConfig
+from theoriaguardrails.llm.filters import conversation_to_events
+from theoriaguardrails.llm.prompts import get_prompt
+from theoriaguardrails.llm.taskmanager import LLMTaskManager
+from theoriaguardrails.llm.types import Task
 
 # TODO: Fix this test
 # def test_openai_text_davinci_prompts():

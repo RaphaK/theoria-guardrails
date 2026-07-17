@@ -22,7 +22,7 @@ sample_conversation: |
   bot respond about capabilities
     "I am an AI assistant which helps answer questions based on a given knowledge base."
 
-# The prompts below are the same as the ones from `nemoguardrails/llm/prompts/dolly.yml`.
+# The prompts below are the same as the ones from `theoriaguardrails/llm/prompts/dolly.yml`.
 prompts:
   - task: general
     models:

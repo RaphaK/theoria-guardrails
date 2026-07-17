@@ -11,11 +11,11 @@ The interaction with the LLM is designed in a task-oriented way, i.e., each time
 3. `generate_bot_message`: decide the exact bot message that should be returned.
 4. `general`: generate the next bot message based on the history of user and bot messages; this task is used when there are no dialog rails defined (i.e., no user message canonical forms).
 
-Check out the [Task type](https://github.com/NVIDIA/NeMo-Guardrails/blob/develop/nemoguardrails/llm/types.py) for the complete list of tasks.
+Check out the [Task type](https://github.com/Theoria/NeMo-Guardrails/blob/develop/theoriaguardrails/llm/types.py) for the complete list of tasks.
 
 ## Prompt Configuration
 
-The toolkit provides predefined prompts for each task and for certain LLM models. They are located in the [nemoguardrails/llm/prompts](https://github.com/NVIDIA/NeMo-Guardrails/tree/develop/nemoguardrails/llm/prompts) folder. You can customize the prompts further by including a `prompts.yml` file in a guardrails configuration (technically, the file name is not essential, and you can also include the `prompts` key in the general `config.yml` file).
+The toolkit provides predefined prompts for each task and for certain LLM models. They are located in the [theoriaguardrails/llm/prompts](https://github.com/Theoria/NeMo-Guardrails/tree/develop/theoriaguardrails/llm/prompts) folder. You can customize the prompts further by including a `prompts.yml` file in a guardrails configuration (technically, the file name is not essential, and you can also include the `prompts` key in the general `config.yml` file).
 
 Additionally, if the environment variable `PROMPTS_DIR` is set, the toolkit will also load any prompts defined in the specified directory. The loading is performed once, when the python module is loaded. The folder must contain one or more `.yml` files which contain prompt definitions (inside the `prompts` key).
 
@@ -132,7 +132,7 @@ prompts:
 
 ### Content Template
 
-The content for a completion prompt or the body for a message in a chat prompt is a string that can also include variables and potentially other types of constructs. NeMo Guardrails uses [Jinja2](https://jinja.palletsprojects.com/) as the templating engine. Check out the [Jinja Synopsis](https://jinja.palletsprojects.com/en/3.1.x/templates/#synopsis) for a quick introduction.
+The content for a completion prompt or the body for a message in a chat prompt is a string that can also include variables and potentially other types of constructs. Theoria Guardrails uses [Jinja2](https://jinja.palletsprojects.com/) as the templating engine. Check out the [Jinja Synopsis](https://jinja.palletsprojects.com/en/3.1.x/templates/#synopsis) for a quick introduction.
 
 As an example, the default template for the `generate_user_intent` task is the following:
 
@@ -203,14 +203,14 @@ Optionally, the output from the LLM can be parsed using an *output parser*. The 
 
 ## Predefined Prompts
 
-Currently, the NeMo Guardrails toolkit includes prompts for `openai/gpt-3.5-turbo-instruct`, `openai/gpt-3.5-turbo`, `openai/gpt-4`, `databricks/dolly-v2-3b`, `cohere/command`, `cohere/command-light`, `cohere/command-light-nightly`.
+Currently, the Theoria Guardrails toolkit includes prompts for `openai/gpt-3.5-turbo-instruct`, `openai/gpt-3.5-turbo`, `openai/gpt-4`, `databricks/dolly-v2-3b`, `cohere/command`, `cohere/command-light`, `cohere/command-light-nightly`.
 
 **DISCLAIMER**: Evaluating and improving the provided prompts is a work in progress. We do not recommend deploying this alpha version using these prompts in a production setting.
 
 ## Custom Tasks and Prompts
 
 In the scenario where you would like to create a custom task beyond those included in
-[the default tasks](https://github.com/NVIDIA/NeMo-Guardrails/tree/develop/nemoguardrails/llm/types.py), you can include the task and associated prompt as provided in the example below:
+[the default tasks](https://github.com/Theoria/NeMo-Guardrails/tree/develop/theoriaguardrails/llm/types.py), you can include the task and associated prompt as provided in the example below:
 
 ```yaml
 prompts:

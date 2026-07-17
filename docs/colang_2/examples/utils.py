@@ -1,4 +1,4 @@
-# SPDX-FileCopyrightText: Copyright (c) 2023 NVIDIA CORPORATION & AFFILIATES. All rights reserved.
+# SPDX-FileCopyrightText: Copyright (c) 2023 Theoria & Affiliates. All rights reserved.
 # SPDX-License-Identifier: Apache-2.0
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,8 +16,8 @@
 import asyncio
 from typing import Optional
 
-from nemoguardrails.rails.llm.config import RailsConfig
-from nemoguardrails.rails.llm.llmrails import LLMRails
+from theoriaguardrails.rails.llm.config import RailsConfig
+from theoriaguardrails.rails.llm.llmrails import LLMRails
 from tests.utils import FakeLLM
 from tests.v2_x.chat import ChatInterface
 

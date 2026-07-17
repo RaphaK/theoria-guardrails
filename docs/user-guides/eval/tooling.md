@@ -1,6 +1,6 @@
 # Evaluation Tooling
 
-NeMo Guardrails provides a set of tools for evaluating the performance of a guardrail configuration.
+Theoria Guardrails provides a set of tools for evaluating the performance of a guardrail configuration.
 
 ## Introduction
 
@@ -207,11 +207,11 @@ prompts:
 
 ## CLI
 
-You can run evaluations and inspect the results using the CLI `nemoguardrails eval`.
+You can run evaluations and inspect the results using the CLI `theoriaguardrails eval`.
 
 Usage:
 ```bash
-nemoguardrails eval [OPTIONS] COMMAND [ARGS]...
+theoriaguardrails eval [OPTIONS] COMMAND [ARGS]...
 ```
 
 ### Commands
@@ -223,4 +223,4 @@ nemoguardrails eval [OPTIONS] COMMAND [ARGS]...
 
 ## Analyze the Results
 
-To analyze the results of a guardrail configuration evaluation, use the Eval UI, which you can launch using `nemoguardrails eval ui`.
+To analyze the results of a guardrail configuration evaluation, use the Eval UI, which you can launch using `theoriaguardrails eval ui`.

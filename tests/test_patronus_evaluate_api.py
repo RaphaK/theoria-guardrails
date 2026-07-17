@@ -1,4 +1,4 @@
-# SPDX-FileCopyrightText: Copyright (c) 2023 NVIDIA CORPORATION & AFFILIATES. All rights reserved.
+# SPDX-FileCopyrightText: Copyright (c) 2023 Theoria & Affiliates. All rights reserved.
 # SPDX-License-Identifier: Apache-2.0
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,9 +16,9 @@
 import pytest
 from aioresponses import aioresponses
 
-from nemoguardrails import RailsConfig
-from nemoguardrails.actions.actions import ActionResult, action
-from nemoguardrails.library.patronusai.actions import (
+from theoriaguardrails import RailsConfig
+from theoriaguardrails.actions.actions import ActionResult, action
+from theoriaguardrails.library.patronusai.actions import (
     check_guardrail_pass,
     patronus_evaluate_request,
 )
@@ -840,9 +840,9 @@ async def test_patronus_evaluate_request_success(monkeypatch):
                 "evaluators": [{"evaluator": "lynx"}],
                 "tags": {"test": "true"},
             },
-            user_input="Does NeMo Guardrails integrate with the Patronus API?",
-            bot_response="Yes, NeMo Guardrails integrates with the Patronus API.",
-            provided_context="Yes, NeMo Guardrails integrates with the Patronus API.",
+            user_input="Does Theoria Guardrails integrate with the Patronus API?",
+            bot_response="Yes, Theoria Guardrails integrates with the Patronus API.",
+            provided_context="Yes, Theoria Guardrails integrates with the Patronus API.",
         )
 
         assert "results" in response

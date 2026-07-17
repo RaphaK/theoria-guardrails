@@ -1,12 +1,12 @@
 # Event-based API
 
-You can use a guardrails configuration through an event-based API using [`LLMRails.generate_events_async`](../../api/nemoguardrails.rails.llm.llmrails.md#method-llmrailsgenerate_events_async) and [`LLMRails.generate_events](../../api/nemoguardrails.rails.llm.llmrails.md#method-llmrailsgenerate_events).
+You can use a guardrails configuration through an event-based API using [`LLMRails.generate_events_async`](../../api/theoriaguardrails.rails.llm.llmrails.md#method-llmrailsgenerate_events_async) and [`LLMRails.generate_events](../../api/theoriaguardrails.rails.llm.llmrails.md#method-llmrailsgenerate_events).
 
 Example usage:
 
 ```python
 import json
-from nemoguardrails import LLMRails, RailsConfig
+from theoriaguardrails import LLMRails, RailsConfig
 
 config = RailsConfig.from_path("path/to/config")
 app = LLMRails(config)
@@ -87,7 +87,7 @@ Example output:
 
 ## Event Types
 
-NeMo Guardrails supports multiple types of events. Some are meant for internal use (e.g., `UserIntent`, `BotIntent`), while others represent the "public" interface (e.g., `UtteranceUserActionFinished`, `StartUtteranceBotAction`).
+Theoria Guardrails supports multiple types of events. Some are meant for internal use (e.g., `UserIntent`, `BotIntent`), while others represent the "public" interface (e.g., `UtteranceUserActionFinished`, `StartUtteranceBotAction`).
 
 ### `UtteranceUserActionFinished`
 

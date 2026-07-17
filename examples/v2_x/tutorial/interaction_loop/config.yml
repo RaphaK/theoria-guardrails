@@ -31,8 +31,8 @@ sample_conversation: |
     bot action: bot inform "Excuse me! I did not get that! Can you repeat please?"
       and bot gesture "Making a sad face"
 
-    user action: user said "Tell me a bit about the history of NVIDIA."
-    user intent: user asked about nvidia history
+    user action: user said "Tell me a bit about the history of Theoria."
+    user intent: user asked about theoria history
 
     user action: user said "thanks"
     user intent: user expressed appreciation

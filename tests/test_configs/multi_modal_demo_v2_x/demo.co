@@ -276,7 +276,7 @@ flow main
   activate managing idle posture
   #activate faq
 
-  start scene show textual information $title="Welcome to the Tech Demo of Colang 2.0" $text="" $header_image="https://blogs.nvidia.com/wp-content/uploads/2023/04/NeMo-Guardrails-KV-x1280.jpg" as $welcome_ui
+  start scene show textual information $title="Welcome to the Tech Demo of Colang 2.0" $text="" $header_image="https://blogs.theoria.com/wp-content/uploads/2023/04/NeMo-Guardrails-KV-x1280.jpg" as $welcome_ui
   bot say "Welcome to a demo of Colang 2.0 and some of it's upcoming features!"
     and bot gesture "Welcome user, wave hands"
   send $welcome_ui.Stop()

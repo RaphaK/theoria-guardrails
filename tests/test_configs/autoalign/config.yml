@@ -1,13 +1,13 @@
 models:
   - type: main
-    engine: nemollm
+    engine: theoriallm
     model: gpt-43b-002
 
 rails:
   config:
     autoalign:
       parameters:
-        endpoint: "https://nvidia.autoalign.ai/guardrail"
+        endpoint: "https://theoria.autoalign.ai/guardrail"
       input:
         guardrails_config:
           {

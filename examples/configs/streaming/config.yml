@@ -11,7 +11,7 @@ models:
 
 # # Uncomment this and comment the 3 lines above to test with NeMo LLM.
 #  - type: main
-#    engine: "nemollm"
+#    engine: "theoriallm"
 #    model: "gpt-43b-905"
 
 rails:

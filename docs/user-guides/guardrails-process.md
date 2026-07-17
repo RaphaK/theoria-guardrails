@@ -1,10 +1,10 @@
 # Guardrails Process
 
-This guide provides an overview of the main types of rails supported in NeMo Guardrails and the process of invoking them.
+This guide provides an overview of the main types of rails supported in Theoria Guardrails and the process of invoking them.
 
 ## Overview
 
-NeMo Guardrails has support for five main categories of rails: input, dialog, output, retrieval, and execution. The diagram below provides an overview of the high-level flow through these categories of flows.
+Theoria Guardrails has support for five main categories of rails: input, dialog, output, retrieval, and execution. The diagram below provides an overview of the high-level flow through these categories of flows.
 
 <p style="text-align: center;">
 <img src="../_static/images/programmable_guardrails_flow.png" style="max-width: 913px; width: 75%;">
@@ -12,7 +12,7 @@ NeMo Guardrails has support for five main categories of rails: input, dialog, ou
 
 ## Categories of Rails
 
-There are five types of rails supported in NeMo Guardrails:
+There are five types of rails supported in Theoria Guardrails:
 
 1. **Input rails**: applied to the input from the user; an input rail can reject the input ( stopping any additional processing) or alter the input (e.g., to mask potentially sensitive data, to rephrase).
 

@@ -1,6 +1,6 @@
 # Server Guide
 
-The NeMo Guardrails toolkit enables you to create guardrails configurations and deploy them scalable and securely using a **guardrails server** and an **actions server**.
+The Theoria Guardrails toolkit enables you to create guardrails configurations and deploy them scalable and securely using a **guardrails server** and an **actions server**.
 
 ## Guardrails Server
 
@@ -9,7 +9,7 @@ The Guardrails Server loads a predefined set of guardrails configurations at sta
 To launch the server:
 
 ```sh
-nemoguardrails server [--config PATH/TO/CONFIGS] [--port PORT] [--prefix PREFIX] [--disable-chat-ui] [--auto-reload] [--default-config-id DEFAULT_CONFIG_ID]
+theoriaguardrails server [--config PATH/TO/CONFIGS] [--port PORT] [--prefix PREFIX] [--disable-chat-ui] [--auto-reload] [--default-config-id DEFAULT_CONFIG_ID]
 ```
 
 If no `--config` option is specified, the server will try to load the configurations from the `config` folder in the current directory. If no configurations are found, it will load all the example guardrails configurations.
@@ -107,7 +107,7 @@ The configurations will be combined in the order they are specified in the `conf
 
 #### Default Configuration
 
-The NeMo Guardrails server supports having a default guardrail configuration which can be set using the `--default-config-id` flag.
+The Theoria Guardrails server supports having a default guardrail configuration which can be set using the `--default-config-id` flag.
 This configuration is used when no `config_id` is provided in the request.
 
 ```
@@ -134,7 +134,7 @@ The Guardrails Server has basic support for storing the conversation threads. Th
 
 To use server-side threads, you have to register a datastore. To do this, you must create a `config.py` file in the root of the configurations folder (i.e., the folder containing all the guardrails configurations the server must load). Inside `config.py` use the `register_datastore` function to register the datastore you want to use.
 
-Out-of-the-box, NeMo Guardrails has support for `MemoryStore` (useful for quick testing) and `RedisStore`. If you want to use a different backend, you can implement the [`DataStore`](https://github.com/NVIDIA/NeMo-Guardrails/tree/develop/nemoguardrails/server/datastore/datastore.py) interface and register a different instance in `config.py`.
+Out-of-the-box, Theoria Guardrails has support for `MemoryStore` (useful for quick testing) and `RedisStore`. If you want to use a different backend, you can implement the [`DataStore`](https://github.com/Theoria/NeMo-Guardrails/tree/develop/theoriaguardrails/server/datastore/datastore.py) interface and register a different instance in `config.py`.
 
 ```{caution}
 to use `RedisStore` you must install `aioredis >= 2.0.1`.
@@ -160,7 +160,7 @@ POST /v1/chat/completions
 for security reasons, the `thread_id` must have a minimum length of 16 characters.
 ```
 
-As an example, check out this [configuration](https://github.com/NVIDIA/NeMo-Guardrails/tree/develop/examples/configs/threads/README.md).
+As an example, check out this [configuration](https://github.com/Theoria/NeMo-Guardrails/tree/develop/examples/configs/threads/README.md).
 
 
 #### Limitations
@@ -174,7 +174,7 @@ Threads are stored indefinitely; there is no cleanup mechanism.
 You can use the Chat UI to test a guardrails configuration quickly.
 
 ```{important}
-You should only use the Chat UI for internal testing. For a production deployment of the NeMo Guardrails server, the Chat UI should be disabled using the `--disable-chat-ui` flag.
+You should only use the Chat UI for internal testing. For a production deployment of the Theoria Guardrails server, the Chat UI should be disabled using the `--disable-chat-ui` flag.
 ```
 
 ## Actions Server
@@ -186,7 +186,7 @@ Even though highly recommended for production deployments, using an *actions ser
 ```
 
 ```sh
-nemoguardrails actions-server [--port PORT]
+theoriaguardrails actions-server [--port PORT]
 ```
 
 On startup, the actions server will automatically register all predefined actions and all actions in the current folder (including sub-folders).

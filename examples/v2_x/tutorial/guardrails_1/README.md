@@ -5,7 +5,7 @@ This examples shows how to add input rails.
 ## Example Session
 
 ```
-$ nemoguardrails chat --config=examples/v2_x/tutorial/guardrails_1
+$ theoriaguardrails chat --config=examples/v2_x/tutorial/guardrails_1
 Starting the chat (Press Ctrl + C twice to quit) ...
 
 > hi

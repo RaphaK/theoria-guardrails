@@ -2,7 +2,7 @@
 
 **EXPERIMENTAL**: Support for red teaming is still experimental and subject to change.
 
-You can use the NeMo Guardrails toolkit to run an internal red teaming process for your guardrails configurations.
+You can use the Theoria Guardrails toolkit to run an internal red teaming process for your guardrails configurations.
 
 ## Overview
 
@@ -10,7 +10,7 @@ To run a red teaming process, there are three steps involved:
 
 1. Create one or more guardrails configurations and store them in a `config` folder (see the [server guide](../user-guides/server-guide.md) for more details).
 2. Create a set of challenges (`challenges.json`) and add them to the `config` folder.
-3. Start the server `nemoguardrails server` and use the Chat UI to interact with various configurations.
+3. Start the server `theoriaguardrails server` and use the Chat UI to interact with various configurations.
 
 For a server configuration template with two guardrails configuration and a set of challenges, check out [this example](../../examples/configs/red-teaming/README.md).
 

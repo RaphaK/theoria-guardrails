@@ -1,6 +1,6 @@
 # LangChain Integration
 
-There are two main ways in which you can use NeMo Guardrails with LangChain:
+There are two main ways in which you can use Theoria Guardrails with LangChain:
 
 1. Add guardrails to a LangChain chain (or `Runnable`).
 2. Use a LangChain chain (or `Runnable`) inside a guardrails configuration.
@@ -10,8 +10,8 @@ There are two main ways in which you can use NeMo Guardrails with LangChain:
 You can easily add guardrails to a chain using the `RunnableRails` class:
 
 ```python
-from nemoguardrails import RailsConfig
-from nemoguardrails.integrations.langchain.runnable_rails import RunnableRails
+from theoriaguardrails import RailsConfig
+from theoriaguardrails.integrations.langchain.runnable_rails import RunnableRails
 
 # ... initialize `some_chain`
 
@@ -33,7 +33,7 @@ For more details, check out the [RunnableRails Guide](runnable-rails.md) and the
 To use a chain (or `Runnable`) inside a guardrails configuration, you can register it as an action.
 
 ```python
-from nemoguardrails import RailsConfig, LLMRails
+from theoriaguardrails import RailsConfig, LLMRails
 
 config = RailsConfig.from_path("path/to/config")
 rails = LLMRails(config)
@@ -54,7 +54,7 @@ For a complete example, check out the [Runnable as Action Guide](runnable-as-act
 
 ## LangSmith Integration
 
-NeMo Guardrails integrates out-of-the-box with [LangSmith](https://www.langchain.com/langsmith). To start sending trace information to LangSmith, you have to configure the following environment variables:
+Theoria Guardrails integrates out-of-the-box with [LangSmith](https://www.langchain.com/langsmith). To start sending trace information to LangSmith, you have to configure the following environment variables:
 
 ```bash
 export LANGCHAIN_TRACING_V2=true

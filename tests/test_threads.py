@@ -1,4 +1,4 @@
-# SPDX-FileCopyrightText: Copyright (c) 2023 NVIDIA CORPORATION & AFFILIATES. All rights reserved.
+# SPDX-FileCopyrightText: Copyright (c) 2023 Theoria & Affiliates. All rights reserved.
 # SPDX-License-Identifier: Apache-2.0
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,9 +17,9 @@ import os
 import pytest
 from fastapi.testclient import TestClient
 
-from nemoguardrails.server import api
-from nemoguardrails.server.api import register_datastore
-from nemoguardrails.server.datastore.memory_store import MemoryStore
+from theoriaguardrails.server import api
+from theoriaguardrails.server.api import register_datastore
+from theoriaguardrails.server.datastore.memory_store import MemoryStore
 
 register_datastore(MemoryStore())
 api.app.rails_config_path = os.path.join(
@@ -99,7 +99,7 @@ def test_thread_id(thread_id, status_code):
 
 @pytest.mark.skip(reason="Should only be run locally when Redis is available.")
 def test_with_redis():
-    from nemoguardrails.server.datastore.redis_store import RedisStore
+    from theoriaguardrails.server.datastore.redis_store import RedisStore
 
     register_datastore(RedisStore("redis://localhost/1"))
     response = client.post(

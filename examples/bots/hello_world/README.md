@@ -7,7 +7,7 @@ This guardrails configuration showcases a basic configuration that controls the 
 To test this configuration you can use the CLI Chat by running the following command from the `examples/bots/hello_world` folder:
 
 ```bash
-$ nemoguardrails chat
+$ theoriaguardrails chat
 ```
 
 ```

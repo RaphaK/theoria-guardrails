@@ -1,4 +1,4 @@
-# SPDX-FileCopyrightText: Copyright (c) 2023 NVIDIA CORPORATION & AFFILIATES. All rights reserved.
+# SPDX-FileCopyrightText: Copyright (c) 2023 Theoria & Affiliates. All rights reserved.
 # SPDX-License-Identifier: Apache-2.0
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -22,13 +22,13 @@ EXAMPLES_FOLDER = os.path.join(os.path.dirname(os.path.dirname(__file__)), "exam
 
 
 def create_chatter(name, configname, logger):
-    """Create a NeMo Guardrails chatter specified with the configuration"""
+    """Create a Theoria Guardrails chatter specified with the configuration"""
     chatter = None
     cwd = os.path.join(EXAMPLES_FOLDER, configname)
     config = os.path.join(EXAMPLES_FOLDER, configname)
     logger.info(f"config: {config}")
     try:
-        command = ["nemoguardrails", "chat", f"--config={config}"]
+        command = ["theoriaguardrails", "chat", f"--config={config}"]
         chatter = subprocess.Popen(
             command,
             cwd=cwd,

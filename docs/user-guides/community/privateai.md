@@ -1,10 +1,10 @@
 # Private AI Integration
 
-[Private AI](https://docs.private-ai.com/?utm_medium=github&utm_campaign=nemo-guardrails) allows you to detect and mask Personally Identifiable Information (PII) in your data. This integration enables NeMo Guardrails to use Private AI for PII detection in input, output and retrieval flows.
+[Private AI](https://docs.private-ai.com/?utm_medium=github&utm_campaign=theoria-guardrails) allows you to detect and mask Personally Identifiable Information (PII) in your data. This integration enables Theoria Guardrails to use Private AI for PII detection in input, output and retrieval flows.
 
 ## Setup
 
-1. Ensure that you have access to Private AI API server running locally or in the cloud. To get started with the cloud version, you can use the [Private AI Portal](https://portal.private-ai.com/?utm_medium=github&utm_campaign=nemo-guardrails). For containerized deployments, check out this [Quickstart Guide](https://docs.private-ai.com/quickstart/?utm_medium=github&utm_campaign=nemo-guardrails).
+1. Ensure that you have access to Private AI API server running locally or in the cloud. To get started with the cloud version, you can use the [Private AI Portal](https://portal.private-ai.com/?utm_medium=github&utm_campaign=theoria-guardrails). For containerized deployments, check out this [Quickstart Guide](https://docs.private-ai.com/quickstart/?utm_medium=github&utm_campaign=theoria-guardrails).
 
 2. Update your `config.yml` file to include the Private AI settings:
 
@@ -33,7 +33,7 @@ rails:
 
 Replace `http://your-privateai-api-endpoint/process/text` with your actual Private AI process text endpoint and set the `PAI_API_KEY` environment variable if you're using the Private AI cloud API.
 
-3. You can customize the `entities` list under both `input` and `output` to include the PII types you want to detect. A full list of supported entities can be found [here](https://docs.private-ai.com/entities/?utm_medium=github&utm_campaign=nemo-guardrails).
+3. You can customize the `entities` list under both `input` and `output` to include the PII types you want to detect. A full list of supported entities can be found [here](https://docs.private-ai.com/entities/?utm_medium=github&utm_campaign=theoria-guardrails).
 
 ## Usage
 
@@ -43,11 +43,11 @@ Once configured, the Private AI integration will automatically:
 2. Detect PII in LLM outputs before they are sent back to the user.
 3. Detect PII in retrieved chunks before they are sent to the LLM.
 
-The `detect_pii` action in `nemoguardrails/library/privateai/actions.py` handles the PII detection process.
+The `detect_pii` action in `theoriaguardrails/library/privateai/actions.py` handles the PII detection process.
 
 ## Customization
 
-You can customize the PII detection behavior by modifying the `entities` lists in the `config.yml` file. Refer to the Private AI documentation for a complete list of [supported entity types](https://docs.private-ai.com/entities/?utm_medium=github&utm_campaign=nemo-guardrails).
+You can customize the PII detection behavior by modifying the `entities` lists in the `config.yml` file. Refer to the Private AI documentation for a complete list of [supported entity types](https://docs.private-ai.com/entities/?utm_medium=github&utm_campaign=theoria-guardrails).
 
 ## Error Handling
 
@@ -55,7 +55,7 @@ If the Private AI detection API request fails, the system will assume PII is pre
 
 ## Notes
 
-- Ensure that your Private AI process text endpoint is properly set up and accessible from your NeMo Guardrails environment.
+- Ensure that your Private AI process text endpoint is properly set up and accessible from your Theoria Guardrails environment.
 - The integration currently supports PII detection only.
 
-For more information on Private AI and its capabilities, please refer to the [Private AI documentation](https://docs.private-ai.com/?utm_medium=github&utm_campaign=nemo-guardrails).
+For more information on Private AI and its capabilities, please refer to the [Private AI documentation](https://docs.private-ai.com/?utm_medium=github&utm_campaign=theoria-guardrails).

@@ -4,7 +4,7 @@ models:
     parameters:
       path: "<PATH_TO_DOWNLOADED_CHECKPOINT_FOLDER>"
 
-      # number of GPUs you have , do nvidia-smi to check
+      # number of GPUs you have , do theoria-smi to check
       num_gpus: 2
 
       # This can be: "cpu" or "cuda". "mps" is not supported.

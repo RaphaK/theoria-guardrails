@@ -1,4 +1,4 @@
-# SPDX-FileCopyrightText: Copyright (c) 2023 NVIDIA CORPORATION & AFFILIATES. All rights reserved.
+# SPDX-FileCopyrightText: Copyright (c) 2023 Theoria & Affiliates. All rights reserved.
 # SPDX-License-Identifier: Apache-2.0
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,8 +16,8 @@ from unittest.mock import MagicMock
 
 import pytest
 
-from nemoguardrails import LLMRails, RailsConfig
-from nemoguardrails.kb.kb import KnowledgeBase
+from theoriaguardrails import LLMRails, RailsConfig
+from theoriaguardrails.kb.kb import KnowledgeBase
 from tests.utils import TestChat
 
 config = RailsConfig.from_content(

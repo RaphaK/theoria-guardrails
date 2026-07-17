@@ -26,5 +26,5 @@ test:
         - pip install --cache-dir .cache/pip .[dev]
         - pip install -e .[sdd]
     script:
-        - python -m pytest --cov=./nemoguardrails --cov=./examples --no-cov-on-fail --cov-fail-under=55
+        - python -m pytest --cov=./theoriaguardrails --cov=./examples --no-cov-on-fail --cov-fail-under=55
     coverage: /(?i)total.*? (100(?:\.0+)?\%|[1-9]?\d(?:\.\d+)?\%)$/

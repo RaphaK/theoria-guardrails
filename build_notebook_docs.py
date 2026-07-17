@@ -1,4 +1,4 @@
-# SPDX-FileCopyrightText: Copyright (c) 2023 NVIDIA CORPORATION & AFFILIATES. All rights reserved.
+# SPDX-FileCopyrightText: Copyright (c) 2023 Theoria & Affiliates. All rights reserved.
 # SPDX-License-Identifier: Apache-2.0
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -90,7 +90,7 @@ def _fix_prefix_and_type_in_code_blocks(md_file_path):
             except:
                 pass
 
-        if lines[0] == "```" and "from nemoguardrails" in block:
+        if lines[0] == "```" and "from theoriaguardrails" in block:
             lines[0] = "```python"
             updated_block = "\n".join(lines)
             content = content.replace(block, updated_block)

@@ -24,18 +24,18 @@ jobs:
       - name: Build Wheel
         run: |
           pip install build
-          cp -r chat-ui nemoguardrails/chat-ui
-          cp -r examples nemoguardrails/examples
+          cp -r chat-ui theoriaguardrails/chat-ui
+          cp -r examples theoriaguardrails/examples
           python -m build --wheel
-          rm -r nemoguardrails/chat-ui
-          rm -r nemoguardrails/examples
+          rm -r theoriaguardrails/chat-ui
+          rm -r theoriaguardrails/examples
           echo "WHEEL_FILE=$(ls dist/*.whl)" >> $GITHUB_ENV
 
       - name: Upload Artifact
         uses: actions/upload-artifact@v4
         with:
-          name: nemoguardrails-${{ env.VERSION }}.whl
-          path: dist/nemoguardrails-${{ env.VERSION }}-py3-none-any.whl
+          name: theoriaguardrails-${{ env.VERSION }}.whl
+          path: dist/theoriaguardrails-${{ env.VERSION }}-py3-none-any.whl
 
   test-wheel:
     needs: build-wheel
@@ -57,12 +57,12 @@ jobs:
       - name: Download Artifact
         uses: actions/download-artifact@v4
         with:
-          name: nemoguardrails-${{ env.VERSION }}.whl
+          name: theoriaguardrails-${{ env.VERSION }}.whl
 
       - name: Install Wheel
         run: |
-          pip install nemoguardrails-${{ env.VERSION }}-py3-none-any.whl
-          pip install nemoguardrails-${{ env.VERSION }}-py3-none-any.whl[dev]
+          pip install theoriaguardrails-${{ env.VERSION }}-py3-none-any.whl
+          pip install theoriaguardrails-${{ env.VERSION }}-py3-none-any.whl[dev]
 
       - name: Test with pytest
         run: |
@@ -72,7 +72,7 @@ jobs:
 
       - name: Start server in the background
         run: |
-          nemoguardrails server &
+          theoriaguardrails server &
           echo "SERVER_PID=$!" >> $GITHUB_ENV
 
       - name: Wait for server to be up

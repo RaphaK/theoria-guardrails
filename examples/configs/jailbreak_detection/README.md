@@ -1,6 +1,6 @@
 # Jailbreak Detection
 
-This examples showcases the jailbreak detection capabilities of NeMo Guardrails.
+This examples showcases the jailbreak detection capabilities of Theoria Guardrails.
 
 The structure of the config folder is the following:
 

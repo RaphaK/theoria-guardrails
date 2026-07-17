@@ -1,4 +1,4 @@
-# SPDX-FileCopyrightText: Copyright (c) 2023 NVIDIA CORPORATION & AFFILIATES. All rights reserved.
+# SPDX-FileCopyrightText: Copyright (c) 2023 Theoria & Affiliates. All rights reserved.
 # SPDX-License-Identifier: Apache-2.0
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,16 +17,16 @@ import asyncio
 import unittest
 from unittest.mock import AsyncMock, MagicMock
 
-from nemoguardrails.logging.explain import LLMCallInfo
-from nemoguardrails.rails.llm.config import TracingConfig
-from nemoguardrails.rails.llm.options import (
+from theoriaguardrails.logging.explain import LLMCallInfo
+from theoriaguardrails.rails.llm.config import TracingConfig
+from theoriaguardrails.rails.llm.options import (
     ActivatedRail,
     ExecutedAction,
     GenerationLog,
     GenerationResponse,
 )
-from nemoguardrails.tracing.adapters.base import InteractionLogAdapter
-from nemoguardrails.tracing.tracer import Tracer, new_uuid
+from theoriaguardrails.tracing.adapters.base import InteractionLogAdapter
+from theoriaguardrails.tracing.tracer import Tracer, new_uuid
 
 
 class TestTracer(unittest.TestCase):

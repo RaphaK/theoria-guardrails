@@ -1,4 +1,4 @@
-# SPDX-FileCopyrightText: Copyright (c) 2023 NVIDIA CORPORATION & AFFILIATES. All rights reserved.
+# SPDX-FileCopyrightText: Copyright (c) 2023 Theoria & Affiliates. All rights reserved.
 # SPDX-License-Identifier: Apache-2.0
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,9 +17,9 @@ from langchain.prompts import PromptTemplate
 from langchain_core.language_models.llms import BaseLLM
 from langchain_core.output_parsers import StrOutputParser
 
-from nemoguardrails import LLMRails
-from nemoguardrails.actions.actions import ActionResult
-from nemoguardrails.kb.kb import KnowledgeBase
+from theoriaguardrails import LLMRails
+from theoriaguardrails.actions.actions import ActionResult
+from theoriaguardrails.kb.kb import KnowledgeBase
 
 TEMPLATE = """Use the following pieces of context to answer the question at the end.
 If you don't know the answer, just say that you don't know, don't try to make up an answer.

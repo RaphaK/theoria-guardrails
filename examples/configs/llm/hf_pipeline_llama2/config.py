@@ -1,4 +1,4 @@
-# SPDX-FileCopyrightText: Copyright (c) 2023 NVIDIA CORPORATION & AFFILIATES. All rights reserved.
+# SPDX-FileCopyrightText: Copyright (c) 2023 Theoria & Affiliates. All rights reserved.
 # SPDX-License-Identifier: Apache-2.0
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -18,9 +18,9 @@ import os.path
 import torch
 from transformers import AutoModelForCausalLM, AutoTokenizer, pipeline
 
-from nemoguardrails import LLMRails, RailsConfig
-from nemoguardrails.llm.helpers import get_llm_instance_wrapper
-from nemoguardrails.llm.providers import (
+from theoriaguardrails import LLMRails, RailsConfig
+from theoriaguardrails.llm.helpers import get_llm_instance_wrapper
+from theoriaguardrails.llm.providers import (
     HuggingFacePipelineCompatible,
     register_llm_provider,
 )

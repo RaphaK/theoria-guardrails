@@ -1,5 +1,5 @@
 define user ask about guardrails
-  "What is NeMo Guardrails?"
+  "What is Theoria Guardrails?"
 
 define flow answer guardrails question
   user ask about guardrails

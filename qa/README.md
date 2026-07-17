@@ -1,6 +1,6 @@
 # QA Started
 
-This is a QA started guide for using automated tests to test all the examples in `nemoguardrails/examples/_deprecated` folder. This guide will cover:
+This is a QA started guide for using automated tests to test all the examples in `theoriaguardrails/examples/_deprecated` folder. This guide will cover:
 
 1. Software installation prerequisites;
 2. Running automated tests;
@@ -14,9 +14,9 @@ This is a QA started guide for using automated tests to test all the examples in
  > pip install -U scikit-learn
  ```
 
-## Running automated tests to test all the examples in `nemoguardrails/examples/_deprecated` folder.
+## Running automated tests to test all the examples in `theoriaguardrails/examples/_deprecated` folder.
 
-Please refer to the [installation guide](installation-guide.md) for instructions on how to install the NeMo Guardrails toolkit.
+Please refer to the [installation guide](installation-guide.md) for instructions on how to install the Theoria Guardrails toolkit.
 
 1. Make sure that you have the `OPENAI_API_KEY` and `WOLFRAM_ALPHA_APP_ID` environment variables set.
 
@@ -25,7 +25,7 @@ Please refer to the [installation guide](installation-guide.md) for instructions
  > export WOLFRAM_ALPHA_APP_ID=...
  ```
 
-2. Change the directory to `nemoguardrails/qa` folder, and then run all the automated tests
+2. Change the directory to `theoriaguardrails/qa` folder, and then run all the automated tests
 
  ```bash
  > QA=True python -m pytest test_*.py

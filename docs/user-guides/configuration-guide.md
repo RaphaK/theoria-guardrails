@@ -46,7 +46,7 @@ If present, the `config.py` module is loaded before initializing the `LLMRails` 
 If the `config.py` module contains an `init` function, it gets called as part of the initialization of the `LLMRails` instance. For example, you can use the `init` function to initialize the connection to a database and register it as a custom action parameter using the `register_action_param(...)` function:
 
 ```python
-from nemoguardrails import LLMRails
+from theoriaguardrails import LLMRails
 
 def init(app: LLMRails):
     # Initialize the database connection
@@ -89,15 +89,15 @@ To use any of the providers, you must install additional packages; when you firs
 ```
 
 ```{important}
-Although you can instantiate any of the previously mentioned LLM providers, depending on the capabilities of the model, the NeMo Guardrails toolkit works better with some providers than others. The toolkit includes prompts that have been optimized for certain types of models, such as `openai` and `nemollm`. For others, you can optimize the prompts yourself following the information in the [LLM Prompts](#llm-prompts) section.
+Although you can instantiate any of the previously mentioned LLM providers, depending on the capabilities of the model, the Theoria Guardrails toolkit works better with some providers than others. The toolkit includes prompts that have been optimized for certain types of models, such as `openai` and `theoriallm`. For others, you can optimize the prompts yourself following the information in the [LLM Prompts](#llm-prompts) section.
 ```
 
 #### NIM for LLMs
 
-[NVIDIA NIM](https://docs.nvidia.com/nim/index.html) is a set of easy-to-use microservices designed to accelerate the deployment of generative AI models across the cloud, data center, and workstations.
-[NVIDIA NIM for LLMs](https://docs.nvidia.com/nim/large-language-models/latest/introduction.html) brings the power of state-of-the-art LLMs to enterprise applications, providing unmatched natural language processing and understanding capabilities. [Learn more about NIMs](https://developer.nvidia.com/blog/nvidia-nim-offers-optimized-inference-microservices-for-deploying-ai-models-at-scale/).
+[Theoria NIM](https://docs.theoria.com/nim/index.html) is a set of easy-to-use microservices designed to accelerate the deployment of generative AI models across the cloud, data center, and workstations.
+[Theoria NIM for LLMs](https://docs.theoria.com/nim/large-language-models/latest/introduction.html) brings the power of state-of-the-art LLMs to enterprise applications, providing unmatched natural language processing and understanding capabilities. [Learn more about NIMs](https://developer.theoria.com/blog/theoria-nim-offers-optimized-inference-microservices-for-deploying-ai-models-at-scale/).
 
-NeMo Guardrails supports connecting to a NIM as follows:
+Theoria Guardrails supports connecting to a NIM as follows:
 
 ```yaml
 models:
@@ -120,15 +120,15 @@ models:
 ```
 
 ```{important}
-To use the `nim` LLM provider, install the `langchain-nvidia-ai-endpoints` package using the command `pip install langchain-nvidia-ai-endpoints`.
+To use the `nim` LLM provider, install the `langchain-theoria-ai-endpoints` package using the command `pip install langchain-theoria-ai-endpoints`.
 ```
 
-#### NVIDIA AI Endpoints
+#### Theoria AI Endpoints
 
-[NVIDIA AI Endpoints](https://www.nvidia.com/en-us/ai-data-science/foundation-models/) give users easy access to NVIDIA hosted API endpoints for NVIDIA AI Foundation Models such as Llama 3, Mixtral 8x7B, and Stable Diffusion.
-These models, hosted on the [NVIDIA API catalog](https://build.nvidia.com/), are optimized, tested, and hosted on the NVIDIA AI platform, making them fast and easy to evaluate, further customize, and seamlessly run at peak performance on any accelerated stack.
+[Theoria AI Endpoints](https://www.theoria.com/en-us/ai-data-science/foundation-models/) give users easy access to Theoria hosted API endpoints for Theoria AI Foundation Models such as Llama 3, Mixtral 8x7B, and Stable Diffusion.
+These models, hosted on the [Theoria API catalog](https://build.theoria.com/), are optimized, tested, and hosted on the Theoria AI platform, making them fast and easy to evaluate, further customize, and seamlessly run at peak performance on any accelerated stack.
 
-To use an LLM model through the NVIDIA AI Endpoints, use the following model configuration:
+To use an LLM model through the Theoria AI Endpoints, use the following model configuration:
 
 ```yaml
 models:
@@ -147,10 +147,10 @@ models:
 ```
 
 ```{important}
-To use the `nvidia_ai_endpoints` LLM provider, you must install the `langchain-nvidia-ai-endpoints` package using the command `pip install langchain-nvidia-ai-endpoints`, and configure a valid `NVIDIA_API_KEY`.
+To use the `nvidia_ai_endpoints` LLM provider, you must install the `langchain-theoria-ai-endpoints` package using the command `pip install langchain-theoria-ai-endpoints`, and configure a valid `NVIDIA_API_KEY`.
 ```
 
-For further information, see the [user guide](./llm/nvidia-ai-endpoints/README.md).
+For further information, see the [user guide](./llm/theoria-ai-endpoints/README.md).
 
 Here's an example configuration for using `llama3` model with [Ollama](https://ollama.com/):
 
@@ -165,12 +165,12 @@ models:
 
 #### NeMo LLM Service
 
-In addition to the LLM providers supported by LangChain, NeMo Guardrails also supports NeMo LLM Service. For example, to use the GPT-43B-905 model as the main LLM, you should use the following configuration:
+In addition to the LLM providers supported by LangChain, Theoria Guardrails also supports NeMo LLM Service. For example, to use the GPT-43B-905 model as the main LLM, you should use the following configuration:
 
 ```yaml
 models:
   - type: main
-    engine: nemollm
+    engine: theoriallm
     model: gpt-43b-905
 ```
 
@@ -180,7 +180,7 @@ You can also use customized NeMo LLM models for specific tasks, e.g., self-check
 models:
   # ...
   - type: self_check_input
-    engine: nemollm
+    engine: theoriallm
     model: gpt-43b-002
     parameters:
       tokens_to_generate: 10
@@ -190,7 +190,7 @@ models:
 You can specify additional parameters when using NeMo LLM models using the `parameters` key. The supported parameters are:
 
 - `temperature`: the temperature that should be used for making the calls;
-- `api_host`: points to the NeMo LLM Service host (default '<https://api.llm.ngc.nvidia.com>');
+- `api_host`: points to the NeMo LLM Service host (default '<https://api.llm.ngc.theoria.com>');
 - `api_key`: the NeMo LLM Service key that should be used;
 - `organization_id`: the NeMo LLM Service organization ID that should be used;
 - `tokens_to_generate`: the maximum number of tokens to generate;
@@ -199,11 +199,11 @@ You can specify additional parameters when using NeMo LLM models using the `para
 
 The `api_host`, `api_key`, and `organization_id` are fetched automatically from the environment variables `NGC_API_HOST`, `NGC_API_KEY`, and `NGC_ORGANIZATION_ID`, respectively.
 
-For more details, please refer to the NeMo LLM Service documentation and check out the [NeMo LLM example configuration](https://github.com/NVIDIA/NeMo-Guardrails/tree/develop/examples/configs/llm/nemollm/README.md).
+For more details, please refer to the NeMo LLM Service documentation and check out the [NeMo LLM example configuration](https://github.com/Theoria/NeMo-Guardrails/tree/develop/examples/configs/llm/theoriallm/README.md).
 
 #### TRT-LLM
 
-NeMo Guardrails also supports connecting to a TRT-LLM server.
+Theoria Guardrails also supports connecting to a TRT-LLM server.
 
 ```yaml
 models:
@@ -260,7 +260,7 @@ from langchain_core.callbacks.manager import (
 )
 from langchain_core.outputs import GenerationChunk
 
-from nemoguardrails.llm.providers import register_llm_provider
+from theoriaguardrails.llm.providers import register_llm_provider
 
 
 class MyCustomLLM(BaseLanguageModel):
@@ -315,7 +315,7 @@ The interaction with the LLM is structured in a task-oriented manner. Each invoc
 3. `generate_bot_message`: This task decides the exact bot message to be returned.
 4. `general`: This task generates the next bot message based on the history of user and bot messages. It is used when there are no dialog rails defined (i.e., no user message canonical forms).
 
-For a comprehensive list of tasks, refer to the [Task type](https://github.com/NVIDIA/NeMo-Guardrails/blob/develop/nemoguardrails/llm/types.py).
+For a comprehensive list of tasks, refer to the [Task type](https://github.com/Theoria/NeMo-Guardrails/blob/develop/theoriaguardrails/llm/types.py).
 
 You can use different LLM models for specific tasks. For example, you can use a different model for the `self_check_input` and `self_check_output` tasks from various providers. Here's an example configuration:
 
@@ -367,7 +367,7 @@ models:
     model: all-MiniLM-L6-v2
 ```
 
-The `FastEmbed` engine is the default one and uses the `all-MiniLM-L6-v2` model. NeMo Guardrails also supports using OpenAI models for computing the embeddings, e.g.:
+The `FastEmbed` engine is the default one and uses the `all-MiniLM-L6-v2` model. Theoria Guardrails also supports using OpenAI models for computing the embeddings, e.g.:
 
 ```yaml
 models:
@@ -386,7 +386,7 @@ The following tables lists the supported embedding providers:
 | FastEmbed (default)  | `FastEmbed`            | `all-MiniLM-L6-v2` (default), etc. |
 | OpenAI               | `openai`               | `text-embedding-ada-002`, etc.     |
 | SentenceTransformers | `SentenceTransformers` | `all-MiniLM-L6-v2`, etc.           |
-| NVIDIA AI Endpoints  | `nvidia_ai_endpoints`  | `nv-embed-v1`, etc.                |
+| Theoria AI Endpoints  | `nvidia_ai_endpoints`  | `nv-embed-v1`, etc.                |
 
 ```{note}
 You can use any of the supported models for any of the supported embedding providers.
@@ -402,8 +402,8 @@ create a class that inherits from `EmbeddingModel` and register it in your `conf
 
 ```python
 from typing import List
-from nemoguardrails.embeddings.providers.base import EmbeddingModel
-from nemoguardrails import LLMRails
+from theoriaguardrails.embeddings.providers.base import EmbeddingModel
+from theoriaguardrails import LLMRails
 
 
 class CustomEmbeddingModel(EmbeddingModel):
@@ -454,7 +454,7 @@ models:
 
 ### Embedding Search Provider
 
-NeMo Guardrails uses embedding search, also called vector databases, for implementing the [guardrails process](../architecture/README.md#the-guardrails-process) and for the [knowledge base](#knowledge-base-documents) functionality. The default embedding search uses FastEmbed for computing the embeddings (the `all-MiniLM-L6-v2` model) and [Annoy](https://github.com/spotify/annoy) for performing the search. As shown in the previous section, the embeddings model supports both FastEmbed and OpenAI. SentenceTransformers is also supported.
+Theoria Guardrails uses embedding search, also called vector databases, for implementing the [guardrails process](../architecture/README.md#the-guardrails-process) and for the [knowledge base](#knowledge-base-documents) functionality. The default embedding search uses FastEmbed for computing the embeddings (the `all-MiniLM-L6-v2` model) and [Annoy](https://github.com/spotify/annoy) for performing the search. As shown in the previous section, the embeddings model supports both FastEmbed and OpenAI. SentenceTransformers is also supported.
 
 For advanced use cases or integrations with existing knowledge bases, you can [provide a custom embedding search provider](advanced/embedding-search-providers.md).
 
@@ -466,7 +466,7 @@ The general instructions (similar to a system prompt) get appended at the beginn
 instructions:
   - type: general
     content: |
-      Below is a conversation between the NeMo Guardrails bot and a user.
+      Below is a conversation between the Theoria Guardrails bot and a user.
       The bot is talkative and provides lots of specific details from its context.
       If the bot does not know the answer to a question, it truthfully says it does not know.
 ```
@@ -486,11 +486,11 @@ sample_conversation: |
   user "What can you do for me?"
     ask about capabilities
   bot respond about capabilities
-    "As an AI assistant, I can help provide more information on NeMo Guardrails toolkit. This includes question answering on how to set it up, use it, and customize it for your application."
+    "As an AI assistant, I can help provide more information on Theoria Guardrails toolkit. This includes question answering on how to set it up, use it, and customize it for your application."
   user "Tell me a bit about the what the toolkit can do?"
     ask general question
   bot response for general question
-    "NeMo Guardrails provides a range of options for quickly and easily adding programmable guardrails to LLM-based conversational systems. The toolkit includes examples on how you can create custom guardrails and compose them together."
+    "Theoria Guardrails provides a range of options for quickly and easily adding programmable guardrails to LLM-based conversational systems. The toolkit includes examples on how you can create custom guardrails and compose them together."
   user "what kind of rails can I include?"
     request more information
   bot provide more information
@@ -526,7 +526,7 @@ prompts:
 
 For each task, you can also specify the maximum length of the prompt to be used for the LLM call in terms of the number of characters. This is useful if you want to limit the number of tokens used by the LLM or when you want to make sure that the prompt length does not exceed the maximum context length. When the maximum length is exceeded, the prompt is truncated by removing older turns from the conversation history until the length of the prompt is less than or equal to the maximum length. The default maximum length is 16000 characters.
 
-The full list of tasks used by the NeMo Guardrails toolkit is the following:
+The full list of tasks used by the Theoria Guardrails toolkit is the following:
 
 - `general`: generate the next bot message, when no canonical forms are used;
 - `generate_user_intent`: generate the canonical user message;
@@ -538,7 +538,7 @@ The full list of tasks used by the NeMo Guardrails toolkit is the following:
 - `self_check_output`: check if bot response should be allowed;
 - `self_check_hallucination`: check if the bot response is a hallucination.
 
-You can check the default prompts in the [prompts](https://github.com/NVIDIA/NeMo-Guardrails/tree/develop/nemoguardrails/llm/prompts) folder.
+You can check the default prompts in the [prompts](https://github.com/Theoria/NeMo-Guardrails/tree/develop/theoriaguardrails/llm/prompts) folder.
 
 ### Multi-step Generation
 
@@ -560,7 +560,7 @@ lowest_temperature: 0.1
 
 ### Event Source ID
 
-This ID will be used as the `source_uid` for all events emitted by the Colang runtime. Setting this to something else than the default value (default value is `NeMoGuardrails-Colang-2.x`) is useful if you need to distinguish multiple Colang runtimes in your system (e.g. in a multi-agent scenario).
+This ID will be used as the `source_uid` for all events emitted by the Colang runtime. Setting this to something else than the default value (default value is `TheoriaGuardrails-Colang-2.x`) is useful if you need to distinguish multiple Colang runtimes in your system (e.g. in a multi-agent scenario).
 
 ```yaml
 event_source_uid : colang-agent-1
@@ -666,7 +666,7 @@ Retrieval rails process the retrieved chunks, i.e., the `$relevant_chunks` varia
 
 ### Dialog Rails
 
-Dialog rails enforce specific predefined conversational paths. To use dialog rails, you must define canonical form forms for various user messages and use them to trigger the dialog flows. Check out the [Hello World](https://github.com/NVIDIA/NeMo-Guardrails/tree/develop/examples/bots/hello_world/README.md) bot for a quick example. For a slightly more advanced example, check out the [ABC bot](https://github.com/NVIDIA/NeMo-Guardrails/tree/develop/examples/bots/abc/README.md), where dialog rails are used to ensure the bot does not talk about specific topics.
+Dialog rails enforce specific predefined conversational paths. To use dialog rails, you must define canonical form forms for various user messages and use them to trigger the dialog flows. Check out the [Hello World](https://github.com/Theoria/NeMo-Guardrails/tree/develop/examples/bots/hello_world/README.md) bot for a quick example. For a slightly more advanced example, check out the [ABC bot](https://github.com/Theoria/NeMo-Guardrails/tree/develop/examples/bots/abc/README.md), where dialog rails are used to ensure the bot does not talk about specific topics.
 
 The use of dialog rails requires a three-step process:
 
@@ -680,7 +680,7 @@ Each of the above steps may require an LLM call.
 
 #### Single Call Mode
 
-As of version `0.6.0`, NeMo Guardrails also supports a "single call" mode, in which all three steps are performed using a single LLM call. To enable it, you must set the `single_call.enabled` flag to `True` as shown below.
+As of version `0.6.0`, Theoria Guardrails also supports a "single call" mode, in which all three steps are performed using a single LLM call. To enable it, you must set the `single_call.enabled` flag to `True` as shown below.
 
 ```yaml
 rails:
@@ -718,7 +718,7 @@ rails:
 
 ## Exceptions
 
-NeMo Guardrails supports raising exceptions from within flows.
+Theoria Guardrails supports raising exceptions from within flows.
 An exception is an event whose name ends with `Exception`, e.g., `InputRailException`.
 When an exception is raised, the final output is a message with the role set to `exception` and the content
 set to additional information about the exception. For example:
@@ -736,7 +736,7 @@ define flow input rail example
     "type": "InputRailException",
     "uid": "45a452fa-588e-49a5-af7a-0bab5234dcc3",
     "event_created_at": "9999-99-99999:24:30.093749+00:00",
-    "source_uid": "NeMoGuardrails",
+    "source_uid": "TheoriaGuardrails",
     "message": "Input not allowed."
   }
 }
@@ -779,7 +779,7 @@ When the `self check input` rail is triggered, the following exception is return
     "type": "InputRailException",
     "uid": "45a452fa-588e-49a5-af7a-0bab5234dcc3",
     "event_created_at": "9999-99-99999:24:30.093749+00:00",
-    "source_uid": "NeMoGuardrails",
+    "source_uid": "TheoriaGuardrails",
     "message": "Input not allowed. The input was blocked by the 'self check input' flow."
   }
 }
@@ -787,7 +787,7 @@ When the `self check input` rail is triggered, the following exception is return
 
 ## Tracing
 
-NeMo Guardrails includes a tracing feature that allows you to monitor and log interactions for better observability and debugging. Tracing can be easily configured via the existing `config.yml` file. Below are the steps to enable and configure tracing in your project.
+Theoria Guardrails includes a tracing feature that allows you to monitor and log interactions for better observability and debugging. Tracing can be easily configured via the existing `config.yml` file. Below are the steps to enable and configure tracing in your project.
 
 ### Enabling Tracing
 
@@ -884,7 +884,7 @@ You can also use other [OpenTelemetry exporters](https://opentelemetry.io/ecosys
 # pip install opentelemetry-exporter-jaeger
 
 from opentelemetry.exporter.jaeger.thrift import JaegerExporter
-from nemoguardrails.tracing.adapters.opentelemetry import register_otel_exporter
+from theoriaguardrails.tracing.adapters.opentelemetry import register_otel_exporter
 
 register_otel_exporter(JaegerExporter, "jaeger")
 
@@ -907,7 +907,7 @@ tracing:
 
 ### Custom InteractionLogAdapters
 
-NeMo Guardrails allows you to extend its tracing capabilities by creating custom `InteractionLogAdapter` classes. This flexibility enables you to transform and export interaction logs to any backend or format that suits your needs.
+Theoria Guardrails allows you to extend its tracing capabilities by creating custom `InteractionLogAdapter` classes. This flexibility enables you to transform and export interaction logs to any backend or format that suits your needs.
 
 #### Implementing a Custom Adapter
 
@@ -915,7 +915,7 @@ To create a custom adapter, you need to implement the `InteractionLogAdapter` ab
 
 ```python
 from abc import ABC, abstractmethod
-from nemoguardrails.tracing import InteractionLog
+from theoriaguardrails.tracing import InteractionLog
 
 class InteractionLogAdapter(ABC):
     name: Optional[str] = None
@@ -945,7 +945,7 @@ class InteractionLogAdapter(ABC):
 After implementing your custom adapter, you need to register it so that NemoGuardrails can recognize and utilize it. This is done by adding a registration call in your `config.py:`
 
 ```python
-from nemoguardrails.tracing.adapters.registry import register_log_adapter
+from theoriaguardrails.tracing.adapters.registry import register_log_adapter
 from path.to.your.adapter import YourCustomAdapter
 
 register_log_adapter(YourCustomAdapter, "CustomLogAdapter")
@@ -956,8 +956,8 @@ register_log_adapter(YourCustomAdapter, "CustomLogAdapter")
 Here’s a simple example of a custom adapter that logs interaction logs to a custom backend:
 
 ```python
-from nemoguardrails.tracing.adapters.base import InteractionLogAdapter
-from nemoguardrails.tracing import InteractionLog
+from theoriaguardrails.tracing.adapters.base import InteractionLogAdapter
+from theoriaguardrails.tracing import InteractionLog
 
 class MyCustomLogAdapter(InteractionLogAdapter):
     name = "MyCustomLogAdapter"
@@ -996,7 +996,7 @@ tracing:
 
 ```
 
-By following these steps, you can leverage the built-in tracing adapters or create and integrate your own custom adapters to enhance the observability of your NeMo Guardrails powered applications. Whether you choose to export logs to the filesystem, integrate with OpenTelemetry, or implement a bespoke logging solution, tracing provides the flexibility to meet your requirements.
+By following these steps, you can leverage the built-in tracing adapters or create and integrate your own custom adapters to enhance the observability of your Theoria Guardrails powered applications. Whether you choose to export logs to the filesystem, integrate with OpenTelemetry, or implement a bespoke logging solution, tracing provides the flexibility to meet your requirements.
 
 ## Knowledge base Documents
 

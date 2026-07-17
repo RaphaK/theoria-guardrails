@@ -5,7 +5,7 @@ Unknown user inputs will be tried to be matched to an existing user intent or al
 ## Example Session
 
 ```
-$ nemoguardrails chat --config=examples/v2_x/tutorial/interaction_loop/
+$ theoriaguardrails chat --config=examples/v2_x/tutorial/interaction_loop/
 Starting the chat (Press Ctrl + C twice to quit) ...
 
 > hi

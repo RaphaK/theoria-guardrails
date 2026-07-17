@@ -29,14 +29,14 @@ nest_asyncio.apply()
 There are two modes in which you can use a guardrails configuration in conjunction with RAG:
 
 1. **Relevant Chunks**: perform the retrieval yourself and pass the **relevant chunks** directly to the `generate` method.
-2. **Knowledge Base**: configure a **knowledge base** directly into the guardrails configuration and let NeMo Guardrails manage the retrieval part.
+2. **Knowledge Base**: configure a **knowledge base** directly into the guardrails configuration and let Theoria Guardrails manage the retrieval part.
 
 ### Relevant Chunks
 
 In the previous guide, the message "How many free vacation days do I have per year" yields a general response:
 
 ```python
-from nemoguardrails import RailsConfig, LLMRails
+from theoriaguardrails import RailsConfig, LLMRails
 
 config = RailsConfig.from_path("./config")
 rails = LLMRails(config)
@@ -109,6 +109,6 @@ This guide introduced how a guardrails configuration can be used in the context 
 
 ## Next
 
-To continue learning about NeMo Guardrails, check out:
+To continue learning about Theoria Guardrails, check out:
 1. [Guardrails Library](../../../docs/user-guides/guardrails-library.md).
 2. [Configuration Guide](../../../docs/user-guides/configuration-guide.md).

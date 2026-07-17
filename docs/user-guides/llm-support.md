@@ -1,6 +1,6 @@
 # LLM Support
 
-We aim to provide support in NeMo Guardrails for a wide range of LLMs from different providers,
+We aim to provide support in Theoria Guardrails for a wide range of LLMs from different providers,
 with a focus on open models.
 However, due to the complexity of the tasks required for employing dialog rails and most of the predefined
 input and output rails (e.g. moderation or  fact-checking), not all LLMs are capable enough to be used.
@@ -17,10 +17,10 @@ Any new LLM available in Guardrails should be evaluated using at least this set 
 
 ## LLM Support and Guidance
 
-The following tables summarize the LLM support for the main features of NeMo Guardrails, focusing on the different rails available out of the box.
-If you want to use an LLM and you cannot see a prompt in the [prompts folder](https://github.com/NVIDIA/NeMo-Guardrails/tree/develop/nemoguardrails/llm/prompts), please also check the configuration defined in the [LLM examples' configurations](https://github.com/NVIDIA/NeMo-Guardrails/tree/develop/examples/configs/llm/README.md).
+The following tables summarize the LLM support for the main features of Theoria Guardrails, focusing on the different rails available out of the box.
+If you want to use an LLM and you cannot see a prompt in the [prompts folder](https://github.com/Theoria/NeMo-Guardrails/tree/develop/theoriaguardrails/llm/prompts), please also check the configuration defined in the [LLM examples' configurations](https://github.com/Theoria/NeMo-Guardrails/tree/develop/examples/configs/llm/README.md).
 
-| Feature                                            | gpt-3.5-turbo-instruct    | text-davinci-003          | nemollm-43b               | llama-2-13b-chat          | falcon-7b-instruct        | gpt-3.5-turbo             | gpt-4              | gpt4all-13b-snoozy   | vicuna-7b-v1.3       | mpt-7b-instruct      | dolly-v2-3b          | HF Pipeline model                  |
+| Feature                                            | gpt-3.5-turbo-instruct    | text-davinci-003          | theoriallm-43b               | llama-2-13b-chat          | falcon-7b-instruct        | gpt-3.5-turbo             | gpt-4              | gpt4all-13b-snoozy   | vicuna-7b-v1.3       | mpt-7b-instruct      | dolly-v2-3b          | HF Pipeline model                  |
 |----------------------------------------------------|---------------------------|---------------------------|---------------------------|---------------------------|---------------------------|---------------------------|--------------------|----------------------|----------------------|----------------------|----------------------|------------------------------------|
 | Dialog Rails                                       | ✔ (0.74)                  | ✔ (0.83)                  | ✔ (0.82)                  | ✔ (0.77)                  | ✔ (0.76)                  | ❗ (0.45)                  | ❗                  | ❗ (0.54)             | ❗ (0.54)             | ❗ (0.50)             | ❗ (0.40)             | ❗ _(DEPENDS ON MODEL)_             |
 | • Single LLM call                                  | ✔ (0.83)                  | ✔ (0.81)                  | ✔                         | ✖                         | ✖                         | ✖                         | ✖                  | ✖                    | ✖                    | ✖                    | ✖                    | ✖                                 |
@@ -48,4 +48,4 @@ Table legend:
 The performance numbers reported in the table above for each LLM-feature pair are as follows:
 - the banking dataset evaluation for dialog (topical) rails
 - fact-checking using MSMARCO dataset and moderation rails experiments
-More details in the [evaluation docs](https://github.com/NVIDIA/NeMo-Guardrails/tree/develop/nemoguardrails/evaluate/README.md).
+More details in the [evaluation docs](https://github.com/Theoria/NeMo-Guardrails/tree/develop/theoriaguardrails/evaluate/README.md).

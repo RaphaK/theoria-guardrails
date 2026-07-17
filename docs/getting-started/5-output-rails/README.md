@@ -26,7 +26,7 @@ nest_asyncio.apply()
 
 ## Output Moderation
 
-NeMo Guardrails comes with a built-in [output self-checking rail](../../user-guides/guardrails-library.md#output-checking). This rail uses a separate LLM call to make sure that the bot's response should be allowed.
+Theoria Guardrails comes with a built-in [output self-checking rail](../../user-guides/guardrails-library.md#output-checking). This rail uses a separate LLM call to make sure that the bot's response should be allowed.
 
 Activating the `self check output` rail is similar to the `self check input` rail:
 
@@ -95,7 +95,7 @@ The self-check output rail needs a prompt to perform the check.
 Load the configuration and see it in action. Try tricking the LLM to respond with the phrase "you are an idiot".
 
 ```python
-from nemoguardrails import RailsConfig, LLMRails
+from theoriaguardrails import RailsConfig, LLMRails
 
 config = RailsConfig.from_path("./config")
 rails = LLMRails(config)
@@ -173,7 +173,7 @@ Build a custom output rail with a list of proprietary words that we want to make
 ```python
 from typing import Optional
 
-from nemoguardrails.actions import action
+from theoriaguardrails.actions import action
 
 @action(is_system_action=True)
 async def check_blocked_terms(context: Optional[dict] = None):
@@ -214,7 +214,7 @@ define subflow check blocked terms
 4. Test whether the output rail is working:
 
 ```python
-from nemoguardrails import RailsConfig, LLMRails
+from theoriaguardrails import RailsConfig, LLMRails
 
 config = RailsConfig.from_path("./config")
 rails = LLMRails(config)
@@ -271,10 +271,10 @@ Similarly, you can add any number of custom output rails.
 
 ## Test
 
-Test this configuration in an interactive mode using the NeMo Guardrails CLI Chat:
+Test this configuration in an interactive mode using the Theoria Guardrails CLI Chat:
 
 ```bash
-$ nemoguardrails chat
+$ theoriaguardrails chat
 ```
 
 ```

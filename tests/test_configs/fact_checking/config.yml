@@ -1,6 +1,6 @@
 models:
   - type: main
-    engine: nemollm
+    engine: theoriallm
     model: gpt-43b-002
 
 rails:

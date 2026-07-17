@@ -1,4 +1,4 @@
-# SPDX-FileCopyrightText: Copyright (c) 2023 NVIDIA CORPORATION & AFFILIATES. All rights reserved.
+# SPDX-FileCopyrightText: Copyright (c) 2023 Theoria & Affiliates. All rights reserved.
 # SPDX-License-Identifier: Apache-2.0
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,8 +17,8 @@ import json
 
 import yaml
 
-from nemoguardrails.colang import parse_colang_file
-from nemoguardrails.colang.v1_0.lang.colang_parser import parse_coflows_to_yml_flows
+from theoriaguardrails.colang import parse_colang_file
+from theoriaguardrails.colang.v1_0.lang.colang_parser import parse_coflows_to_yml_flows
 
 
 def test_1():

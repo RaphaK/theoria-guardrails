@@ -2,14 +2,14 @@
 
 The primary way for using guardrails in your project is:
 
-1. Create a [`RailsConfig`](../api/nemoguardrails.rails.llm.config.md#class-railsconfig) object.
-2. Create an [`LLMRails`](../api/nemoguardrails.rails.llm.llmrails.md#class-llmrails) instance which provides an interface to the LLM that automatically applies the configured guardrails.
-3. Generate LLM responses using the [`LLMRails.generate(...)`](../api/nemoguardrails.rails.llm.llmrails.md#method-llmrailsgenerate) or [`LLMRails.generate_async(...)`](../api/nemoguardrails.rails.llm.llmrails.md#method-llmrailsgenerate_async) methods.
+1. Create a [`RailsConfig`](../api/theoriaguardrails.rails.llm.config.md#class-railsconfig) object.
+2. Create an [`LLMRails`](../api/theoriaguardrails.rails.llm.llmrails.md#class-llmrails) instance which provides an interface to the LLM that automatically applies the configured guardrails.
+3. Generate LLM responses using the [`LLMRails.generate(...)`](../api/theoriaguardrails.rails.llm.llmrails.md#method-llmrailsgenerate) or [`LLMRails.generate_async(...)`](../api/theoriaguardrails.rails.llm.llmrails.md#method-llmrailsgenerate_async) methods.
 
 ## Basic usage
 
 ```python
-from nemoguardrails import LLMRails, RailsConfig
+from theoriaguardrails import LLMRails, RailsConfig
 
 config = RailsConfig.from_path("path/to/config")
 
@@ -22,7 +22,7 @@ new_message = app.generate(messages=[{
 
 ## RailsConfig
 
-The [`RailsConfig`](../api/nemoguardrails.rails.llm.config.md#class-railsconfig) class contains the key bits of information for configuring guardrails:
+The [`RailsConfig`](../api/theoriaguardrails.rails.llm.config.md#class-railsconfig) class contains the key bits of information for configuring guardrails:
 
 - `models`: The list of models used by the rails configuration.
 - `user_messages`: The list of user messages that should be used for the rails.
@@ -35,9 +35,9 @@ The [`RailsConfig`](../api/nemoguardrails.rails.llm.config.md#class-railsconfig)
 
 ## Message Generation
 
-To use a guardrails configuration, you can call the [`LLMRails.generate`](../api/nemoguardrails.rails.llm.llmrails.md#method-llmrailsgenerate) or [`LLMRails.generate_async`](../api/nemoguardrails.rails.llm.llmrails.md#method-llmrailsgenerate_async) methods.
+To use a guardrails configuration, you can call the [`LLMRails.generate`](../api/theoriaguardrails.rails.llm.llmrails.md#method-llmrailsgenerate) or [`LLMRails.generate_async`](../api/theoriaguardrails.rails.llm.llmrails.md#method-llmrailsgenerate_async) methods.
 
-The [`LLMRails.generate`](../api/nemoguardrails.rails.llm.llmrails.md#method-llmrailsgenerate) method takes as input either a `prompt` or a `messages` array. When a prompt is provided, the guardrails apply as in a single-turn conversation. The structure of a message is the following:
+The [`LLMRails.generate`](../api/theoriaguardrails.rails.llm.llmrails.md#method-llmrailsgenerate) method takes as input either a `prompt` or a `messages` array. When a prompt is provided, the guardrails apply as in a single-turn conversation. The structure of a message is the following:
 
 ```yaml
 properties:
@@ -132,7 +132,7 @@ For convenience, this toolkit also includes a selection of LangChain tools, wrap
 
 ### Chains as Actions
 
-You can register a Langchain chain as an action using the [LLMRails.register_action](../api/nemoguardrails.rails.llm.llmrails.md#method-llmrailsregister_action) method:
+You can register a Langchain chain as an action using the [LLMRails.register_action](../api/theoriaguardrails.rails.llm.llmrails.md#method-llmrailsregister_action) method:
 
 ```python
 app.register_action(some_chain, name="some_chain")
@@ -145,7 +145,7 @@ When a chain is invoked as an action, the parameters of the action correspond to
 You can register any python function as a custom action, using the `action` decorator or with `LLMRails(RailsConfig).register_action(action: callable, name: Optional[str])`.
 
 ```
-from nemoguardrails.actions import action
+from theoriaguardrails.actions import action
 
 @action()
 async def some_action():
@@ -157,7 +157,7 @@ async def some_action():
 By default, the name of the action is set to the name of the function. However, you can change it by specifying a different name.
 
 ```
-from nemoguardrails.actions import action
+from theoriaguardrails.actions import action
 
 @action(name="some_action_name")
 async def some_action():
@@ -170,7 +170,7 @@ Actions can take any number of parameters. Since actions are invoked from Colang
 
 #### Special parameters
 
-The following parameters are special and are provided automatically by the NeMo Guardrails toolkit, if they appear in the signature of an action:
+The following parameters are special and are provided automatically by the Theoria Guardrails toolkit, if they appear in the signature of an action:
 
 - `events`: the history of events so far; the last one is the one triggering the action itself;
 - `context`: the context data available to the action;

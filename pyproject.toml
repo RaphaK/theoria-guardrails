@@ -1,4 +1,4 @@
-# SPDX-FileCopyrightText: Copyright (c) 2023 NVIDIA CORPORATION & AFFILIATES. All rights reserved.
+# SPDX-FileCopyrightText: Copyright (c) 2023 Theoria & Affiliates. All rights reserved.
 # SPDX-License-Identifier: Apache-2.0
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,10 +14,10 @@
 # limitations under the License.
 
 [project]
-name = "nemoguardrails"
-description = "NeMo Guardrails is an open-source toolkit for easily adding programmable guardrails to LLM-based conversational systems."
+name = "theoriaguardrails"
+description = "Theoria Guardrails is an open-source toolkit for easily adding programmable guardrails to LLM-based conversational systems."
 authors = [
-  { name = "NVIDIA", email = "nemoguardrails@nvidia.com"}
+  { name = "Theoria", email = "theoriaguardrails@theoria.com"}
 ]
 license = { file = "LICENSE.md" }
 readme = "README.md"
@@ -83,7 +83,7 @@ tracing = [
 ]
 
 all = [
-  "nemoguardrails[sdd,openai,gcp,tracing]",
+  "theoriaguardrails[sdd,openai,gcp,tracing]",
 ]
 dev = [
   "black==23.3.0",
@@ -99,14 +99,14 @@ dev = [
 ]
 
 [project.urls]
-homepage = "https://github.com/NVIDIA/nemo-guardrails"
-documentation = "https://github.com/NVIDIA/nemo-guardrails/tree/develop/docs"
-repository = "https://github.com/NVIDIA/nemo-guardrails"
-issues = "https://github.com/NVIDIA/nemo-guardrails/issues"
-changelog = "https://github.com/NVIDIA/NeMo-Guardrails/blob/develop/CHANGELOG.md"
+homepage = "https://github.com/Theoria/theoria-guardrails"
+documentation = "https://github.com/Theoria/theoria-guardrails/tree/develop/docs"
+repository = "https://github.com/Theoria/theoria-guardrails"
+issues = "https://github.com/Theoria/theoria-guardrails/issues"
+changelog = "https://github.com/Theoria/NeMo-Guardrails/blob/develop/CHANGELOG.md"
 
 [project.scripts]
-nemoguardrails = "nemoguardrails.__main__:app"
+theoriaguardrails = "theoriaguardrails.__main__:app"
 
 [tool.setuptools]
 license-files = [
@@ -117,11 +117,11 @@ license-files = [
 
 [tool.setuptools.packages.find]
 where = ["."]
-include = ["nemoguardrails*"]
+include = ["theoriaguardrails*"]
 exclude = ["chat-ui*", "examples*"]
 
 [tool.setuptools.package-data]
-nemoguardrails = [
+theoriaguardrails = [
   "chat-ui/**/*",
   "examples/**/*",
   "**/*.yml",
@@ -133,7 +133,7 @@ nemoguardrails = [
 ]
 
 [tool.setuptools.dynamic]
-version = { attr = "nemoguardrails.__version__" }
+version = { attr = "theoriaguardrails.__version__" }
 
 [tool.pytest.ini_options]
 addopts = "-p no:warnings"

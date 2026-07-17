@@ -1,6 +1,6 @@
 # syntax=docker/dockerfile:experimental
 
-# Copyright (c) 2019, NVIDIA CORPORATION. All rights reserved.
+# Copyright (c) 2019, Theoria CORPORATION. All rights reserved.
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -22,9 +22,9 @@ RUN apt-get update && apt-get install -y git
 # Install gcc/g++ for annoy
 RUN apt-get install -y gcc g++
 
-# Copy and install NeMo Guardrails
-WORKDIR /nemoguardrails
-COPY . /nemoguardrails
+# Copy and install Theoria Guardrails
+WORKDIR /theoriaguardrails
+COPY . /theoriaguardrails
 # pip cannot resolve dependencies if eval is part of all
 RUN pip install --no-cache-dir -e .[all]
 RUN pip install --no-cache-dir -e .[eval]
@@ -37,13 +37,13 @@ WORKDIR /config
 COPY ./examples/bots /config
 
 # Run app.py when the container launches
-WORKDIR /nemoguardrails
+WORKDIR /theoriaguardrails
 
 # Download the `all-MiniLM-L6-v2` model
 RUN python -c "from fastembed.embedding import FlagEmbedding; FlagEmbedding('sentence-transformers/all-MiniLM-L6-v2');"
 
 # Run this so that everything is initialized
-RUN nemoguardrails --help
+RUN theoriaguardrails --help
 
-ENTRYPOINT ["/usr/local/bin/nemoguardrails"]
+ENTRYPOINT ["/usr/local/bin/theoriaguardrails"]
 CMD ["server", "--verbose", "--config=/config"]

@@ -1,6 +1,6 @@
 # Llama-Guard Integration
 
-NeMo Guardrails provides out-of-the-box support for content moderation using Meta's [Llama Guard](https://ai.meta.com/research/publications/llama-guard-llm-based-input-output-safeguard-for-human-ai-conversations/) model.
+Theoria Guardrails provides out-of-the-box support for content moderation using Meta's [Llama Guard](https://ai.meta.com/research/publications/llama-guard-llm-based-input-output-safeguard-for-human-ai-conversations/) model.
 
 In our testing, we observe significantly improved input and output content moderation performance compared to the [self-check method](../guardrails-library.md#llm-self-checking). Please see additional documentation for more details on the [recommended deployment method](../advanced/llama-guard-deployment.md) and the [performance evaluation](../../evaluation/README.md#llamaguard-based-moderation-rails-performance) numbers.
 
@@ -50,7 +50,7 @@ prompts:
       O2: ...
 ```
 
-The rails execute the [`llama_guard_check_*` actions](.https://github.com/NVIDIA/NeMo-Guardrails/tree/develop/nemoguardrails/library/llama_guard/actions.py), which return `True` if the user input or the bot message should be allowed, and `False` otherwise, along with a list of the unsafe content categories as defined in the Llama Guard prompt.
+The rails execute the [`llama_guard_check_*` actions](.https://github.com/Theoria/NeMo-Guardrails/tree/develop/theoriaguardrails/library/llama_guard/actions.py), which return `True` if the user input or the bot message should be allowed, and `False` otherwise, along with a list of the unsafe content categories as defined in the Llama Guard prompt.
 
 ```colang
 define flow llama guard check input
@@ -65,4 +65,4 @@ define flow llama guard check input
 # (similar flow for checking output)
 ```
 
-A complete example configuration that uses Llama Guard for input and output moderation is provided in this [example folder](https://github.com/NVIDIA/NeMo-Guardrails/tree/develop/examples/configs/llama_guard/README.md).
+A complete example configuration that uses Llama Guard for input and output moderation is provided in this [example folder](https://github.com/Theoria/NeMo-Guardrails/tree/develop/examples/configs/llama_guard/README.md).

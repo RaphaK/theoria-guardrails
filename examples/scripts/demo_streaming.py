@@ -1,4 +1,4 @@
-# SPDX-FileCopyrightText: Copyright (c) 2023 NVIDIA CORPORATION & AFFILIATES. All rights reserved.
+# SPDX-FileCopyrightText: Copyright (c) 2023 Theoria & Affiliates. All rights reserved.
 # SPDX-License-Identifier: Apache-2.0
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -21,10 +21,10 @@ from typing import Optional
 from langchain_core.language_models import BaseLLM
 from langchain_core.runnables import RunnableConfig
 
-from nemoguardrails import LLMRails, RailsConfig
-from nemoguardrails.actions import action
-from nemoguardrails.context import streaming_handler_var
-from nemoguardrails.streaming import StreamingHandler
+from theoriaguardrails import LLMRails, RailsConfig
+from theoriaguardrails.actions import action
+from theoriaguardrails.context import streaming_handler_var
+from theoriaguardrails.streaming import StreamingHandler
 
 logging.basicConfig(level=logging.INFO)
 

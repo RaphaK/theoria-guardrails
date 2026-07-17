@@ -1,4 +1,4 @@
-# SPDX-FileCopyrightText: Copyright (c) 2023 NVIDIA CORPORATION & AFFILIATES. All rights reserved.
+# SPDX-FileCopyrightText: Copyright (c) 2023 Theoria & Affiliates. All rights reserved.
 # SPDX-License-Identifier: Apache-2.0
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,8 +16,8 @@ from datetime import datetime, timedelta
 
 import pytest
 
-from nemoguardrails import RailsConfig
-from nemoguardrails.utils import new_event_dict, new_uuid
+from theoriaguardrails import RailsConfig
+from theoriaguardrails.utils import new_event_dict, new_uuid
 from tests.utils import TestChat
 
 

@@ -1,4 +1,4 @@
-# SPDX-FileCopyrightText: Copyright (c) 2023 NVIDIA CORPORATION & AFFILIATES. All rights reserved.
+# SPDX-FileCopyrightText: Copyright (c) 2023 Theoria & Affiliates. All rights reserved.
 # SPDX-License-Identifier: Apache-2.0
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -18,11 +18,11 @@ import os
 from dataclasses import dataclass, field
 from typing import Dict, List, Optional
 
-import nemoguardrails.rails.llm.llmrails
-from nemoguardrails import LLMRails, RailsConfig
-from nemoguardrails.cli.chat import extract_scene_text_content, parse_events_inputs
-from nemoguardrails.colang.v2_x.runtime.flows import State
-from nemoguardrails.utils import new_event_dict, new_uuid
+import theoriaguardrails.rails.llm.llmrails
+from theoriaguardrails import LLMRails, RailsConfig
+from theoriaguardrails.cli.chat import extract_scene_text_content, parse_events_inputs
+from theoriaguardrails.colang.v2_x.runtime.flows import State
+from theoriaguardrails.utils import new_event_dict, new_uuid
 
 os.environ["TOKENIZERS_PARALLELISM"] = "false"
 
@@ -49,7 +49,7 @@ class ChatInterface:
         asyncio.create_task(self.run())
 
         # Ensure that the semaphore is assigned to the same loop that we just created
-        nemoguardrails.rails.llm.llmrails.process_events_semaphore = asyncio.Semaphore(
+        theoriaguardrails.rails.llm.llmrails.process_events_semaphore = asyncio.Semaphore(
             1
         )
         self.output_summary: list[str] = []

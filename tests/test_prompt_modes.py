@@ -1,4 +1,4 @@
-# SPDX-FileCopyrightText: Copyright (c) 2023 NVIDIA CORPORATION & AFFILIATES. All rights reserved.
+# SPDX-FileCopyrightText: Copyright (c) 2023 Theoria & Affiliates. All rights reserved.
 # SPDX-License-Identifier: Apache-2.0
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -15,9 +15,9 @@
 
 import os
 
-from nemoguardrails import RailsConfig
-from nemoguardrails.llm.prompts import get_prompt
-from nemoguardrails.llm.types import Task
+from theoriaguardrails import RailsConfig
+from theoriaguardrails.llm.prompts import get_prompt
+from theoriaguardrails.llm.types import Task
 
 CONFIGS_FOLDER = os.path.join(
     os.path.dirname(__file__), ".", "test_configs", "with_prompt_modes"
@@ -63,7 +63,7 @@ def yaml_config(task_name):
         engine = "openai"
         model = "gpt-3.5-turbo"
     else:
-        engine = "nemollm"
+        engine = "theoriallm"
         model = "gpt-43b-905"
 
     prompting_mode = "compact" if "compact" in task_name else "standard"

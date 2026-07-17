@@ -1,4 +1,4 @@
-# SPDX-FileCopyrightText: Copyright (c) 2023 NVIDIA CORPORATION & AFFILIATES. All rights reserved.
+# SPDX-FileCopyrightText: Copyright (c) 2023 Theoria & Affiliates. All rights reserved.
 # SPDX-License-Identifier: Apache-2.0
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -15,8 +15,8 @@
 
 import os
 
-from nemoguardrails import RailsConfig
-from nemoguardrails.rails.llm.config import colang_path_dirs
+from theoriaguardrails import RailsConfig
+from theoriaguardrails.rails.llm.config import colang_path_dirs
 from tests.utils import TestChat
 
 CONFIGS_FOLDER = os.path.join(os.path.dirname(__file__), "../test_configs")

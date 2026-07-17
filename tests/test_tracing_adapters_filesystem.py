@@ -1,4 +1,4 @@
-# SPDX-FileCopyrightText: Copyright (c) 2023 NVIDIA CORPORATION & AFFILIATES. All rights reserved.
+# SPDX-FileCopyrightText: Copyright (c) 2023 Theoria & Affiliates. All rights reserved.
 # SPDX-License-Identifier: Apache-2.0
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -21,9 +21,9 @@ import tempfile
 import unittest
 from unittest.mock import MagicMock
 
-from nemoguardrails.eval.models import Span
-from nemoguardrails.tracing import InteractionLog
-from nemoguardrails.tracing.adapters.filesystem import FileSystemAdapter
+from theoriaguardrails.eval.models import Span
+from theoriaguardrails.tracing import InteractionLog
+from theoriaguardrails.tracing.adapters.filesystem import FileSystemAdapter
 
 
 class TestFileSystemAdapter(unittest.TestCase):

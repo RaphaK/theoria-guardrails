@@ -1,6 +1,6 @@
 # GCP Text Moderation Integration
 
-NeMo Guardrails supports using the [GCP Text Modeation API](https://cloud.google.com/natural-language/docs/moderating-text) as an input rail out-of-the-box. There are many ways you can authentication on GCP, refer to this [link](https://cloud.google.com/docs/authentication/application-default-credentials) for more details .
+Theoria Guardrails supports using the [GCP Text Modeation API](https://cloud.google.com/natural-language/docs/moderating-text) as an input rail out-of-the-box. There are many ways you can authentication on GCP, refer to this [link](https://cloud.google.com/docs/authentication/application-default-credentials) for more details .
 
 ```yaml
 rails:
@@ -15,7 +15,7 @@ rails:
 
 The `gcpnlp moderation` flow uses the maximum risk score with an 0.80 threshold to decide if the input should be allowed or not (i.e., if the risk score is above the threshold, it is considered a violation). The `gcpnlp moderation detailed` has individual scores per category of violation.
 
-To customize the scores, you have to overwrite the [default flows](https://github.com/NVIDIA/NeMo-Guardrails/tree/develop/nemoguardrails/library/gcp_moderate_text/flows.co) in your config. For example, to change the threshold for `gcpnlp moderation` you can add the following flow to your config:
+To customize the scores, you have to overwrite the [default flows](https://github.com/Theoria/NeMo-Guardrails/tree/develop/theoriaguardrails/library/gcp_moderate_text/flows.co) in your config. For example, to change the threshold for `gcpnlp moderation` you can add the following flow to your config:
 
 ```colang
 define subflow gcpnlp moderation

@@ -1,4 +1,4 @@
-# SPDX-FileCopyrightText: Copyright (c) 2023 NVIDIA CORPORATION & AFFILIATES. All rights reserved.
+# SPDX-FileCopyrightText: Copyright (c) 2023 Theoria & Affiliates. All rights reserved.
 # SPDX-License-Identifier: Apache-2.0
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -18,9 +18,9 @@ import logging
 
 from rich.logging import RichHandler
 
-from nemoguardrails import RailsConfig
-from nemoguardrails.colang.v2_x.runtime.flows import ActionStatus
-from nemoguardrails.colang.v2_x.runtime.statemachine import (
+from theoriaguardrails import RailsConfig
+from theoriaguardrails.colang.v2_x.runtime.flows import ActionStatus
+from theoriaguardrails.colang.v2_x.runtime.statemachine import (
     InternalEvent,
     run_to_completion,
 )

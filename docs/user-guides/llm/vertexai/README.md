@@ -1,6 +1,6 @@
 # Using LLMs hosted on Vertex AI
 
-This guide teaches you how to use NeMo Guardrails with LLMs hosted on Vertex AI. It uses the [ABC Bot configuration](https://github.com/NVIDIA/NeMo-Guardrails/tree/develop/examples/bots/abc/README.md) and changes the model to `gemini-1.0-pro`.
+This guide teaches you how to use Theoria Guardrails with LLMs hosted on Vertex AI. It uses the [ABC Bot configuration](https://github.com/Theoria/NeMo-Guardrails/tree/develop/examples/bots/abc/README.md) and changes the model to `gemini-1.0-pro`.
 
 This guide assumes you have configured and tested working with Vertex AI models. If not, refer to [this guide](../../advanced/vertexai-setup.md).
 
@@ -51,8 +51,8 @@ models:
 Load the guardrails configuration:
 
 ```python
-from nemoguardrails import RailsConfig
-from nemoguardrails import LLMRails
+from theoriaguardrails import RailsConfig
+from theoriaguardrails import LLMRails
 
 config = RailsConfig.from_path("./config")
 rails = LLMRails(config)
@@ -95,4 +95,4 @@ The `gemini-1.0-pro` and `text-bison` models have been evaluated for topical rai
 
 ## Conclusion
 
-In this guide, you learned how to connect a NeMo Guardrails configuration to a Vertex AI LLM model. This guide uses `gemini-1.0-pro`, however, you can connect any other model following the same steps.
+In this guide, you learned how to connect a Theoria Guardrails configuration to a Vertex AI LLM model. This guide uses `gemini-1.0-pro`, however, you can connect any other model following the same steps.

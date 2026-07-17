@@ -1,4 +1,4 @@
-# SPDX-FileCopyrightText: Copyright (c) 2023 NVIDIA CORPORATION & AFFILIATES. All rights reserved.
+# SPDX-FileCopyrightText: Copyright (c) 2023 Theoria & Affiliates. All rights reserved.
 # SPDX-License-Identifier: Apache-2.0
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,8 +17,8 @@ import importlib
 
 import pytest
 
-import nemoguardrails
-from nemoguardrails import RailsConfig
+import theoriaguardrails
+from theoriaguardrails import RailsConfig
 from tests.utils import TestChat
 
 config = RailsConfig.from_content(yaml_content="""models: []""")
@@ -42,7 +42,7 @@ def test_sync_api():
 async def test_async_api(monkeypatch):
     monkeypatch.setenv("DISABLE_NEST_ASYNCIO", "False")
 
-    importlib.reload(nemoguardrails)
+    importlib.reload(theoriaguardrails)
 
     chat >> "Hi!"
     chat << "Hello there!"
@@ -53,14 +53,14 @@ async def test_async_api_error(monkeypatch):
     monkeypatch.setenv("DISABLE_NEST_ASYNCIO", "True")
 
     # Reload the module to re-run its top-level code with the new env var
-    importlib.reload(nemoguardrails)
-    importlib.reload(nemoguardrails.patch_asyncio)
+    importlib.reload(theoriaguardrails)
+    importlib.reload(theoriaguardrails.patch_asyncio)
     importlib.reload(asyncio)
 
     # Remove the patching marker
     delattr(asyncio, "_nest_patched")
 
-    assert nemoguardrails.patch_asyncio.nest_asyncio_patch_applied is False
+    assert theoriaguardrails.patch_asyncio.nest_asyncio_patch_applied is False
     assert not hasattr(asyncio, "_nest_patched")
 
     with pytest.raises(

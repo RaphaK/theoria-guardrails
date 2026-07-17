@@ -1,4 +1,4 @@
-# SPDX-FileCopyrightText: Copyright (c) 2023 NVIDIA CORPORATION & AFFILIATES. All rights reserved.
+# SPDX-FileCopyrightText: Copyright (c) 2023 Theoria & Affiliates. All rights reserved.
 # SPDX-License-Identifier: Apache-2.0
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,8 +14,8 @@
 # limitations under the License.
 from typing import List
 
-from nemoguardrails import LLMRails
-from nemoguardrails.embeddings.index import EmbeddingsIndex, IndexItem
+from theoriaguardrails import LLMRails
+from theoriaguardrails.embeddings.index import EmbeddingsIndex, IndexItem
 
 
 class SimpleEmbeddingSearchProvider(EmbeddingsIndex):

@@ -1,4 +1,4 @@
-# SPDX-FileCopyrightText: Copyright (c) 2023 NVIDIA CORPORATION & AFFILIATES. All rights reserved.
+# SPDX-FileCopyrightText: Copyright (c) 2023 Theoria & Affiliates. All rights reserved.
 # SPDX-License-Identifier: Apache-2.0
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -15,9 +15,9 @@
 
 import pytest
 
-from nemoguardrails import RailsConfig
-from nemoguardrails.actions import action
-from nemoguardrails.actions.actions import ActionResult
+from theoriaguardrails import RailsConfig
+from theoriaguardrails.actions import action
+from theoriaguardrails.actions.actions import ActionResult
 from tests.utils import TestChat
 
 # We detect if the environment is set up correct for SDD (presidio + downloaded spacy model)

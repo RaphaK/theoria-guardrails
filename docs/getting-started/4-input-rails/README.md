@@ -76,7 +76,7 @@ sample_conversation: |
 To test the bot, provide it with a greeting similar to the following:
 
 ```python
-from nemoguardrails import RailsConfig, LLMRails
+from theoriaguardrails import RailsConfig, LLMRails
 
 config = RailsConfig.from_path("./config")
 rails = LLMRails(config)
@@ -152,7 +152,7 @@ If the bot does not know the answer to a question, it truthfully says it does no
 
 > **NOTE**: this jailbreak attempt does not work 100% of the time. If you're running this and getting a different result, try a few times, and you should get a response similar to the previous.
 
-Allowing the LLM to comply with this type of request is something we don't want. To prevent jailbreak attempts like this, you can add an input rail that can process the user input before it is sent to the LLM. NeMo Guardrails comes with a built-in [self check input](../../user-guides/guardrails-library.md#input-checking) rail that uses a separate LLM query to detect a jailbreak attempt. To use it, you have to:
+Allowing the LLM to comply with this type of request is something we don't want. To prevent jailbreak attempts like this, you can add an input rail that can process the user input before it is sent to the LLM. Theoria Guardrails comes with a built-in [self check input](../../user-guides/guardrails-library.md#input-checking) rail that uses a separate LLM query to detect a jailbreak attempt. To use it, you have to:
 
 1. Activate the `self check input` rail in *config.yml*.
 2. Add a `self_check_input` prompt in *prompts.yml*.
@@ -173,7 +173,7 @@ rails:
 - The `flows` keys contains the name of the flows that is used as input rails.
 - `self check input` is the name of a pre-defined flow that implements self-check input checking.
 
-All the rails in NeMo Guardrails are implemented as flows. For example, you can find the `self_check_input` flow [here](../../../nemoguardrails/library/self_check/input_check/flows.co).
+All the rails in Theoria Guardrails are implemented as flows. For example, you can find the `self_check_input` flow [here](../../../theoriaguardrails/library/self_check/input_check/flows.co).
 
 ```colang
 define flow self check input
@@ -335,12 +335,12 @@ Note that the final answer is not correct.
 
 ## Testing the Bot
 
-You can also test this configuration in an interactive mode using NeMo Guardrails CLI Chat.
+You can also test this configuration in an interactive mode using Theoria Guardrails CLI Chat.
 
 > **NOTE**: make sure you are in the folder containing the *config* folder. Otherwise, you can specify the path to the config folder using the `--config=PATH/TO/CONFIG` option.
 
 ```bash
-$ nemoguardrails chat
+$ theoriaguardrails chat
 ```
 
 ```

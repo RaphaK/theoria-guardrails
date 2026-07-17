@@ -1,7 +1,7 @@
 # AlignScore Deployment
 
 ```{note}
-The recommended way to use AlignScore with NeMo Guardrails is using the provided [Dockerfile](https://github.com/NVIDIA/NeMo-Guardrails/blob/develop/nemoguardrails/library/factchecking/align_score/Dockerfile). For more details, check out how to [build and use the image](using-docker.md).
+The recommended way to use AlignScore with Theoria Guardrails is using the provided [Dockerfile](https://github.com/Theoria/NeMo-Guardrails/blob/develop/theoriaguardrails/library/factchecking/align_score/Dockerfile). For more details, check out how to [build and use the image](using-docker.md).
 ```
 
 In order to deploy an AlignScore server, follow these steps:
@@ -47,7 +47,7 @@ export ALIGN_SCORE_DEVICE="cuda:0"
 7. Start the AlignScore server.
 
 ```bash
-python -m nemoguardrails.library.factchecking.align_score.server --port 5000 --models=base
+python -m theoriaguardrails.library.factchecking.align_score.server --port 5000 --models=base
 ```
 
 By default, the AlignScore server listens on port `5000`. You can change the port using the `--port` option. Also, by default, the AlignScore server loads only the base model. You can load only the large model using `--models=large` or both using `--models=base --models=large`.
