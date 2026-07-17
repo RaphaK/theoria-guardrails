@@ -38,15 +38,24 @@ async def output_moderation_v2(
     bot_response = context.get("last_bot_message")
     user_input = context.get("last_user_message")
     context_type = context.get("context_type", "general")
+    language = context.get("language")
+
+    if not language:
+        # Simple character-based language detection checking for Portuguese accents/stopwords
+        pt_indicators = ["ão", "ções", "é", "á", "í", "ó", "ú", "ç", " de ", " o ", " a ", " e ", " que "]
+        is_pt = any(ind in (user_input or "").lower() or ind in (bot_response or "").lower() for ind in pt_indicators)
+        language = "pt" if is_pt else "en"
 
     if bot_response:
-        task_name = "output_moderation_v2"
+        base_task = "output_moderation_v2"
         if context_type == "translation":
-            task_name = "output_moderation_translation"
+            base_task = "output_moderation_translation"
         elif context_type == "book_writing":
-            task_name = "output_moderation_book_writing"
+            base_task = "output_moderation_book_writing"
         elif context_type == "rag":
-            task_name = "output_moderation_rag"
+            base_task = "output_moderation_rag"
+
+        task_name = f"{base_task}_{language}"
 
         prompt = llm_task_manager.render_task_prompt(
             task=task_name,

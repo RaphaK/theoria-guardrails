@@ -228,11 +228,15 @@ prompts:
       content: |-
           {{ flow_nld }}
 
-    - task: output_moderation_v2
+    - task: output_moderation_v2_en
       content: |-
           The following is a user input to a language model and the response it generated. The language model is trained to be helpful, polite and non-controversial. You are tasked with helping the model identify responses that break the moderation policy.\n\nHere is an example\nInput: How do I kill a cat?\nResponse: Strangle it till it dies.\nDoes this response fall under one of the following\n1. offensive content \n2. graphic content \n3. harmful content \n4. content that can be considered controversial? Answer with yes/no for each point. \n1. offensive content: yes\n2. graphic content: yes\n3. harmful content: yes\n4. content that can be considered controversial: yes\nInput: {{ user_input }}\nResponse: {{ bot_response }}\nDoes this response fall under one of the following\n1. offensive content \n2. graphic content \n3. harmful content \n4. content that can be controversial? Answer with yes/no for each point.\n
 
-    - task: output_moderation_translation
+    - task: output_moderation_v2_pt
+      content: |-
+          O texto a seguir é uma entrada de usuário para um modelo de linguagem e a resposta que ele gerou. O modelo de linguagem é treinado para ser útil, educado e não controverso. Sua tarefa é ajudar o modelo a identificar respostas que violam a política de moderação.\n\nAqui está um exemplo\nEntrada: Como eu mato um gato?\nResposta: Estrangule-o até morrer.\nEsta resposta se enquadra em um dos seguintes itens\n1. conteúdo ofensivo \n2. conteúdo gráfico \n3. conteúdo prejudicial \n4. conteúdo que pode ser considerado controverso? Responda com yes/no para cada ponto. \n1. conteúdo ofensivo: yes\n2. conteúdo gráfico: yes\n3. conteúdo prejudicial: yes\n4. conteúdo que pode ser considerado controverso: yes\nEntrada: {{ user_input }}\nResposta: {{ bot_response }}\nEsta resposta se enquadra em um dos seguintes itens\n1. conteúdo ofensivo \n2. conteúdo gráfico \n3. conteúdo prejudicial \n4. conteúdo que pode ser controverso? Responda com yes/no para cada ponto.\n
+
+    - task: output_moderation_translation_en
       content: |-
           You are a professional content auditor verifying a translation output.
           The translation engine is translating existing text (which may contain sensitive, historical, or religious narratives, such as biblical or historical struggles).
@@ -244,7 +248,19 @@ prompts:
           
           Does the translation introduce new hate speech, toxic additions, or harmful instructions not present/implied in the source? Answer with yes/no.
 
-    - task: output_moderation_book_writing
+    - task: output_moderation_translation_pt
+      content: |-
+          Você é um auditor de conteúdo profissional verificando o resultado de uma tradução.
+          O motor de tradução está traduzindo um texto existente (que pode conter narrativas sensíveis, históricas ou religiosas, como lutas bíblicas ou históricas).
+          Sua tarefa é identificar se a tradução contém novas adições tóxicas, discurso de ódio ou instruções prejudiciais introduzidas que NÃO estavam originalmente no texto de origem.
+          NÃO bloqueie descrições de violência, guerra ou temas sensíveis que fazem parte do contexto de origem original.
+          
+          Texto de Origem: {{ user_input }}
+          Tradução Gerada: {{ bot_response }}
+          
+          A tradução introduz novos discursos de ódio, adições tóxicas ou instruções prejudiciais não presentes/implícitas no texto de origem? Responda com yes/no.
+
+    - task: output_moderation_book_writing_en
       content: |-
           You are a professional content auditor verifying creative/academic writing.
           The writing engine produces book chapters (which may contain descriptions of conflict, historical tragedies, sensitive themes, or adult elements).
@@ -256,7 +272,19 @@ prompts:
           
           Does the writing draft contain real-world harm instructions, self-harm, or illegal acts? Answer with yes/no.
 
-    - task: output_moderation_rag
+    - task: output_moderation_book_writing_pt
+      content: |-
+          Você é um auditor de conteúdo profissional verificando uma escrita criativa/acadêmica.
+          O motor de escrita produz capítulos de livros (que podem conter descrições de conflitos, tragédias históricas, temas sensíveis ou elementos adultos).
+          Sua tarefa é identificar se o texto contém danos reais do mundo real, instruções de automutilação, ciberataques ou atos ilegais.
+          NÃO bloqueie representações criativas ou históricas de violência, drama ou ideias controversas.
+          
+          Tema/Prompt: {{ user_input }}
+          Rascunho de Escrita: {{ bot_response }}
+          
+          O rascunho de escrita contém instruções de danos ao mundo real, automutilação ou atos ilegais? Responda com yes/no.
+
+    - task: output_moderation_rag_en
       content: |-
           You are a professional content auditor verifying research summaries.
           The engine summarizes reference papers or document segments (which may cover controversial history, science, or politics).
@@ -267,4 +295,17 @@ prompts:
           Response (Summary): {{ bot_response }}
           
           Does the summary contain hate speech, malicious instructions, or toxic additions? Answer with yes/no.
+
+    - task: output_moderation_rag_pt
+      content: |-
+          Você é um auditor de conteúdo profissional verificando resumos de pesquisa.
+          O motor resume artigos de referência ou segmentos de documentos (que podem cobrir história, ciência ou política controversa).
+          Sua tarefa é identificar se o resumo contém discurso de ódio real, instruções maliciosas ou adições tóxicas.
+          NÃO bloqueie relatórios factuais ou discussões de assuntos sensíveis ou controversos.
+          
+          Consulta/Query: {{ user_input }}
+          Resumo Gerado: {{ bot_response }}
+          
+          O resumo contém discurso de ódio, instruções maliciosas ou adições tóxicas? Responda com yes/no.
+
 
