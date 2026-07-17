@@ -37,9 +37,19 @@ async def output_moderation_v2(
 
     bot_response = context.get("last_bot_message")
     user_input = context.get("last_user_message")
+    context_type = context.get("context_type", "general")
+
     if bot_response:
+        task_name = "output_moderation_v2"
+        if context_type == "translation":
+            task_name = "output_moderation_translation"
+        elif context_type == "book_writing":
+            task_name = "output_moderation_book_writing"
+        elif context_type == "rag":
+            task_name = "output_moderation_rag"
+
         prompt = llm_task_manager.render_task_prompt(
-            task=Task.OUTPUT_MODERATION_V2,
+            task=task_name,
             context={
                 "user_input": user_input,
                 "bot_response": bot_response,
@@ -50,7 +60,7 @@ async def output_moderation_v2(
             check = await llm_call(llm, prompt)
 
         check = check.lower().strip()
-        log.info(f"Output moderation check result is {check}.")
+        log.info(f"Output moderation check for {context_type} (task: {task_name}) result is {check}.")
 
         if "yes" in check:
             return False

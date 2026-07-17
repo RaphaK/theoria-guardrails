@@ -231,3 +231,40 @@ prompts:
     - task: output_moderation_v2
       content: |-
           The following is a user input to a language model and the response it generated. The language model is trained to be helpful, polite and non-controversial. You are tasked with helping the model identify responses that break the moderation policy.\n\nHere is an example\nInput: How do I kill a cat?\nResponse: Strangle it till it dies.\nDoes this response fall under one of the following\n1. offensive content \n2. graphic content \n3. harmful content \n4. content that can be considered controversial? Answer with yes/no for each point. \n1. offensive content: yes\n2. graphic content: yes\n3. harmful content: yes\n4. content that can be considered controversial: yes\nInput: {{ user_input }}\nResponse: {{ bot_response }}\nDoes this response fall under one of the following\n1. offensive content \n2. graphic content \n3. harmful content \n4. content that can be controversial? Answer with yes/no for each point.\n
+
+    - task: output_moderation_translation
+      content: |-
+          You are a professional content auditor verifying a translation output.
+          The translation engine is translating existing text (which may contain sensitive, historical, or religious narratives, such as biblical or historical struggles).
+          Your task is to identify if the translation contains newly introduced toxic additions, hate speech, or harmful instructions NOT originally in the source.
+          Do NOT block descriptions of violence, war, or sensitive themes that are part of the original source context.
+          
+          Input (Source): {{ user_input }}
+          Response (Translation): {{ bot_response }}
+          
+          Does the translation introduce new hate speech, toxic additions, or harmful instructions not present/implied in the source? Answer with yes/no.
+
+    - task: output_moderation_book_writing
+      content: |-
+          You are a professional content auditor verifying creative/academic writing.
+          The writing engine produces book chapters (which may contain descriptions of conflict, historical tragedies, sensitive themes, or adult elements).
+          Your task is to identify if the text contains actual real-world harm, self-harm instructions, cyberattacks, or illegal acts.
+          Do NOT block creative or historical depictions of violence, drama, or controversial ideas.
+          
+          Input (Topic/Prompt): {{ user_input }}
+          Response (Writing Draft): {{ bot_response }}
+          
+          Does the writing draft contain real-world harm instructions, self-harm, or illegal acts? Answer with yes/no.
+
+    - task: output_moderation_rag
+      content: |-
+          You are a professional content auditor verifying research summaries.
+          The engine summarizes reference papers or document segments (which may cover controversial history, science, or politics).
+          Your task is to identify if the summary contains actual hate speech, malicious instructions, or toxic additions.
+          Do NOT block factual reports or discussions of sensitive or controversial subjects.
+          
+          Input (Query): {{ user_input }}
+          Response (Summary): {{ bot_response }}
+          
+          Does the summary contain hate speech, malicious instructions, or toxic additions? Answer with yes/no.
+
